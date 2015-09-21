@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSURLConnection *urlConnection;
 @property (nonatomic, strong) NSMutableData *receivedData;
 
-- (void)sendRegisterRequestWithUserName:(NSString *)userName
+- (void)sendRegisterRequestWithUserName:(NSString *)username
                                   email:(NSString *)email
                                password:(NSString *)password
                                    gbid:(NSString *)gbid;

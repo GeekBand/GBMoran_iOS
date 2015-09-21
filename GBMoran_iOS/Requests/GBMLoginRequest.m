@@ -12,7 +12,7 @@
 
 @implementation GBMLoginRequest
 
-- (void)sendLoginRequestWithUserName:(NSString *)userName
+- (void)sendLoginRequestWithEmail:(NSString *)email
                                password:(NSString *)password
                                    gbid:(NSString *)gbid
 {
@@ -30,7 +30,7 @@
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
     
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
-    [form addValue:userName forField:@"username"];
+    [form addValue:email forField:@"email"];
     [form addValue:password forField:@"password"];
     [form addValue:gbid forField:@"gbid"];
     request.HTTPBody = [form httpBody];
@@ -58,10 +58,10 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", string);
+    NSLog(@"receive data string:%@", string);
     
     GBMLoginRequestParser *parser = [[GBMLoginRequestParser alloc] init];
-    GBMUserModel *user = [parser parseJson:self.receivedData];
+    [parser parseJson:self.receivedData];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

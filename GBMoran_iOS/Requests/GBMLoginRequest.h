@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GBMLoginRequest : NSObject
+@interface GBMLoginRequest : NSObject <NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) NSURLConnection *urlConnection;
 @property (nonatomic, strong) NSMutableData *receivedData;
 
-- (void)sendLoginRequestWithUserName:(NSString *)userName
-                               password:(NSString *)password
-                                   gbid:(NSString *)gbid;
+- (void)sendLoginRequestWithEmail:(NSString *)email
+                         password:(NSString *)password
+                             gbid:(NSString *)gbid;
 
 
 

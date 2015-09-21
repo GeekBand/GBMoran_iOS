@@ -13,7 +13,7 @@
 
 @implementation GBMRegisterRequest
 
-- (void)sendRegisterRequestWithUserName:(NSString *)userName
+- (void)sendRegisterRequestWithUserName:(NSString *)username
                                   email:(NSString *)email
                                password:(NSString *)password
                                    gbid:(NSString *)gbid
@@ -32,7 +32,7 @@
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
     
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
-    [form addValue:userName forField:@"username"];
+    [form addValue:username forField:@"user_name"];
     [form addValue:email forField:@"email"];
     [form addValue:password forField:@"password"];
     [form addValue:gbid forField:@"gbid"];
@@ -64,7 +64,7 @@
     NSLog(@"%@", string);
     
     GBMRegisterRequestParser *parser = [[GBMRegisterRequestParser alloc] init];
-    GBMUserModel *user = [parser parseJson:self.receivedData];
+    [parser parseJson:self.receivedData];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

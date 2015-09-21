@@ -43,6 +43,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    
+    // 键盘收回后，视图恢复到原始位置
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
     return YES;
 }
 
@@ -53,6 +57,28 @@
     [self.emailTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.repeatPasswordTextField resignFirstResponder];
+    
+    // 键盘收回后，视图恢复到原始位置
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+
+}
+
+// 通过键盘弹出时，适当上移视图，避免键盘遮挡输入框
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = self.registerButton.frame;
+    int offset = frame.origin.y + 36 - (self.view.frame.size.height - 216); // 键盘高度216
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    // 将视图的Y坐标向上移Y个单位，为键盘腾出空间
+    if (offset > 0) {
+        self.view.frame = CGRectMake(0, -offset, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+    }
+    
 }
 
 #pragma mark - 点击登录按钮后的相关方法
@@ -66,13 +92,13 @@
 
 - (IBAction)registerButtonClicked:(id)sender
 {
-    NSString *userName = self.userNameTextField.text;
+    NSString *username = self.userNameTextField.text;
     NSString *email = self.emailTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *repeatPassword = self.repeatPasswordTextField.text;
     
     // 验证邮箱和密码是否都有输入内容，且检查邮箱格式是否正确
-    if (([userName length] == 0) ||
+    if (([username length] == 0) ||
         ([email length] == 0) ||
         ([password length] == 0) ||
         ([repeatPassword length] == 0)){
@@ -106,14 +132,15 @@
 
 - (void)registerHandle
 {
-    NSString *userName = self.userNameTextField.text;
+    NSString *username = self.userNameTextField.text;
     NSString *email = self.emailTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *gbid = @"GeekBand-I150001";
     
     self.registerRequest = [[GBMRegisterRequest alloc] init];
-    [self.registerRequest sendRegisterRequestWithUserName:userName
-                                                    email:email password:password
+    [self.registerRequest sendRegisterRequestWithUserName:username
+                                                    email:email
+                                                 password:password
                                                      gbid:gbid];
 }
 
