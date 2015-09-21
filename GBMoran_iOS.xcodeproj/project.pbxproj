@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E987E9901BAFA5BA00D4A039 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987E98F1BAFA5BA00D4A039 /* LoginAndRegister.storyboard */; };
-		E987E9911BAFA5BA00D4A039 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987E98F1BAFA5BA00D4A039 /* LoginAndRegister.storyboard */; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9981BAFA63900D4A039 /* GBMSquareModel.m */; };
@@ -23,6 +21,8 @@
 		E987E9AA1BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
 		E987E9AE1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
+		E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */; };
+		E987E9B71BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */; };
 		E9F17DC71BAF93B700C2948B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC61BAF93B700C2948B /* main.m */; };
 		E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC91BAF93B700C2948B /* AppDelegate.m */; };
 		E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F17DD11BAF93B700C2948B /* Images.xcassets */; };
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E987E98F1BAFA5BA00D4A039 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
 		E987E9971BAFA63900D4A039 /* GBMSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareModel.h; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMMyViewController.m; sourceTree = "<group>"; };
 		E987E9AB1BAFA73200D4A039 /* GBMSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareViewController.h; sourceTree = "<group>"; };
 		E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareViewController.m; sourceTree = "<group>"; };
+		E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMLoginAndRegister.storyboard; sourceTree = "<group>"; };
 		E9F17DC11BAF93B700C2948B /* GBMoran_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBMoran_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F17DC51BAF93B700C2948B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9F17DC61BAF93B700C2948B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -162,22 +162,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		E987E9881BAFA54700D4A039 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E987E9891BAFA54700D4A039 /* Storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E987E9891BAFA54700D4A039 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				E987E98F1BAFA5BA00D4A039 /* LoginAndRegister.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		E987E98A1BAFA57100D4A039 /* APP */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +178,14 @@
 				E9F17DD31BAF93B700C2948B /* LaunchScreen.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E987E9B41BAFBBDA00D4A039 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E9F17DB81BAF93B700C2948B = {
@@ -217,9 +209,9 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E987E9B41BAFBBDA00D4A039 /* Views */,
 				E987E98B1BAFA58200D4A039 /* Resources */,
 				E987E98A1BAFA57100D4A039 /* APP */,
-				E987E9881BAFA54700D4A039 /* Views */,
 				E987E9841BAFA54000D4A039 /* Models */,
 				E987E9801BAFA53900D4A039 /* Controllers */,
 				E9F17DC41BAF93B700C2948B /* Supporting Files */,
@@ -333,9 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 				E9F17DD51BAF93B700C2948B /* LaunchScreen.xib in Resources */,
 				E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */,
-				E987E9901BAFA5BA00D4A039 /* LoginAndRegister.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E987E9911BAFA5BA00D4A039 /* LoginAndRegister.storyboard in Resources */,
+				E987E9B71BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
