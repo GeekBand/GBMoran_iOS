@@ -25,6 +25,8 @@
 		E987E9AA1BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
 		E987E9AE1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
+		E987E9B21BAFA94E00D4A039 /* GBMSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9B11BAFA94E00D4A039 /* GBMSquareView.m */; };
+		E987E9B31BAFA94E00D4A039 /* GBMSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9B11BAFA94E00D4A039 /* GBMSquareView.m */; };
 		E9F17DC71BAF93B700C2948B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC61BAF93B700C2948B /* main.m */; };
 		E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC91BAF93B700C2948B /* AppDelegate.m */; };
 		E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F17DD11BAF93B700C2948B /* Images.xcassets */; };
@@ -59,6 +61,8 @@
 		E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMMyViewController.m; sourceTree = "<group>"; };
 		E987E9AB1BAFA73200D4A039 /* GBMSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareViewController.h; sourceTree = "<group>"; };
 		E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareViewController.m; sourceTree = "<group>"; };
+		E987E9B01BAFA94E00D4A039 /* GBMSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareView.h; sourceTree = "<group>"; };
+		E987E9B11BAFA94E00D4A039 /* GBMSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareView.m; sourceTree = "<group>"; };
 		E9F17DC11BAF93B700C2948B /* GBMoran_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBMoran_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F17DC51BAF93B700C2948B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9F17DC61BAF93B700C2948B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		E987E9881BAFA54700D4A039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E987E9AF1BAFA93C00D4A039 /* Square */,
 				E987E9891BAFA54700D4A039 /* Storyboard */,
 			);
 			path = Views;
@@ -198,6 +203,15 @@
 				E9F17DD31BAF93B700C2948B /* LaunchScreen.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E987E9AF1BAFA93C00D4A039 /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				E987E9B01BAFA94E00D4A039 /* GBMSquareView.h */,
+				E987E9B11BAFA94E00D4A039 /* GBMSquareView.m */,
+			);
+			path = Square;
 			sourceTree = "<group>";
 		};
 		E9F17DB81BAF93B700C2948B = {
@@ -366,6 +380,7 @@
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
+				E987E9B21BAFA94E00D4A039 /* GBMSquareView.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */,
 				E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */,
@@ -380,6 +395,7 @@
 				E9F17DE11BAF93B700C2948B /* GBMoran_iOSTests.m in Sources */,
 				E987E9AE1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */,
 				E987E99A1BAFA63900D4A039 /* GBMSquareModel.m in Sources */,
+				E987E9B31BAFA94E00D4A039 /* GBMSquareView.m in Sources */,
 				E987E9AA1BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E987E9A21BAFA66400D4A039 /* GBMLoginViewController.m in Sources */,
 				E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */,
