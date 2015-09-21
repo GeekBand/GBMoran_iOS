@@ -55,7 +55,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
 }
 
@@ -63,7 +62,7 @@
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", string);
-    NSData *data = self.receivedData;
+    
     GBMRegisterRequestParser *parser = [[GBMRegisterRequestParser alloc] init];
     GBMUserModel *user = [parser parseJson:self.receivedData];
 }
