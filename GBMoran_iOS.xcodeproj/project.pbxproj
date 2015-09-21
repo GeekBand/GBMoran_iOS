@@ -13,6 +13,9 @@
 		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; settings = {ASSET_TAGS = (); }; };
 		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
+		DFFB145E1BB047000036755D /* CMJPublish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145A1BB047000036755D /* CMJPublish.storyboard */; };
+		DFFB145F1BB047000036755D /* CMJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB145C1BB047000036755D /* CMJPublishViewController.m */; };
+		DFFB14601BB047000036755D /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145D1BB047000036755D /* Untitled.jpg */; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9981BAFA63900D4A039 /* GBMSquareModel.m */; };
@@ -58,6 +61,10 @@
 		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
 		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
+		DFFB145A1BB047000036755D /* CMJPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CMJPublish.storyboard; sourceTree = "<group>"; };
+		DFFB145B1BB047000036755D /* CMJPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMJPublishViewController.h; sourceTree = "<group>"; };
+		DFFB145C1BB047000036755D /* CMJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMJPublishViewController.m; sourceTree = "<group>"; };
+		DFFB145D1BB047000036755D /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
 		E987E9971BAFA63900D4A039 /* GBMSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareModel.h; sourceTree = "<group>"; };
@@ -134,9 +141,21 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
+		DFFB14591BB047000036755D /* CMJ */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB145A1BB047000036755D /* CMJPublish.storyboard */,
+				DFFB145B1BB047000036755D /* CMJPublishViewController.h */,
+				DFFB145C1BB047000036755D /* CMJPublishViewController.m */,
+				DFFB145D1BB047000036755D /* Untitled.jpg */,
+			);
+			path = CMJ;
+			sourceTree = "<group>";
+		};
 		E987E9801BAFA53900D4A039 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB14591BB047000036755D /* CMJ */,
 				E987E9811BAFA53900D4A039 /* LoginAndRegister */,
 				E987E9821BAFA53900D4A039 /* My */,
 				E987E9831BAFA53900D4A039 /* Square */,
@@ -377,9 +396,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFB145E1BB047000036755D /* CMJPublish.storyboard in Resources */,
 				E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 				E9F17DD51BAF93B700C2948B /* LaunchScreen.xib in Resources */,
 				C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */,
+				DFFB14601BB047000036755D /* Untitled.jpg in Resources */,
 				E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +428,7 @@
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
+				DFFB145F1BB047000036755D /* CMJPublishViewController.m in Sources */,
 				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */,
