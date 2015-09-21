@@ -1,5 +1,5 @@
 //
-//  GBMMyViewController.h
+//  GBMRegisterViewController.h
 //  GBMoran_iOS
 //
 //  Created by 柴勇峰 on 9/21/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GBMMyViewController : UIViewController
+@interface GBMRegisterViewController : UIViewController
 
 @end
