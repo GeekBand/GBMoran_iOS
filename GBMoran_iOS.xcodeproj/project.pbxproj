@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */; settings = {ASSET_TAGS = (); }; };
+		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9981BAFA63900D4A039 /* GBMSquareModel.m */; };
@@ -41,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMSquare.storyboard; sourceTree = "<group>"; };
+		C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequest.h; sourceTree = "<group>"; };
+		C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequest.m; sourceTree = "<group>"; };
+		C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequest.h; sourceTree = "<group>"; };
+		C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequest.m; sourceTree = "<group>"; };
+		C93EB5C81BAFDC60007DCAB4 /* BLMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMultipartForm.h; sourceTree = "<group>"; };
+		C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMultipartForm.m; sourceTree = "<group>"; };
+		C93EB5CC1BAFE464007DCAB4 /* GBMLoginRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequestParser.h; sourceTree = "<group>"; };
+		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
+		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
+		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
 		E987E9971BAFA63900D4A039 /* GBMSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareModel.h; sourceTree = "<group>"; };
@@ -86,6 +103,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C93EB5C01BAFD5D9007DCAB4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */,
+				C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */,
+				C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */,
+				C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C93EB5C71BAFDC60007DCAB4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C93EB5C81BAFDC60007DCAB4 /* BLMultipartForm.h */,
+				C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C93EB5CB1BAFE464007DCAB4 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				C93EB5CC1BAFE464007DCAB4 /* GBMLoginRequestParser.h */,
+				C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */,
+				C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */,
+				C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
 		E987E9801BAFA53900D4A039 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
+				C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +258,9 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C93EB5CB1BAFE464007DCAB4 /* Parsers */,
+				C93EB5C71BAFDC60007DCAB4 /* Utilities */,
+				C93EB5C01BAFD5D9007DCAB4 /* Requests */,
 				E987E9B41BAFBBDA00D4A039 /* Views */,
 				E987E98B1BAFA58200D4A039 /* Resources */,
 				E987E98A1BAFA57100D4A039 /* APP */,
@@ -327,6 +379,7 @@
 			files = (
 				E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 				E9F17DD51BAF93B700C2948B /* LaunchScreen.xib in Resources */,
+				C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */,
 				E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,14 +399,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */,
 				E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */,
 				E987E9A11BAFA66400D4A039 /* GBMLoginViewController.m in Sources */,
 				E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */,
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
+				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
+				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
+				C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */,
 				E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */,
+				C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */,
 				E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

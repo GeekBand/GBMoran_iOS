@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kIW-TH-cot">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kIW-TH-cot">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -33,8 +34,8 @@
                                     <constraint firstAttribute="height" constant="174" id="eJI-cs-Mdr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Vc-wr5">
-                                <rect key="frame" x="12" y="192" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Vc-wr5">
+                                <rect key="frame" x="12" y="192" width="64" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rbi-dg-clp"/>
                                 </constraints>
@@ -51,7 +52,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDC-Sv-WDg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDC-Sv-WDg">
                                 <rect key="frame" x="9" y="223" width="302" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gnk-PE-KuG"/>
@@ -90,6 +91,9 @@
                                 <state key="normal" title="注册新账号">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="U9L-q4-Md4" kind="presentation" id="uRu-vC-5Nq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,23 +130,24 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="emailTextField" destination="KDC-Sv-WDg" id="tLB-ID-ea2"/>
+                        <outlet property="loginButton" destination="O6x-eY-J4k" id="Wmk-FW-Vdz"/>
                         <outlet property="passwordTextField" destination="HxO-2R-tbu" id="UFl-PJ-Ev9"/>
+                        <outlet property="userNameTextField" destination="KDC-Sv-WDg" id="7Nd-wM-YeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-uL-9cS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279" y="186"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Ycw-o7-r1K">
             <objects>
-                <viewController storyboardIdentifier="RegisterStoryboard" id="U9L-q4-Md4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterStoryboard" id="U9L-q4-Md4" customClass="GBMRegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lwe-WG-0EW"/>
                         <viewControllerLayoutGuide type="bottom" id="76f-4U-ZPM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mrf-pf-mUi">
+                    <view key="view" contentMode="scaleToFill" id="mrf-pf-mUi" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -238,19 +243,25 @@
                                     <constraint firstAttribute="height" constant="36" id="3rL-iY-OUw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" title="登录">
+                                <state key="normal" title="注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonClicked:" destination="U9L-q4-Md4" eventType="touchUpInside" id="eNC-SV-Hsl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFg-iv-aMp">
-                                <rect key="frame" x="123" y="534" width="75" height="30"/>
+                                <rect key="frame" x="130" y="534" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j5w-Gn-3oh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="注册新账号">
+                                <state key="normal" title="登录账户">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="U9L-q4-Md4" eventType="touchUpInside" id="4dA-e5-BLN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,12 +296,22 @@
                             <constraint firstAttribute="trailing" secondItem="P2A-K6-4Qs" secondAttribute="trailing" constant="9" id="u00-c8-g3J"/>
                             <constraint firstItem="EFg-iv-aMp" firstAttribute="centerX" secondItem="mrf-pf-mUi" secondAttribute="centerX" id="vfY-Pl-gau"/>
                         </constraints>
+                        <connections>
+                            <action selector="touchDownAction:" destination="U9L-q4-Md4" eventType="touchDown" id="LFm-kF-woI"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="P2A-K6-4Qs" id="5af-6n-8AS"/>
+                        <outlet property="passwordTextField" destination="nDH-qP-Ki8" id="K1H-le-FMa"/>
+                        <outlet property="registerButton" destination="gDa-zS-co5" id="mqx-Ib-N8H"/>
+                        <outlet property="repeatPasswordTextField" destination="PLi-0f-dJM" id="mPs-KY-nDF"/>
+                        <outlet property="userNameTextField" destination="JSw-1P-qGU" id="Cf7-wj-S2w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQv-5j-mcq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="169"/>
+            <point key="canvasLocation" x="675" y="186"/>
         </scene>
     </scenes>
     <resources>
