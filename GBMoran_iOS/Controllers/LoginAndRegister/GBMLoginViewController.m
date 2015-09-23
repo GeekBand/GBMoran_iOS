@@ -65,18 +65,18 @@
                                            password:password
                                                gbid:gbid];
     
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
-//    GBMPublishViewController *gbm = [story instantiateViewControllerWithIdentifier: @"CMJ"];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:gbm];
-//    [self presentViewController:nav animated:YES completion:nil];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+    GBMPublishViewController *gbm = [story instantiateViewControllerWithIdentifier: @"CMJ"];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:gbm];
+    [self presentViewController:nav animated:YES completion:nil];
     
-    GBMUserModel *user = [[GBMUserModel alloc] init];
-    if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
-        NSLog(@"登录成功");
-        [self showErrorMessage:@"登录成功了吗？"];
-    } else {
-        NSLog(@"服务器返回值：%@", user.loginReturnMessage);
-    }
+//    GBMUserModel *user = [[GBMUserModel alloc] init];
+//    if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
+//        NSLog(@"登录成功");
+//        [self showErrorMessage:@"登录成功了吗？"];
+//    } else {
+//        NSLog(@"服务器返回值：%@", user.loginReturnMessage);
+//    }
 }
 
 // 创建一个弹出UIAlertView的方法，用来提示用户

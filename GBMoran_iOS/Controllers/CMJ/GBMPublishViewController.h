@@ -10,5 +10,9 @@
 
 @interface GBMPublishViewController : UIViewController<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
+@property (strong , nonatomic)UIImage *publishPhoto;
+
+-(instancetype)initWithPulishPhoto:(UIImage*)pulishPhoto;
+
 
 @end

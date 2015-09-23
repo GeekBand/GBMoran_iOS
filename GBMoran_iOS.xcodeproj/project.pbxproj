@@ -67,10 +67,10 @@
 		DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
-		DFFB145A1BB047000036755D /* GBMPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMPublish.storyboard; sourceTree = "<group>"; };
-		DFFB145B1BB047000036755D /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
-		DFFB145C1BB047000036755D /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
-		DFFB145D1BB047000036755D /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+		DFFB145A1BB047000036755D /* GBMPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GBMPublish.storyboard; path = ../Controllers/CMJ/GBMPublish.storyboard; sourceTree = "<group>"; };
+		DFFB145B1BB047000036755D /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMPublishViewController.h; path = ../CMJ/GBMPublishViewController.h; sourceTree = "<group>"; };
+		DFFB145C1BB047000036755D /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMPublishViewController.m; path = ../CMJ/GBMPublishViewController.m; sourceTree = "<group>"; };
+		DFFB145D1BB047000036755D /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Untitled.jpg; path = ../CMJ/Untitled.jpg; sourceTree = "<group>"; };
 		DFFB3C251BB1756000396F7A /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
@@ -156,25 +156,22 @@
 				DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */,
 			);
 			name = Cell;
+			path = ../Controllers/CMJ;
 			sourceTree = "<group>";
 		};
-		DFFB14591BB047000036755D /* 发表照片--临时文件夹 */ = {
+		DFD76C6C1BB26C5A00AAF041 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
-				DFD76C631BB22E5C00AAF041 /* Cell */,
-				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+				DFFB145D1BB047000036755D /* Untitled.jpg */,
 				DFFB145B1BB047000036755D /* GBMPublishViewController.h */,
 				DFFB145C1BB047000036755D /* GBMPublishViewController.m */,
-				DFFB145D1BB047000036755D /* Untitled.jpg */,
 			);
-			name = "发表照片--临时文件夹";
-			path = CMJ;
+			name = Publish;
 			sourceTree = "<group>";
 		};
 		E987E9801BAFA53900D4A039 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DFFB14591BB047000036755D /* 发表照片--临时文件夹 */,
 				E987E9811BAFA53900D4A039 /* LoginAndRegister */,
 				E987E9821BAFA53900D4A039 /* My */,
 				E987E9831BAFA53900D4A039 /* Square */,
@@ -205,6 +202,7 @@
 		E987E9831BAFA53900D4A039 /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				DFD76C6C1BB26C5A00AAF041 /* Publish */,
 				E987E9AB1BAFA73200D4A039 /* GBMSquareViewController.h */,
 				E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */,
 			);
@@ -270,6 +268,8 @@
 		E987E9B41BAFBBDA00D4A039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+				DFD76C631BB22E5C00AAF041 /* Cell */,
 				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
 				C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */,
 			);

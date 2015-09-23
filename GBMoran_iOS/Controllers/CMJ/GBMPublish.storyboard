@@ -83,8 +83,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0/25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-AV-8jH">
                                 <rect key="frame" x="278" y="460" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="G6o-c7-gqn"/>
-                                    <constraint firstAttribute="width" constant="42" id="PvS-g9-cBd"/>
+                                    <constraint firstAttribute="height" constant="21" id="baS-pV-FOh"/>
+                                    <constraint firstAttribute="width" constant="42" id="mj9-yQ-bZ3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +97,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LAp-Z0-llf" secondAttribute="trailing" constant="-20" id="3L7-7J-bVi"/>
                             <constraint firstItem="LAp-Z0-llf" firstAttribute="top" secondItem="Hld-ig-BUH" secondAttribute="bottom" constant="57" id="3h4-vy-B97"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HG9-Ci-NSR" secondAttribute="trailing" constant="-20" id="5Tl-W9-ctT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u4p-AV-8jH" secondAttribute="trailing" constant="-20" id="8rJ-g2-BuI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u4p-AV-8jH" secondAttribute="trailing" constant="-20" id="62a-1n-fAX"/>
                             <constraint firstItem="Hld-ig-BUH" firstAttribute="top" secondItem="PtW-uE-pNw" secondAttribute="bottom" id="D9D-oL-8Ib"/>
                             <constraint firstItem="HG9-Ci-NSR" firstAttribute="top" secondItem="PtW-uE-pNw" secondAttribute="bottom" constant="241" id="Daf-gm-ufU"/>
                             <constraint firstItem="LAp-Z0-llf" firstAttribute="top" secondItem="HG9-Ci-NSR" secondAttribute="bottom" constant="17" id="ISl-KM-PSp"/>
@@ -106,10 +106,9 @@
                             <constraint firstItem="Hld-ig-BUH" firstAttribute="leading" secondItem="OUI-so-F76" secondAttribute="leadingMargin" constant="-20" id="T1h-B3-jJe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hld-ig-BUH" secondAttribute="trailing" constant="-20" id="a6R-d0-jYm"/>
                             <constraint firstItem="tFw-dQ-8uB" firstAttribute="top" secondItem="LAp-Z0-llf" secondAttribute="bottom" constant="17" id="bTJ-dU-nbJ"/>
-                            <constraint firstItem="tFw-dQ-8uB" firstAttribute="top" secondItem="u4p-AV-8jH" secondAttribute="bottom" constant="17" id="dQh-g9-EgK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tFw-dQ-8uB" secondAttribute="trailing" constant="-20" id="mby-16-eF4"/>
+                            <constraint firstItem="tFw-dQ-8uB" firstAttribute="top" secondItem="u4p-AV-8jH" secondAttribute="bottom" constant="17" id="rg2-B6-WRt"/>
                             <constraint firstItem="tFw-dQ-8uB" firstAttribute="leading" secondItem="OUI-so-F76" secondAttribute="leadingMargin" constant="-20" id="tzb-Mm-cJf"/>
-                            <constraint firstItem="tFw-dQ-8uB" firstAttribute="top" secondItem="u4p-AV-8jH" secondAttribute="bottom" constant="17" id="uKL-hH-xC2"/>
                         </constraints>
                         <connections>
                             <action selector="touchDown:" destination="Q8f-dx-KYk" eventType="touchDown" id="T5O-yJ-Cob"/>

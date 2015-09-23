@@ -14,16 +14,34 @@
 @interface GBMPublishViewController ()
 {
     BOOL openOrNot;
+    BOOL keyboardOpen;
+    CGFloat keyboardOffSet;
 }
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong,nonatomic) UITableView *tableView;
+@property (strong,nonatomic) UIControl *blackView;
 
 @end
 
 @implementation GBMPublishViewController
 
+
+-(instancetype)initWithPulishPhoto:(UIImage *)pulishPhoto
+{
+    self = [super init];
+    if (self) {
+        _publishPhoto = pulishPhoto;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
+    keyboardOpen = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [super viewDidLoad];
     [self makePublishButton];
 
@@ -57,14 +75,23 @@
     }
     
     if (openOrNot == NO) {
+        _blackView = [[UIControl alloc]initWithFrame:CGRectMake(0, 0, selfWidth, selfHeight-230)];
+        [_blackView addTarget:self action:@selector(blackViewTouchDown) forControlEvents:UIControlEventTouchDown];
+        _blackView.backgroundColor = [UIColor blackColor];
+        _blackView.alpha = 0;
+        [self.view addSubview:_blackView];
         [UIView animateWithDuration:1 animations:^{
             [self.tableView setFrame:CGRectMake(0, selfHeight-230, selfWidth, 230)];
-        }];
+            _blackView.alpha = 0.5;
+        }
+         ];
         openOrNot = YES;
     }else{
         [UIView animateWithDuration:1 animations:^{
             [self.tableView setFrame:CGRectMake(0, selfHeight, selfWidth, 230)];
+            _blackView.alpha = 0;
         }];
+        [_blackView removeFromSuperview];
         openOrNot = NO;
     }
 }
@@ -86,8 +113,14 @@
     button.layer.cornerRadius = 3.0;
     button.clipsToBounds = YES;
     [self.navigationController.navigationBar addSubview:button];
-    
-   
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (openOrNot == YES) {
+        [self makeTableView];
+    }
+
 }
 
 -(void)publishButtonClicked:(id)sender{
@@ -104,6 +137,15 @@
 
 - (IBAction)touchDown:(id)sender {
     [self.textView resignFirstResponder];
+    if (openOrNot == YES) {
+        [self makeTableView];
+    }
+}
+
+-(void)blackViewTouchDown{
+    if (openOrNot == YES) {
+        [self makeTableView];
+    }
 }
 
 
@@ -127,19 +169,19 @@
 
 
 #pragma mark ------textView的delegate
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    NSCharacterSet *doneButton = [NSCharacterSet newlineCharacterSet];
-    NSRange replacement = [text rangeOfCharacterFromSet:doneButton ];
-    NSUInteger location = replacement.location;
-    if (textView.text.length + text.length > 25) {
-        if (!location != NSNotFound) {
-            [self.textView resignFirstResponder];
-        }
-    }
-    self.numberLabel.text = [NSString stringWithFormat:@"%lu/25",textView.text.length+text.length];
-    return YES;
-}
+
+//-(void)textViewDidChange:(UITextView *)textView
+//{
+//    
+//    if (textView.text.length > 25) {
+//        
+//        [self.textView resignFirstResponder];
+//        
+//    }
+//    self.numberLabel.text = [NSString stringWithFormat:@"%lu/25",textView.text.length];
+//   
+//}
+
 
 
 -(void)textViewDidBeginEditing:(UITextView *)textView
@@ -148,6 +190,9 @@
     if ([textView.text isEqualToString:@"你想说的话"]) {
         textView.text = @"";
     }
+  
+   
+    
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView
@@ -155,7 +200,47 @@
     if (textView.text.length < 1) {
         textView.text = @"你想说的话";
     }
+//    CGRect textViewRect  = self.textView.frame;
+//    if (keyboardOpen == YES) {
+//        [UIView animateWithDuration:1 animations:^{
+//            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+//        }];
+//        keyboardOpen = NO;
+//    }
     
+}
+
+#pragma mark ---弹出键盘时适应
+- (void)keyboardWillChangeFrame:(NSNotification *)notification
+{
+    if (keyboardOpen == NO) {
+        NSDictionary *info = [notification userInfo];
+        CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+        CGRect beginKeyboardRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        CGRect endKeyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        //    CGFloat yOffset = endKeyboardRect.origin.y - beginKeyboardRect.origin.y;
+        CGFloat keyboardHeight = endKeyboardRect.origin.y;
+        CGRect textViewRect  = self.textView.frame;
+        CGFloat textViewHeight = textViewRect.origin.y+textViewRect.size.height;
+        keyboardOffSet = textViewHeight - keyboardHeight;
+        CGFloat newy = textViewRect.origin.y - keyboardOffSet;
+        [UIView animateWithDuration:duration animations:^{
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+        }];
+        [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+        keyboardOpen = YES;
+    }
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    CGRect textViewRect  = self.textView.frame;
+    if (keyboardOpen == YES) {
+        [UIView animateWithDuration:1 animations:^{
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+        }];
+        keyboardOpen = NO;
+    }
 }
 
 /*
