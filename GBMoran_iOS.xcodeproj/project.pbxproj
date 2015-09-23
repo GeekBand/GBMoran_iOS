@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */; settings = {ASSET_TAGS = (); }; };
-		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; settings = {ASSET_TAGS = (); }; };
-		C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */; settings = {ASSET_TAGS = (); }; };
-		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; settings = {ASSET_TAGS = (); }; };
-		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; settings = {ASSET_TAGS = (); }; };
-		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
-		DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */; settings = {ASSET_TAGS = (); }; };
-		DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */; settings = {ASSET_TAGS = (); }; };
-		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */; };
+		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; };
+		C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */; };
+		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; };
+		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; };
+		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; };
+		DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */; };
+		DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */; };
+		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
 		DFFB145E1BB047000036755D /* GBMPublish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145A1BB047000036755D /* GBMPublish.storyboard */; };
 		DFFB145F1BB047000036755D /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB145C1BB047000036755D /* GBMPublishViewController.m */; };
 		DFFB14601BB047000036755D /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145D1BB047000036755D /* Untitled.jpg */; };
-		DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFB3C251BB1756000396F7A /* Main.xcassets */; settings = {ASSET_TAGS = (); }; };
+		DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFB3C251BB1756000396F7A /* Main.xcassets */; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9981BAFA63900D4A039 /* GBMSquareModel.m */; };
@@ -123,11 +123,8 @@
 		C93EB5C01BAFD5D9007DCAB4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				E9CA0CF51BB2A81500695D6E /* LoginAndRegister */,
 				DFD76C6D1BB28F7400AAF041 /* Publish */,
-				C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */,
-				C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */,
-				C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */,
-				C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -281,12 +278,56 @@
 		E987E9B41BAFBBDA00D4A039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+				E9CA0CF21BB2A78F00695D6E /* Storyboard */,
 				DFD76C631BB22E5C00AAF041 /* Cell */,
-				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
-				C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E9CA0CF21BB2A78F00695D6E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
+				C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */,
+				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		E9CA0CF31BB2A7E600695D6E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E9CA0CF41BB2A7F800695D6E /* Network */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		E9CA0CF41BB2A7F800695D6E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C93EB5C01BAFD5D9007DCAB4 /* Requests */,
+				C93EB5C71BAFDC60007DCAB4 /* Utilities */,
+				C93EB5CB1BAFE464007DCAB4 /* Parsers */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		E9CA0CF51BB2A81500695D6E /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */,
+				C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */,
+				C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */,
+				C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		E9CA0CF61BB2A87E00695D6E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		E9F17DB81BAF93B700C2948B = {
@@ -310,14 +351,13 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C93EB5CB1BAFE464007DCAB4 /* Parsers */,
-				C93EB5C71BAFDC60007DCAB4 /* Utilities */,
-				C93EB5C01BAFD5D9007DCAB4 /* Requests */,
+				E987E9801BAFA53900D4A039 /* Controllers */,
 				E987E9B41BAFBBDA00D4A039 /* Views */,
+				E987E9841BAFA54000D4A039 /* Models */,
+				E9CA0CF61BB2A87E00695D6E /* Library */,
+				E9CA0CF31BB2A7E600695D6E /* Public */,
 				E987E98B1BAFA58200D4A039 /* Resources */,
 				E987E98A1BAFA57100D4A039 /* APP */,
-				E987E9841BAFA54000D4A039 /* Models */,
-				E987E9801BAFA53900D4A039 /* Controllers */,
 				E9F17DC41BAF93B700C2948B /* Supporting Files */,
 			);
 			path = GBMoran_iOS;
