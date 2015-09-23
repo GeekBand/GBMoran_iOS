@@ -110,10 +110,13 @@
     button.alpha = 0.8;
     [button setTitle:@"发布" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(publishPhotoButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     button.layer.cornerRadius = 3.0;
     button.clipsToBounds = YES;
     [self.navigationController.navigationBar addSubview:button];
 }
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -241,6 +244,16 @@
         }];
         keyboardOpen = NO;
     }
+}
+
+
+
+#pragma mark ----发布照片事件
+
+-(void)publishPhotoButtonClicked:(id)sender{
+    
+    
+
 }
 
 /*

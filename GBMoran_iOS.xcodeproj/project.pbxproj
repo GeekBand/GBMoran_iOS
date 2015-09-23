@@ -15,6 +15,7 @@
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */; settings = {ASSET_TAGS = (); }; };
 		DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */; settings = {ASSET_TAGS = (); }; };
+		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; settings = {ASSET_TAGS = (); }; };
 		DFFB145E1BB047000036755D /* GBMPublish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145A1BB047000036755D /* GBMPublish.storyboard */; };
 		DFFB145F1BB047000036755D /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB145C1BB047000036755D /* GBMPublishViewController.m */; };
 		DFFB14601BB047000036755D /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145D1BB047000036755D /* Untitled.jpg */; };
@@ -67,6 +68,8 @@
 		DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
+		DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequest.h; sourceTree = "<group>"; };
+		DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequest.m; sourceTree = "<group>"; };
 		DFFB145A1BB047000036755D /* GBMPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GBMPublish.storyboard; path = ../Controllers/CMJ/GBMPublish.storyboard; sourceTree = "<group>"; };
 		DFFB145B1BB047000036755D /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMPublishViewController.h; path = ../CMJ/GBMPublishViewController.h; sourceTree = "<group>"; };
 		DFFB145C1BB047000036755D /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMPublishViewController.m; path = ../CMJ/GBMPublishViewController.m; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		C93EB5C01BAFD5D9007DCAB4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				DFD76C6D1BB28F7400AAF041 /* Publish */,
 				C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */,
 				C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */,
 				C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */,
@@ -165,6 +169,15 @@
 				DFFB145D1BB047000036755D /* Untitled.jpg */,
 				DFFB145B1BB047000036755D /* GBMPublishViewController.h */,
 				DFFB145C1BB047000036755D /* GBMPublishViewController.m */,
+			);
+			name = Publish;
+			sourceTree = "<group>";
+		};
+		DFD76C6D1BB28F7400AAF041 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */,
+				DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */,
 			);
 			name = Publish;
 			sourceTree = "<group>";
@@ -446,6 +459,7 @@
 				E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */,
 				E987E9A11BAFA66400D4A039 /* GBMLoginViewController.m in Sources */,
 				E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */,
+				DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */,
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
