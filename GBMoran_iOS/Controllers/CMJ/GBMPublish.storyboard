@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Publish View Controller-->
         <scene sceneID="owi-c7-up7">
             <objects>
-                <viewController storyboardIdentifier="CMJ" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8f-dx-KYk" customClass="CMJPublishViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CMJ" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8f-dx-KYk" customClass="GBMPublishViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PtW-uE-pNw"/>
                         <viewControllerLayoutGuide type="bottom" id="vGW-mQ-xB9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OUI-so-F76">
+                    <view key="view" contentMode="scaleToFill" id="OUI-so-F76" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,8 +49,8 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-dQ-8uB">
                                 <rect key="frame" x="0.0" y="498" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bN-MV-cks">
-                                        <rect key="frame" x="69" y="14" width="182" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bN-MV-cks">
+                                        <rect key="frame" x="8" y="14" width="182" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="IQs-1o-orD"/>
                                             <constraint firstAttribute="width" constant="182" id="nKD-36-hRa"/>
@@ -58,11 +59,13 @@
                                         <state key="normal" title="上海市浦东新区常泰广场" image="publish_location">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="publishLocation:" destination="Q8f-dx-KYk" eventType="touchUpInside" id="bKS-1T-B8r"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="6bN-MV-cks" firstAttribute="centerX" secondItem="tFw-dQ-8uB" secondAttribute="centerX" id="3dm-jy-hy7"/>
                                     <constraint firstItem="6bN-MV-cks" firstAttribute="top" secondItem="tFw-dQ-8uB" secondAttribute="top" constant="14" id="wB7-Je-xPi"/>
                                     <constraint firstAttribute="height" constant="50" id="xxr-Q3-1JI"/>
                                 </constraints>
@@ -108,9 +111,13 @@
                             <constraint firstItem="tFw-dQ-8uB" firstAttribute="leading" secondItem="OUI-so-F76" secondAttribute="leadingMargin" constant="-20" id="tzb-Mm-cJf"/>
                             <constraint firstItem="tFw-dQ-8uB" firstAttribute="top" secondItem="u4p-AV-8jH" secondAttribute="bottom" constant="17" id="uKL-hH-xC2"/>
                         </constraints>
+                        <connections>
+                            <action selector="touchDown:" destination="Q8f-dx-KYk" eventType="touchDown" id="T5O-yJ-Cob"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="numberLabel" destination="u4p-AV-8jH" id="c4U-Mh-gxN"/>
                         <outlet property="textView" destination="LAp-Z0-llf" id="Qda-jx-wjl"/>
                     </connections>
                 </viewController>

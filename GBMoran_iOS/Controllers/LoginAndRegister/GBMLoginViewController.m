@@ -8,6 +8,7 @@
 
 #import "GBMLoginViewController.h"
 #import "GBMUserModel.h"
+#import "GBMPublishViewController.h"
 
 @interface GBMLoginViewController ()
 
@@ -58,10 +59,16 @@
     NSString *password = self.passwordTextField.text;
     NSString *gbid = @"GeekBand-I150001";
     
+    
     self.loginRequest = [[GBMLoginRequest alloc] init];
     [self.loginRequest sendLoginRequestWithEmail:email
                                            password:password
                                                gbid:gbid];
+    
+//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+//    GBMPublishViewController *gbm = [story instantiateViewControllerWithIdentifier: @"CMJ"];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:gbm];
+//    [self presentViewController:nav animated:YES completion:nil];
     
     GBMUserModel *user = [[GBMUserModel alloc] init];
     if ([user.loginReturnMessage isEqualToString:@"Login success"]) {

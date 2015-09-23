@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMJPublishViewController : UIViewController<UITextViewDelegate>
+@interface GBMPublishViewController : UIViewController<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 
 @end

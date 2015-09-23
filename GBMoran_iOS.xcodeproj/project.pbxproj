@@ -13,9 +13,12 @@
 		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; settings = {ASSET_TAGS = (); }; };
 		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
-		DFFB145E1BB047000036755D /* CMJPublish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145A1BB047000036755D /* CMJPublish.storyboard */; };
-		DFFB145F1BB047000036755D /* CMJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB145C1BB047000036755D /* CMJPublishViewController.m */; };
+		DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */; settings = {ASSET_TAGS = (); }; };
+		DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */; settings = {ASSET_TAGS = (); }; };
+		DFFB145E1BB047000036755D /* GBMPublish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145A1BB047000036755D /* GBMPublish.storyboard */; };
+		DFFB145F1BB047000036755D /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB145C1BB047000036755D /* GBMPublishViewController.m */; };
 		DFFB14601BB047000036755D /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFFB145D1BB047000036755D /* Untitled.jpg */; };
+		DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFB3C251BB1756000396F7A /* Main.xcassets */; settings = {ASSET_TAGS = (); }; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9981BAFA63900D4A039 /* GBMSquareModel.m */; };
@@ -61,10 +64,14 @@
 		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
 		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
-		DFFB145A1BB047000036755D /* CMJPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CMJPublish.storyboard; sourceTree = "<group>"; };
-		DFFB145B1BB047000036755D /* CMJPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMJPublishViewController.h; sourceTree = "<group>"; };
-		DFFB145C1BB047000036755D /* CMJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMJPublishViewController.m; sourceTree = "<group>"; };
+		DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
+		DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
+		DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
+		DFFB145A1BB047000036755D /* GBMPublish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMPublish.storyboard; sourceTree = "<group>"; };
+		DFFB145B1BB047000036755D /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
+		DFFB145C1BB047000036755D /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		DFFB145D1BB047000036755D /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+		DFFB3C251BB1756000396F7A /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
 		E987E9971BAFA63900D4A039 /* GBMSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareModel.h; sourceTree = "<group>"; };
@@ -141,21 +148,33 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
-		DFFB14591BB047000036755D /* CMJ */ = {
+		DFD76C631BB22E5C00AAF041 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				DFFB145A1BB047000036755D /* CMJPublish.storyboard */,
-				DFFB145B1BB047000036755D /* CMJPublishViewController.h */,
-				DFFB145C1BB047000036755D /* CMJPublishViewController.m */,
+				DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */,
+				DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */,
+				DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		DFFB14591BB047000036755D /* 发表照片--临时文件夹 */ = {
+			isa = PBXGroup;
+			children = (
+				DFD76C631BB22E5C00AAF041 /* Cell */,
+				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+				DFFB145B1BB047000036755D /* GBMPublishViewController.h */,
+				DFFB145C1BB047000036755D /* GBMPublishViewController.m */,
 				DFFB145D1BB047000036755D /* Untitled.jpg */,
 			);
+			name = "发表照片--临时文件夹";
 			path = CMJ;
 			sourceTree = "<group>";
 		};
 		E987E9801BAFA53900D4A039 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DFFB14591BB047000036755D /* CMJ */,
+				DFFB14591BB047000036755D /* 发表照片--临时文件夹 */,
 				E987E9811BAFA53900D4A039 /* LoginAndRegister */,
 				E987E9821BAFA53900D4A039 /* My */,
 				E987E9831BAFA53900D4A039 /* Square */,
@@ -241,6 +260,7 @@
 		E987E98B1BAFA58200D4A039 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB3C251BB1756000396F7A /* Main.xcassets */,
 				E9F17DD11BAF93B700C2948B /* Images.xcassets */,
 				E9F17DD31BAF93B700C2948B /* LaunchScreen.xib */,
 			);
@@ -396,7 +416,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFFB145E1BB047000036755D /* CMJPublish.storyboard in Resources */,
+				DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */,
+				DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */,
+				DFFB145E1BB047000036755D /* GBMPublish.storyboard in Resources */,
 				E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 				E9F17DD51BAF93B700C2948B /* LaunchScreen.xib in Resources */,
 				C93EB5BF1BAFCFA4007DCAB4 /* GBMSquare.storyboard in Resources */,
@@ -428,7 +450,8 @@
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
-				DFFB145F1BB047000036755D /* CMJPublishViewController.m in Sources */,
+				DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */,
+				DFFB145F1BB047000036755D /* GBMPublishViewController.m in Sources */,
 				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */,

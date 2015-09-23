@@ -29,12 +29,15 @@
     request.timeoutInterval = 60;
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
     
+    NSData *data1 = [request HTTPBody];
+    
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
     [form addValue:email forField:@"email"];
     [form addValue:password forField:@"password"];
     [form addValue:gbid forField:@"gbid"];
     request.HTTPBody = [form httpBody];
-    
+    [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
+
     self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
                                                          delegate:self
                                                  startImmediately:YES];
@@ -52,6 +55,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+     self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
 }
 

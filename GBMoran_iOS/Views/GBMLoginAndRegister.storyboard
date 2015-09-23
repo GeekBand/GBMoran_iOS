@@ -83,8 +83,8 @@
                                     <action selector="loginButtonClicked:" destination="kIW-TH-cot" eventType="touchUpInside" id="m9d-5r-T3l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-77-GDF">
-                                <rect key="frame" x="123" y="392" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-77-GDF">
+                                <rect key="frame" x="123" y="397" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YfX-zD-uLi"/>
                                 </constraints>

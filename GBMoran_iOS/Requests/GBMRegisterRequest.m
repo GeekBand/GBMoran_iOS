@@ -32,12 +32,12 @@
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
     
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
-    [form addValue:username forField:@"user_name"];
+    [form addValue:username forField:@"username"];
     [form addValue:email forField:@"email"];
     [form addValue:password forField:@"password"];
     [form addValue:gbid forField:@"gbid"];
     request.HTTPBody = [form httpBody];
-
+    [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
     self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
                                                          delegate:self
                                                  startImmediately:YES];
@@ -48,13 +48,14 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-    if (httpResponse.statusCode == 200) {
-        self.receivedData = [NSMutableData data];
-    }
+//    if (httpResponse.statusCode == 200) {
+//        self.receivedData = [NSMutableData data];
+//    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+     self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
 }
 
