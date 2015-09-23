@@ -9,7 +9,6 @@
 #import "GBMRegisterRequest.h"
 #import "BLMultipartForm.h"
 #import "GBMRegisterRequestParser.h"
-#import "GBMUserModel.h"
 
 @implementation GBMRegisterRequest
 
@@ -17,8 +16,11 @@
                                   email:(NSString *)email
                                password:(NSString *)password
                                    gbid:(NSString *)gbid
+                               delegate:(id<GBMRegisterRequestDelegate>)delegate
 {
     [self.urlConnection cancel];
+    
+    self.delegate = delegate;
     
     NSString *urlString = @"http://moran.chinacloudapp.cn/moran/web/user/register";
     
@@ -48,29 +50,35 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-//    if (httpResponse.statusCode == 200) {
-//        self.receivedData = [NSMutableData data];
-//    }
+    if (httpResponse.statusCode == 200) {
+        self.receivedData = [NSMutableData data];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-     self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", string);
+    NSLog(@"receive data string:%@", string);
     
     GBMRegisterRequestParser *parser = [[GBMRegisterRequestParser alloc] init];
-    [parser parseJson:self.receivedData];
+    GBMUserModel *user = [parser parseJson:self.receivedData];
+    
+    if ([_delegate respondsToSelector:@selector(registerRequestSuccess:user:)]) {
+        [_delegate registerRequestSuccess:self user:user];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"error = %@", error);
+    if ([_delegate respondsToSelector:@selector(registerRequestFailed:error:)]) {
+        [_delegate registerRequestFailed:self error:error];
+    }
 }
 
 

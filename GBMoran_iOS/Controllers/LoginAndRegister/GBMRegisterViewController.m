@@ -7,8 +7,9 @@
 //
 
 #import "GBMRegisterViewController.h"
+#import "GBMSquareViewController.h"
 
-@interface GBMRegisterViewController ()
+@interface GBMRegisterViewController () <GBMRegisterRequestDelegate>
 
 @property (nonatomic, strong) GBMRegisterRequest *registerRequest;
 
@@ -60,7 +61,7 @@
     
     // 键盘收回后，视图恢复到原始位置
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-
+    
 }
 
 // 通过键盘弹出时，适当上移视图，避免键盘遮挡输入框
@@ -107,6 +108,8 @@
         [self showErrorMessage:@"您输入的邮箱格式有误，请重试"];
     } else if (![password isEqualToString:repeatPassword]){
         [self showErrorMessage:@"您两次输入的密码不一致，请重试"];
+    } else if (![self isValidatePassword:password]) {
+        [self showErrorMessage:@"密码格式有误，应为6~20位的字母或数字"];
     } else {
         [self registerHandle];
     }
@@ -117,6 +120,15 @@
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
+}
+
+// 利用正则表达式验证用户输入的密码是否符合要求
+// 密码为6~20位的字母或数字
+- (BOOL) isValidatePassword:(NSString *)password
+{
+    NSString *passwordRegex = @"^[a-zA-Z0-9]{6,20}+$";
+    NSPredicate *passwordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",passwordRegex];
+    return [passwordPredicate evaluateWithObject:password];
 }
 
 // 创建一个弹出UIAlertView的方法，用来提示用户
@@ -141,7 +153,28 @@
     [self.registerRequest sendRegisterRequestWithUserName:username
                                                     email:email
                                                  password:password
-                                                     gbid:gbid];
+                                                     gbid:gbid
+                                                 delegate:self];
+}
+
+#pragma mark - GBMRegisterRequestDelegate methods
+
+- (void)registerRequestSuccess:(GBMRegisterRequest *)request user:(GBMUserModel *)user
+{
+    if ([user.registerReturnMessage isEqualToString:@"Register success"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"注册成功，请登录"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (void)registerRequestFailed:(GBMRegisterRequest *)request error:(NSError *)error
+{
+    NSLog(@"注册错误原因:%@", error);
 }
 
 
