@@ -9,8 +9,10 @@
 #import "GBMLoginViewController.h"
 #import "GBMUserModel.h"
 #import "GBMPublishViewController.h"
+#import "AppDelegate.h"
+#import "GBMFoundation.h"
 
-@interface GBMLoginViewController ()
+@interface GBMLoginViewController () <GBMLoginRequestDelegate>
 
 @property (nonatomic, strong) GBMLoginRequest *loginRequest;
 
@@ -63,20 +65,8 @@
     self.loginRequest = [[GBMLoginRequest alloc] init];
     [self.loginRequest sendLoginRequestWithEmail:email
                                            password:password
-                                               gbid:gbid];
-    
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
-//    GBMPublishViewController *gbm = [story instantiateViewControllerWithIdentifier: @"CMJ"];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:gbm];
-//    [self presentViewController:nav animated:YES completion:nil];
-    
-    GBMUserModel *user = [[GBMUserModel alloc] init];
-    if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
-        NSLog(@"登录成功");
-        [self showErrorMessage:@"登录成功了吗？"];
-    } else {
-        NSLog(@"服务器返回值：%@", user.loginReturnMessage);
-    }
+                                               gbid:gbid
+                                           delegate:self];
 }
 
 // 创建一个弹出UIAlertView的方法，用来提示用户
@@ -130,6 +120,22 @@
     
 }
 
+#pragma mark - GBMLoginRequestDelegate methods
+- (void)loginRequestSuccess:(GBMLoginRequest *)request user:(GBMUserModel *)user
+{
+    if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
+        NSLog(@"登录成功");
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate loadSquareView];
+    } else {
+        NSLog(@"服务器返回值：%@", user.loginReturnMessage);
+    }
+}
+
+- (void)loginRequestFailed:(GBMLoginRequest *)request error:(NSError *)error
+{
+    NSLog(@"登录错误原因:%@", error);
+}
 
 
 @end

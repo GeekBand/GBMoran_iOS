@@ -11,7 +11,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIViewController *loginViewController;
 
+- (void)loadLoginView;
+- (void)loadSquareView;
 
 @end
 

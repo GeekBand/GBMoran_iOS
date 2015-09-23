@@ -64,6 +64,7 @@
 		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
 		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
+		C9ADE2F41BB2A04F00663CF4 /* GBMFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMFoundation.h; sourceTree = "<group>"; };
 		DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
@@ -146,6 +147,14 @@
 				C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		C9ADE2F31BB2A01500663CF4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				C9ADE2F41BB2A04F00663CF4 /* GBMFoundation.h */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		DFD76C631BB22E5C00AAF041 /* Cell */ = {
@@ -297,6 +306,7 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C9ADE2F31BB2A01500663CF4 /* Global */,
 				C93EB5CB1BAFE464007DCAB4 /* Parsers */,
 				C93EB5C71BAFDC60007DCAB4 /* Utilities */,
 				C93EB5C01BAFD5D9007DCAB4 /* Requests */,

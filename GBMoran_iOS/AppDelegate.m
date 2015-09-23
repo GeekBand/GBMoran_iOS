@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GBMLoginViewController.h"
+#import "GBMSquareViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +16,38 @@
 
 @implementation AppDelegate
 
+- (void)loadLoginView
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GBMLoginAndRegister" bundle:[NSBundle mainBundle]];
+    self.loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginStoryboard"];
+    self.window.rootViewController = self.loginViewController;
+}
+
+- (void)loadSquareView
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GBMSquare" bundle:[NSBundle mainBundle]];
+    GBMSquareViewController *squareVC = [storyboard instantiateViewControllerWithIdentifier:@"SquareStoryboard"];
+    self.window.rootViewController = squareVC;
+    
+    // 添加切换页面的动画效果
+    [self.window addSubview:self.loginViewController.view];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.loginViewController.view.alpha = 0;
+                     }
+                     completion:^(BOOL finished){
+                         self.loginViewController = nil;
+                     }];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self loadLoginView];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

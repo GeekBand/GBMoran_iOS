@@ -8,7 +8,7 @@
         <!--Square View Controller-->
         <scene sceneID="Rar-Yp-TkA">
             <objects>
-                <viewController id="l9J-Fg-Vtq" customClass="GBMSquareViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SquareStoryboard" id="l9J-Fg-Vtq" customClass="GBMSquareViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PxB-Ha-roM"/>
                         <viewControllerLayoutGuide type="bottom" id="X9p-Qr-niL"/>

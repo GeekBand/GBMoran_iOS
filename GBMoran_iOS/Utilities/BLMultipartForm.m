@@ -72,7 +72,6 @@
 				if(!v)
 					return nil;
 			} else {
-                  NSLog(@"%@",[v description]);
 				v = [v dataUsingEncoding:NSUTF8StringEncoding];
               
 			}
