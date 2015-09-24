@@ -8,6 +8,7 @@
 
 #import "GBMPublishViewController.h"
 #import "GBMPublishCell.h"
+#import "GBMPublishRequest.h"
 #define selfWidth self.view.frame.size.width
 #define selfHeight self.view.frame.size.height
 
@@ -252,8 +253,8 @@
 
 -(void)publishPhotoButtonClicked:(id)sender{
     
+    GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     
-
 }
 
 /*
