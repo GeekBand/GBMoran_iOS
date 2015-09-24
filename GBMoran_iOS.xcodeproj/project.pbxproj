@@ -13,6 +13,7 @@
 		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; };
 		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; };
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; };
+		C9DBAE551BB3A3070036561C /* GBMMy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9DBAE541BB3A3070036561C /* GBMMy.storyboard */; settings = {ASSET_TAGS = (); }; };
 		DFD76C6A1BB22EE100AAF041 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */; };
 		DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */; };
 		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
@@ -65,6 +66,7 @@
 		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
 		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
+		C9DBAE541BB3A3070036561C /* GBMMy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMMy.storyboard; sourceTree = "<group>"; };
 		DFD76C671BB22EE100AAF041 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		DFD76C681BB22EE100AAF041 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		DFD76C691BB22EE100AAF041 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				E987E9B51BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard */,
 				C93EB5BE1BAFCFA4007DCAB4 /* GBMSquare.storyboard */,
 				DFFB145A1BB047000036755D /* GBMPublish.storyboard */,
+				C9DBAE541BB3A3070036561C /* GBMMy.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				DFD76C6B1BB22EE100AAF041 /* GBMPublishCell.xib in Resources */,
 				DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */,
+				C9DBAE551BB3A3070036561C /* GBMMy.storyboard in Resources */,
 				DFFB145E1BB047000036755D /* GBMPublish.storyboard in Resources */,
 				E987E9B61BAFBBEE00D4A039 /* GBMLoginAndRegister.storyboard in Resources */,
 				E9F17DD51BAF93B700C2948B /* LaunchScreen.xib in Resources */,

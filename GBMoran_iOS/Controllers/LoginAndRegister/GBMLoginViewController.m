@@ -124,7 +124,7 @@
     if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
         NSLog(@"登录成功，现在转换页面");
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [appDelegate loadSquareView];
+        [appDelegate loadMainView];
     } else {
         NSLog(@"服务器报错:%@", user.loginReturnMessage);
     }

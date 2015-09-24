@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GBMMyViewController : UIViewController
+@interface GBMMyViewController : UITableViewController
 
 @end

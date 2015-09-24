@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GBMLoginViewController.h"
 #import "GBMSquareViewController.h"
+#import "GBMMyViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +24,23 @@
     self.window.rootViewController = self.loginViewController;
 }
 
-- (void)loadSquareView
+- (void)loadMainView
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GBMSquare" bundle:[NSBundle mainBundle]];
-    GBMSquareViewController *squareVC = [storyboard instantiateViewControllerWithIdentifier:@"SquareStoryboard"];
-    self.window.rootViewController = squareVC;
+    UIStoryboard *squareStoryboard = [UIStoryboard storyboardWithName:@"GBMSquare" bundle:[NSBundle mainBundle]];
+    GBMSquareViewController *squareVC = [squareStoryboard instantiateViewControllerWithIdentifier:@"SquareStoryboard"];
+    squareVC.tabBarItem.title = @"广场";
+    squareVC.tabBarItem.image = [UIImage imageNamed:@"square"];
+    
+    UIStoryboard *myStoryboard
+    = [UIStoryboard storyboardWithName:@"GBMMy" bundle:[NSBundle mainBundle]];
+    GBMMyViewController *myVC = [myStoryboard instantiateViewControllerWithIdentifier:@"MyStoryboard"];
+    myVC.tabBarItem.title = @"我的";
+    myVC.tabBarItem.image = [UIImage imageNamed:@"my"];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[squareVC, myVC];
+    
+    self.window.rootViewController = tabBarController;
     
     // 添加切换页面的动画效果
     [self.window addSubview:self.loginViewController.view];
