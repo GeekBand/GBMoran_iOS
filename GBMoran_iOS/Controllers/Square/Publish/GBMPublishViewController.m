@@ -42,6 +42,7 @@
 
 
 - (void)viewDidLoad {
+    self.pulishview.image= self.publishPhoto;
     keyboardOpen = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
