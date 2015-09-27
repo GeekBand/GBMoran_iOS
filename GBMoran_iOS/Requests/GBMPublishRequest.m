@@ -7,21 +7,82 @@
 //
 
 #import "GBMPublishRequest.h"
+#import "BLMultipartForm.h"
+#import "GBMPublishRequestParser.h"
 
 @interface GBMPublishRequest()<NSURLConnectionDataDelegate>
+
 
 @end
 
 
 @implementation GBMPublishRequest
 
--(void)sendLoginRequestWithUserName:(NSString *)email password:(NSString *)token longitude:(NSString *)longitude latitude:(NSString *)latitude data:(NSData *)data delegate:(id<GBMPublishRequestDelegate>)delegate
+
+-(void)sendLoginRequestWithUserId:(NSString *)userId token:(NSString *)token longitude:(NSString *)longitude latitude:(NSString *)latitude data:(NSData *)data delegate:(id<GBMPublishRequestDelegate>)delegate
 {
-
-
-
-
+    
+    [self.urlConnection cancel];
+    
+    NSString *urlString = @"http://moran.chinacloudapp.cn/moran/web/picture/create";
+    
+    // POST请求
+    NSString *encodeURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURL *url = [NSURL URLWithString:encodeURLString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+    request.timeoutInterval = 60;
+    request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
+    
+    
+    BLMultipartForm *form = [[BLMultipartForm alloc] init];
+    [form addValue:userId forField:@"user_id"];
+    [form addValue:token forField:@"token"];
+    [form addValue:longitude forField:@"longtitude"];
+    [form addValue:latitude forField:@"latitude"];
+    [form addValue:nil forField:@"data"];
+    request.HTTPBody = [form httpBody];
+    [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
+    
+    self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
+                                                         delegate:self
+                                                 startImmediately:YES];
 }
+
+
+#pragma mark - 网络请求代理方法
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    if (httpResponse.statusCode == 200) {
+        self.receivedData = [NSMutableData data];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    self.receivedData = [NSMutableData data];
+    [self.receivedData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
+    NSLog(@"receive data string:%@", string);
+    GBMPublishRequestParser *parser =[[GBMPublishRequestParser alloc]init];
+    [parser parseJson:self.receivedData];
+    //    [parser parseJson:self.receivedData];
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"error = %@", error);
+}
+
+
 
 
 @end

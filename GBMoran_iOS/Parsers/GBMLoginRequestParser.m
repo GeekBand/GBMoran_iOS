@@ -19,14 +19,35 @@
     if (error) {
         NSLog(@"The parser is not work.");
     } else {
+        GBMUserModel *user = [[GBMUserModel alloc] init];
         if ([[jsonDic class] isSubclassOfClass:[NSDictionary class]]) {
+            
+            id data = [jsonDic valueForKey:@"data"];
+            if ([[data class] isSubclassOfClass:[NSDictionary class]]) {
+                
+                id userId = [data valueForKey:@"user_id"];
+                if ([[userId class] isSubclassOfClass:[NSString class]]) {
+                    user.userId = userId;
+                }
+                
+                id token = [data valueForKey:@"token"];
+                if ([[token class] isSubclassOfClass:[NSString class]]) {
+                    user.token = token;
+                }
+                
+            }
+            
+            
+            
             id returnMessage = [jsonDic valueForKey:@"message"];
             if ([[returnMessage class] isSubclassOfClass:[NSString class]]) {
-                GBMUserModel *user = [[GBMUserModel alloc] init];
+                
                 user.loginReturnMessage = returnMessage;
                 
-                return user;
+                
             }
+            
+            return user;
         }
     }
     return nil;

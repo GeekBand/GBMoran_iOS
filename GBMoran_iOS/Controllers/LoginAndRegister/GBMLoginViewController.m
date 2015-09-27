@@ -9,7 +9,8 @@
 #import "GBMLoginViewController.h"
 #import "GBMUserModel.h"
 #import "AppDelegate.h"
-
+#import "GBMGlobal.h"
+#import "GBMPublishViewController.h"
 @interface GBMLoginViewController () <GBMLoginRequestDelegate>
 
 @property (nonatomic, strong) GBMLoginRequest *loginRequest;
@@ -125,6 +126,11 @@
         NSLog(@"登录成功，现在转换页面");
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appDelegate loadMainView];
+        [GBMGlobal shareGloabl].user = user;
+//        UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+//        GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
+//        [self presentViewController:nav animated:YES completion:nil];
     } else {
         NSLog(@"服务器报错:%@", user.loginReturnMessage);
     }

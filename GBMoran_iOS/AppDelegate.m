@@ -10,6 +10,8 @@
 #import "GBMLoginViewController.h"
 #import "GBMSquareViewController.h"
 #import "GBMMyViewController.h"
+#define viewwidth self.window.frame.size.width
+#define viewheight self.window.frame.size.height
 
 @interface AppDelegate ()
 
@@ -40,7 +42,9 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[squareVC, myVC];
     
+    
     self.window.rootViewController = tabBarController;
+ 
     
     // 添加切换页面的动画效果
     [self.window addSubview:self.loginViewController.view];
@@ -51,6 +55,10 @@
                      completion:^(BOOL finished){
                          self.loginViewController = nil;
                      }];
+    
+    UIButton *photoButton = [[UIButton alloc]initWithFrame:CGRectMake(viewwidth/2-60, -25, 120, 50)];
+    [photoButton setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
+    [tabBarController.tabBar addSubview:photoButton];
 }
 
 

@@ -15,5 +15,7 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *loginReturnMessage;
 @property (nonatomic, copy) NSString *registerReturnMessage;
+@property (nonatomic, copy) NSString *token;
+@property (nonatomic, copy) NSString *userId;
 
 @end

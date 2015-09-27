@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class GBMPublishRequest;
 
+
 @protocol GBMPublishRequestDelegate <NSObject>
 
 - (void)requestSuccess:(GBMPublishRequest *)request picId:(NSString *)picId;
@@ -18,17 +19,15 @@
 
 @interface GBMPublishRequest : NSObject
 
-@property(nonatomic, strong)NSURLConnection *URLConnection;
-@property(nonatomic, strong)NSMutableData *receivedData;
+@property (nonatomic, strong) NSURLConnection *urlConnection;
+@property (nonatomic, strong) NSMutableData *receivedData;
 @property(nonatomic, assign)id<GBMPublishRequestDelegate> delegate;
 
-- (void)sendLoginRequestWithUserName:(NSString *)email
-                            password:(NSString *)token
-                           longitude:(NSString *)longitude
-                            latitude:(NSString *)latitude
-                                data:(NSData *)data
-                            delegate:(id<GBMPublishRequestDelegate>)delegate;
-
-- (void)cancelRequest;
+- (void)sendLoginRequestWithUserId:(NSString *)userId
+                             token:(NSString *)token
+                         longitude:(NSString *)longitude
+                          latitude:(NSString *)latitude
+                              data:(NSData *)data
+                          delegate:(id<GBMPublishRequestDelegate>)delegate;
 
 @end
