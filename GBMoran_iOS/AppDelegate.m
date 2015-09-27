@@ -33,17 +33,21 @@
 {
     UIStoryboard *squareStoryboard = [UIStoryboard storyboardWithName:@"GBMSquare" bundle:[NSBundle mainBundle]];
     GBMSquareViewController *squareVC = [squareStoryboard instantiateViewControllerWithIdentifier:@"SquareStoryboard"];
-    squareVC.tabBarItem.title = @"广场";
-    squareVC.tabBarItem.image = [UIImage imageNamed:@"square"];
+    UINavigationController *nav1 = [[UINavigationController alloc]initWithRootViewController:squareVC];
+    nav1.navigationBar.barTintColor = [[UIColor alloc]initWithRed:230/255.0 green:106/255.0 blue:58/255.0 alpha:1];
+
+    nav1.tabBarItem.title = @"广场";
+    nav1.tabBarItem.image = [UIImage imageNamed:@"square"];
     
     UIStoryboard *myStoryboard
     = [UIStoryboard storyboardWithName:@"GBMMy" bundle:[NSBundle mainBundle]];
     GBMMyViewController *myVC = [myStoryboard instantiateViewControllerWithIdentifier:@"MyStoryboard"];
+//    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:myVC];
     myVC.tabBarItem.title = @"我的";
     myVC.tabBarItem.image = [UIImage imageNamed:@"my"];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[squareVC, myVC];
+    self.tabBarController.viewControllers = @[ nav1,myVC];
     
     
 //    self.window.rootViewController = self.tabBarController;

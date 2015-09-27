@@ -256,7 +256,7 @@
 
 -(void)publishPhotoButtonClicked:(id)sender{
     
-    NSData *data = UIImageJPEGRepresentation(self.imageView.image, 1.0);
+    NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 1.0);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
     

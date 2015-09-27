@@ -37,17 +37,28 @@
     
     
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
+    NSNumber *a = [NSNumber numberWithFloat:37.777];
+    NSNumber *b = [NSNumber numberWithFloat:37.777];
+        [form addValue:token forField:@"token"];
     [form addValue:userId forField:@"user_id"];
-    [form addValue:token forField:@"token"];
-    [form addValue:longitude forField:@"longtitude"];
-    [form addValue:latitude forField:@"latitude"];
-    [form addValue:nil forField:@"data"];
+    [form addValue:data forField:@"data"];
+    [form addValue:@"haha" forField:@"title"];
+    [form addValue:@"" forField:@"location"];
+    [form addValue:@"123" forField:@"longitude"];
+    [form addValue:@"123" forField:@"latitude"];
+   
+   
     request.HTTPBody = [form httpBody];
     [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
     
     self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
                                                          delegate:self
                                                  startImmediately:YES];
+    
+
+
+
+ 
 }
 
 
