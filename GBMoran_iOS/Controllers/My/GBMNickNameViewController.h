@@ -11,5 +11,6 @@
 @interface GBMNickNameViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
+@property (nonatomic, weak) NSMutableString *nickName;
 
 @end

@@ -64,9 +64,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"settingNickName"]) {
-        GBMNickNameViewController *nickNameVC = [[GBMNickNameViewController alloc] init];
-        self.nickNameLabel.text = @"易科比";
-        nickNameVC.nickNameTextField.text = self.nickNameLabel.text;
+        GBMNickNameViewController *nickNameVC = segue.destinationViewController;
+        nickNameVC.nickName = [NSMutableString stringWithString:self.nickNameLabel.text];
+        NSLog(@"%@", nickNameVC.nickName);
     }
 }
 
