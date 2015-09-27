@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.nickNameTextField.text = self.nickName;
 }
 
 - (void)didReceiveMemoryWarning {
