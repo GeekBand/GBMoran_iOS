@@ -7,10 +7,9 @@
 //
 
 #import "GBMMyViewController.h"
+#import "GBMNickNameViewController.h"
 
 @interface GBMMyViewController ()
-
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 
 @end
 
@@ -59,6 +58,18 @@
         }
     }
 }
+
+#pragma mark - Storyboard segue methods
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"settingNickName"]) {
+        GBMNickNameViewController *nickNameVC = [[GBMNickNameViewController alloc] init];
+        self.nickNameLabel.text = @"易科比";
+        nickNameVC.nickNameTextField.text = self.nickNameLabel.text;
+    }
+}
+
 
 
 @end

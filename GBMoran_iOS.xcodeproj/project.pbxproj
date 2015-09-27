@@ -16,6 +16,8 @@
 		994BB5221BB68DF800420EB8 /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51B1BB68DF800420EB8 /* GBMViewDetail.storyboard */; settings = {ASSET_TAGS = (); }; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; settings = {ASSET_TAGS = (); }; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; settings = {ASSET_TAGS = (); }; };
+		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; };
 		C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */; };
 		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; };
@@ -69,6 +71,10 @@
 		994BB5241BB68E0D00420EB8 /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+		C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMNickNameViewController.h; sourceTree = "<group>"; };
+		C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMNickNameViewController.m; sourceTree = "<group>"; };
+		C92D438B1BB7891900FA1916 /* GBMHeadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMHeadImageViewController.h; sourceTree = "<group>"; };
+		C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMHeadImageViewController.m; sourceTree = "<group>"; };
 		C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequest.h; sourceTree = "<group>"; };
 		C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequest.m; sourceTree = "<group>"; };
 		C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequest.h; sourceTree = "<group>"; };
@@ -264,6 +270,10 @@
 			children = (
 				E987E9A71BAFA72400D4A039 /* GBMMyViewController.h */,
 				E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */,
+				C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */,
+				C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */,
+				C92D438B1BB7891900FA1916 /* GBMHeadImageViewController.h */,
+				C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -549,8 +559,10 @@
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
+				C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
 				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
+				C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */,
 				DFEB0BFA1BB774EA0023543B /* GBMPublishModel.m in Sources */,
