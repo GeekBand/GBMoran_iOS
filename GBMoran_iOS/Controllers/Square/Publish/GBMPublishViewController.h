@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBMPublishRequest.h"
 
-@interface GBMPublishViewController : UIViewController<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface GBMPublishViewController : UIViewController<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate,GBMPublishRequestDelegate>
 
 @property (strong , nonatomic)UIImage *publishPhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *pulishview;
 
 -(instancetype)initWithPulishPhoto:(UIImage*)pulishPhoto;
 

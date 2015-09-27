@@ -10,8 +10,13 @@
 #import "GBMLoginViewController.h"
 #import "GBMSquareViewController.h"
 #import "GBMMyViewController.h"
+#import "GBMPublishViewController.h"
+#define viewwidth self.window.frame.size.width
+#define viewheight self.window.frame.size.height
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+@property (nonatomic,strong)UITabBarController *tabBarController;
 
 @end
 
@@ -24,7 +29,7 @@
     self.window.rootViewController = self.loginViewController;
 }
 
-- (void)loadMainView
+- (void)loadMainViewWithController:(UIViewController *)controller
 {
     UIStoryboard *squareStoryboard = [UIStoryboard storyboardWithName:@"GBMSquare" bundle:[NSBundle mainBundle]];
     GBMSquareViewController *squareVC = [squareStoryboard instantiateViewControllerWithIdentifier:@"SquareStoryboard"];
@@ -37,13 +42,15 @@
     myVC.tabBarItem.title = @"我的";
     myVC.tabBarItem.image = [UIImage imageNamed:@"my"];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[squareVC, myVC];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[squareVC, myVC];
     
-    self.window.rootViewController = tabBarController;
+    
+//    self.window.rootViewController = self.tabBarController;
+ 
     
     // 添加切换页面的动画效果
-    [self.window addSubview:self.loginViewController.view];
+    [controller presentViewController:self.tabBarController animated:YES completion:nil];
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.loginViewController.view.alpha = 0;
@@ -51,6 +58,63 @@
                      completion:^(BOOL finished){
                          self.loginViewController = nil;
                      }];
+    
+    UIButton *photoButton = [[UIButton alloc]initWithFrame:CGRectMake(viewwidth/2-60, -25, 120, 50)];
+    [photoButton setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
+    [photoButton addTarget:self action:@selector(addOrderView) forControlEvents:UIControlEventTouchUpInside];
+    [self.tabBarController.tabBar addSubview:photoButton];
+}
+
+
+- (void)addOrderView
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"拍照",@"从手机相册选择", nil];
+    [sheet showInView:self.tabBarController.view];
+}
+
+#pragma mark ----UIActionSheet delegate method
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc]init];;
+    if (buttonIndex == 0) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            pickerController.allowsEditing = YES;
+            pickerController.delegate = self;
+            [self.tabBarController presentViewController:pickerController animated:YES completion:nil];
+          
+        }else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"无法获取照相机" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            [alert show];
+              return;
+        }
+    }else if(buttonIndex == 1){
+        pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        pickerController.allowsEditing = YES;
+        pickerController.delegate = self;
+        [self.tabBarController presentViewController:pickerController animated:YES completion:nil];
+    }
+    
+ 
+}
+
+#pragma mark -----UIImagePickerController delegate method
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+            UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+            GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
+    pulish.publishPhoto = image;
+            UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
+        [self.tabBarController dismissViewControllerAnimated:YES completion:nil ];
+        [self.tabBarController presentViewController:nav animated:YES completion:nil];
+
+
 }
 
 

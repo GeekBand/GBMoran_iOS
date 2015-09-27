@@ -15,6 +15,7 @@
 		994BB5211BB68DF800420EB8 /* GBMSquare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51A1BB68DF800420EB8 /* GBMSquare.storyboard */; settings = {ASSET_TAGS = (); }; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; settings = {ASSET_TAGS = (); }; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; settings = {ASSET_TAGS = (); }; };
+<<<<<<< HEAD
 		996F96911BB7B49C005BBEE7 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F96821BB7B49C005BBEE7 /* GBMLoginRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		996F96921BB7B49C005BBEE7 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F96841BB7B49C005BBEE7 /* GBMRegisterRequestParser.m */; settings = {ASSET_TAGS = (); }; };
 		996F96931BB7B49C005BBEE7 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F96871BB7B49C005BBEE7 /* GBMLoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -27,6 +28,19 @@
 		99BA767A1BB70151008E587E /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA76791BB70151008E587E /* GBMViewDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		99BA767C1BB70163008E587E /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99BA767B1BB70163008E587E /* GBMViewDetail.storyboard */; settings = {ASSET_TAGS = (); }; };
 		99BA76801BB701BF008E587E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA767F1BB701BF008E587E /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+=======
+		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; };
+		C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */; };
+		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; };
+		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; };
+		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; };
+		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
+		DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF11BB773BA0023543B /* GBMGlobal.m */; settings = {ASSET_TAGS = (); }; };
+		DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */; settings = {ASSET_TAGS = (); }; };
+		DFEB0BFA1BB774EA0023543B /* GBMPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> origin/master
 		DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFB3C251BB1756000396F7A /* Main.xcassets */; };
 		E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
 		E987E9951BAFA61700D4A039 /* GBMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9931BAFA61700D4A039 /* GBMUserModel.m */; };
@@ -68,6 +82,7 @@
 		994BB5241BB68E0D00420EB8 /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		996F96811BB7B49C005BBEE7 /* GBMLoginRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequestParser.h; sourceTree = "<group>"; };
 		996F96821BB7B49C005BBEE7 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		996F96831BB7B49C005BBEE7 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
@@ -89,6 +104,30 @@
 		99BA767B1BB70163008E587E /* GBMViewDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GBMViewDetail.storyboard; sourceTree = "<group>"; };
 		99BA767E1BB701BF008E587E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		99BA767F1BB701BF008E587E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+=======
+		C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMNickNameViewController.h; sourceTree = "<group>"; };
+		C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMNickNameViewController.m; sourceTree = "<group>"; };
+		C92D438B1BB7891900FA1916 /* GBMHeadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMHeadImageViewController.h; sourceTree = "<group>"; };
+		C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMHeadImageViewController.m; sourceTree = "<group>"; };
+		C93EB5C11BAFD7EE007DCAB4 /* GBMLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequest.h; sourceTree = "<group>"; };
+		C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequest.m; sourceTree = "<group>"; };
+		C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequest.h; sourceTree = "<group>"; };
+		C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequest.m; sourceTree = "<group>"; };
+		C93EB5C81BAFDC60007DCAB4 /* BLMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMultipartForm.h; sourceTree = "<group>"; };
+		C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMultipartForm.m; sourceTree = "<group>"; };
+		C93EB5CC1BAFE464007DCAB4 /* GBMLoginRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLoginRequestParser.h; sourceTree = "<group>"; };
+		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
+		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
+		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
+		DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequest.h; sourceTree = "<group>"; };
+		DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequest.m; sourceTree = "<group>"; };
+		DFEB0BF01BB773BA0023543B /* GBMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMGlobal.h; sourceTree = "<group>"; };
+		DFEB0BF11BB773BA0023543B /* GBMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMGlobal.m; sourceTree = "<group>"; };
+		DFEB0BF31BB774040023543B /* GBMPublishRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequestParser.h; sourceTree = "<group>"; };
+		DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequestParser.m; sourceTree = "<group>"; };
+		DFEB0BF81BB774EA0023543B /* GBMPublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishModel.h; sourceTree = "<group>"; };
+		DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishModel.m; sourceTree = "<group>"; };
+>>>>>>> origin/master
 		DFFB3C251BB1756000396F7A /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E987E9921BAFA61700D4A039 /* GBMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMUserModel.h; sourceTree = "<group>"; };
 		E987E9931BAFA61700D4A039 /* GBMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMUserModel.m; sourceTree = "<group>"; };
@@ -234,8 +273,17 @@
 		99A457F01BB7B30B00506124 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				99A457F11BB7B30B00506124 /* Info.plist */,
 				99A457F21BB7B30B00506124 /* main.m */,
+=======
+				DFEB0BF31BB774040023543B /* GBMPublishRequestParser.h */,
+				DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */,
+				C93EB5CC1BAFE464007DCAB4 /* GBMLoginRequestParser.h */,
+				C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */,
+				C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */,
+				C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */,
+>>>>>>> origin/master
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,6 +304,24 @@
 				99BA767F1BB701BF008E587E /* AppDelegate.m */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DFEB0BEF1BB773AF0023543B /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				DFEB0BF01BB773BA0023543B /* GBMGlobal.h */,
+				DFEB0BF11BB773BA0023543B /* GBMGlobal.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		DFEB0BF71BB774D50023543B /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				DFEB0BF81BB774EA0023543B /* GBMPublishModel.h */,
+				DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */,
+			);
+			name = Publish;
 			sourceTree = "<group>";
 		};
 		E987E9801BAFA53900D4A039 /* Controllers */ = {
@@ -284,6 +350,10 @@
 			children = (
 				E987E9A71BAFA72400D4A039 /* GBMMyViewController.h */,
 				E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */,
+				C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */,
+				C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */,
+				C92D438B1BB7891900FA1916 /* GBMHeadImageViewController.h */,
+				C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -322,6 +392,7 @@
 		E987E9861BAFA54000D4A039 /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				DFEB0BF71BB774D50023543B /* Publish */,
 				E987E9971BAFA63900D4A039 /* GBMSquareModel.h */,
 				E987E9981BAFA63900D4A039 /* GBMSquareModel.m */,
 			);
@@ -375,7 +446,12 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				99BA767D1BB701BF008E587E /* App */,
+=======
+				DFEB0BEF1BB773AF0023543B /* Global */,
+				994BB5111BB68DF800420EB8 /* Views */,
+>>>>>>> origin/master
 				E987E9801BAFA53900D4A039 /* Controllers */,
 				E9CA0CF61BB2A87E00695D6E /* Library */,
 				E987E9841BAFA54000D4A039 /* Models */,
@@ -517,20 +593,42 @@
 				99BA76801BB701BF008E587E /* AppDelegate.m in Sources */,
 				996F96971BB7B49C005BBEE7 /* BLMultipartForm.m in Sources */,
 				E987E9A11BAFA66400D4A039 /* GBMLoginViewController.m in Sources */,
+<<<<<<< HEAD
+=======
+				E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */,
+				DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */,
+				DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */,
+>>>>>>> origin/master
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				996F96941BB7B49C005BBEE7 /* GBMPublishRequest.m in Sources */,
 				994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */,
+<<<<<<< HEAD
 				99A457F41BB7B30B00506124 /* main.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */,
 				99BA767A1BB70151008E587E /* GBMViewDetailViewController.m in Sources */,
+=======
+				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
+				C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */,
+				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
+				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
+				C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */,
+				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
+				994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */,
+				DFEB0BFA1BB774EA0023543B /* GBMPublishModel.m in Sources */,
+				C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */,
+>>>>>>> origin/master
 				E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */,
 				996F96931BB7B49C005BBEE7 /* GBMLoginRequest.m in Sources */,
 				996F96961BB7B49C005BBEE7 /* GBMViewDetailRequest.m in Sources */,
 				E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */,
+<<<<<<< HEAD
 				996F96921BB7B49C005BBEE7 /* GBMRegisterRequestParser.m in Sources */,
 				996F96911BB7B49C005BBEE7 /* GBMLoginRequestParser.m in Sources */,
+=======
+				DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */,
+>>>>>>> origin/master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

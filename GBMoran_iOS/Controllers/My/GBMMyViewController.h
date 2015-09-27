@@ -10,4 +10,7 @@
 
 @interface GBMMyViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+
 @end

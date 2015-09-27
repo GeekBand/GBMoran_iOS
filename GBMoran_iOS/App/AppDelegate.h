@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UIViewController *loginViewController;
 
 - (void)loadLoginView;
-- (void)loadMainView;
+- (void)loadMainViewWithController:(UIViewController *)controller;
 
 
 @end

@@ -9,6 +9,7 @@
 #import "GBMPublishViewController.h"
 #import "GBMPublishCell.h"
 #import "GBMPublishRequest.h"
+#import "GBMGlobal.h"
 #define selfWidth self.view.frame.size.width
 #define selfHeight self.view.frame.size.height
 
@@ -19,6 +20,7 @@
     CGFloat keyboardOffSet;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong,nonatomic) UITableView *tableView;
@@ -40,12 +42,13 @@
 
 
 - (void)viewDidLoad {
+    self.pulishview.image= self.publishPhoto;
     keyboardOpen = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [super viewDidLoad];
     [self makePublishButton];
-
+    
     
     self.navigationController.navigationBar.backgroundColor = [[UIColor alloc]initWithRed:230/255.0 green:106/255.0 blue:58/255.0 alpha:1];
     self.navigationController.navigationBar.barTintColor = [[UIColor alloc]initWithRed:230/255.0 green:106/255.0 blue:58/255.0 alpha:1];
@@ -55,7 +58,7 @@
     label.text =@"发布照片";
     label.textColor = [UIColor whiteColor];
     [self.navigationController.navigationBar addSubview:label];
-   
+    
     
     // Do any additional setup after loading the view.
 }
@@ -100,7 +103,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-
+    
     return 60;
 }
 
@@ -124,11 +127,11 @@
     if (openOrNot == YES) {
         [self makeTableView];
     }
-
+    
 }
 
 -(void)publishButtonClicked:(id)sender{
-
+    
 }
 - (IBAction)publishLocation:(id)sender {
     [self makeTableView];
@@ -167,7 +170,7 @@
     cell.nameLabel.text = @"上海";
     cell.placeLabel.text = @"上海浦东国际金融中心";
     return cell;
-
+    
 }
 
 
@@ -176,14 +179,14 @@
 
 //-(void)textViewDidChange:(UITextView *)textView
 //{
-//    
+//
 //    if (textView.text.length > 25) {
-//        
+//
 //        [self.textView resignFirstResponder];
-//        
+//
 //    }
 //    self.numberLabel.text = [NSString stringWithFormat:@"%lu/25",textView.text.length];
-//   
+//
 //}
 
 
@@ -194,8 +197,8 @@
     if ([textView.text isEqualToString:@"你想说的话"]) {
         textView.text = @"";
     }
-  
-   
+    
+    
     
 }
 
@@ -204,13 +207,13 @@
     if (textView.text.length < 1) {
         textView.text = @"你想说的话";
     }
-//    CGRect textViewRect  = self.textView.frame;
-//    if (keyboardOpen == YES) {
-//        [UIView animateWithDuration:1 animations:^{
-//            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
-//        }];
-//        keyboardOpen = NO;
-//    }
+    //    CGRect textViewRect  = self.textView.frame;
+    //    if (keyboardOpen == YES) {
+    //        [UIView animateWithDuration:1 animations:^{
+    //            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+    //        }];
+    //        keyboardOpen = NO;
+    //    }
     
 }
 
@@ -253,18 +256,27 @@
 
 -(void)publishPhotoButtonClicked:(id)sender{
     
+    NSData *data = UIImageJPEGRepresentation(self.imageView.image, 1.0);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
+    GBMUserModel *user = [GBMGlobal shareGloabl].user;
+    
+    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:@"1" latitude:@"1" data:data delegate:self];
+    
+    
+    
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
