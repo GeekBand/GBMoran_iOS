@@ -10,6 +10,7 @@
 #import "GBMPublishCell.h"
 #import "GBMPublishRequest.h"
 #import "GBMGlobal.h"
+#import "AppDelegate.h"
 #define selfWidth self.view.frame.size.width
 #define selfHeight self.view.frame.size.height
 
@@ -259,13 +260,31 @@
     NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 1.0);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
-    
-    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:@"1" latitude:@"1" data:data delegate:self];
+    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:@"1" latitude:@"1" title:self.textView.text data:data delegate:self];
     
     
     
     
 }
+
+
+-(void)requestSuccess:(GBMPublishRequest *)request picId:(NSString *)picId
+{
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [appDelegate loadMainViewWithController:self];
+}
+
+
+-(void)requestFailed:(GBMPublishRequest *)request error:(NSError *)error
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [alert show];
+}
+
+
 - (IBAction)returnToCamera:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];

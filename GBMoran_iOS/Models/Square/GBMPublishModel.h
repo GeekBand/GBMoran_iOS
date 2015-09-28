@@ -10,6 +10,6 @@
 
 @interface GBMPublishModel : NSObject
 
-@property(nonatomic, copy)NSMutableArray *picId;
+@property(nonatomic, copy)NSString *picId;
 
 @end

@@ -125,6 +125,7 @@
                             <action selector="touchDown:" destination="Q8f-dx-KYk" eventType="touchDown" id="T5O-yJ-Cob"/>
                         </connections>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="numberLabel" destination="u4p-AV-8jH" id="c4U-Mh-gxN"/>

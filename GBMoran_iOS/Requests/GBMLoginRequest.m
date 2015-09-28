@@ -69,7 +69,6 @@
     
     GBMLoginRequestParser *parser = [[GBMLoginRequestParser alloc] init];
     GBMUserModel *user = [parser parseJson:self.receivedData];
-    
     if ([_delegate respondsToSelector:@selector(loginRequestSuccess:user:)]) {
         [_delegate loginRequestSuccess:self user:user];
     }

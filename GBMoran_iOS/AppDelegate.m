@@ -18,6 +18,7 @@
 
 @property (nonatomic,strong)UITabBarController *tabBarController;
 
+
 @end
 
 @implementation AppDelegate
@@ -115,7 +116,7 @@
     pulish.publishPhoto = image;
             UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
     
-        [picker presentViewController:nav animated:YES completion:nil];
+        [picker pushViewController:pulish animated:YES];
 
 
 }

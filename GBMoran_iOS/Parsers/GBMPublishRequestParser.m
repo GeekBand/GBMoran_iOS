@@ -22,10 +22,10 @@
     } else {
         if ([[jsonDic class] isSubclassOfClass:[NSDictionary class]]) {
             id returnMessage = [jsonDic valueForKey:@"data"];
-            if ([[returnMessage class] isSubclassOfClass:[NSString class]]) {
+            id returnPic = [returnMessage valueForKey:@"pic_id"];
+            if ([[returnPic class] isSubclassOfClass:[NSString class]]) {
                 GBMPublishModel *user = [[GBMPublishModel alloc] init];
-                user.picId = [NSMutableArray array];
-                [user.picId addObject:returnMessage];
+                user.picId = returnPic;
                 return user;
             }
         }
