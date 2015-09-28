@@ -124,14 +124,11 @@
 {
     if ([user.loginReturnMessage isEqualToString:@"Login success"]) {
         NSLog(@"登录成功，现在转换页面");
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [appDelegate loadMainViewWithController:self];
+
+ 
          
         [GBMGlobal shareGloabl].user = user;
-//        UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
-//        GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
-//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
-//        [self presentViewController:nav animated:YES completion:nil];
+
     } else {
         NSLog(@"服务器报错:%@", user.loginReturnMessage);
     }
