@@ -32,6 +32,9 @@
                                         <state key="normal" title="重新拍摄" image="publish_repick">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="returnToCamera:" destination="Q8f-dx-KYk" eventType="touchUpInside" id="iEd-Yx-4Iy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>

@@ -107,7 +107,7 @@
     return 60;
 }
 
-//制作拍照按钮
+//制作发布按钮
 -(void)makePublishButton{
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-65, 0, 50, 40)];
     button.backgroundColor = [UIColor whiteColor];
@@ -264,6 +264,11 @@
     
     
     
+    
+}
+- (IBAction)returnToCamera:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

@@ -99,7 +99,6 @@
         }
     }else if(buttonIndex == 1){
         pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        pickerController.allowsEditing = YES;
         pickerController.delegate = self;
         [self.tabBarController presentViewController:pickerController animated:YES completion:nil];
     }
@@ -115,8 +114,8 @@
             GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
     pulish.publishPhoto = image;
             UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
-        [self.tabBarController dismissViewControllerAnimated:YES completion:nil ];
-        [self.tabBarController presentViewController:nav animated:YES completion:nil];
+    
+        [picker presentViewController:nav animated:YES completion:nil];
 
 
 }
