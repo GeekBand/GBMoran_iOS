@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--我的-->
@@ -17,8 +18,12 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cK5-4J-rQD">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cK5-4J-rQD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="cK5-4J-rQD" secondAttribute="height" multiplier="32:15" id="G0n-SC-4Xc"/>
+                                        <constraint firstAttribute="height" constant="150" id="xmB-Nw-V1Y"/>
+                                    </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-Dg-piL">
                                     <rect key="frame" x="136" y="21" width="48" height="48"/>
@@ -27,7 +32,7 @@
                                         <constraint firstAttribute="width" constant="48" id="ujp-Mj-5MV"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一个人类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-Pc-7s6">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="科比布莱恩特" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-Pc-7s6">
                                     <rect key="frame" x="8" y="81" width="304" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="3NU-gg-xkM"/>
@@ -50,11 +55,14 @@
                             <constraints>
                                 <constraint firstItem="f88-n3-q8v" firstAttribute="top" secondItem="NBG-Pc-7s6" secondAttribute="bottom" constant="6" id="3l7-Qz-3GQ"/>
                                 <constraint firstItem="f88-n3-q8v" firstAttribute="leading" secondItem="8gb-lk-bJ5" secondAttribute="leading" constant="8" id="94J-xK-KQO"/>
+                                <constraint firstAttribute="trailing" secondItem="cK5-4J-rQD" secondAttribute="trailing" id="BmA-CH-qlt"/>
                                 <constraint firstItem="0n7-Dg-piL" firstAttribute="top" secondItem="8gb-lk-bJ5" secondAttribute="top" constant="21" id="Hij-I9-NE7"/>
                                 <constraint firstItem="0n7-Dg-piL" firstAttribute="centerX" secondItem="8gb-lk-bJ5" secondAttribute="centerX" id="Hj1-vT-zlf"/>
                                 <constraint firstItem="NBG-Pc-7s6" firstAttribute="top" secondItem="0n7-Dg-piL" secondAttribute="bottom" constant="12" id="L9Y-9D-1KS"/>
                                 <constraint firstItem="NBG-Pc-7s6" firstAttribute="leading" secondItem="8gb-lk-bJ5" secondAttribute="leading" constant="8" id="ZiL-sS-mds"/>
+                                <constraint firstItem="cK5-4J-rQD" firstAttribute="top" secondItem="8gb-lk-bJ5" secondAttribute="top" id="jqx-CW-vSp"/>
                                 <constraint firstAttribute="trailing" secondItem="f88-n3-q8v" secondAttribute="trailing" constant="8" id="kuQ-aB-ZS4"/>
+                                <constraint firstItem="cK5-4J-rQD" firstAttribute="leading" secondItem="8gb-lk-bJ5" secondAttribute="leading" id="uvz-pt-PuY"/>
                                 <constraint firstAttribute="trailing" secondItem="NBG-Pc-7s6" secondAttribute="trailing" constant="8" id="ztO-lm-Re6"/>
                             </constraints>
                         </view>
@@ -68,7 +76,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNw-wQ-JXM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nickname" translatesAutoresizingMaskIntoConstraints="NO" id="RNw-wQ-JXM">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更改昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-az-dK2">
@@ -80,7 +88,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="P9E-rc-KPH" kind="show" identifier="settingNickName" id="YFx-Al-XNp"/>
+                                            <segue destination="P9E-rc-KPH" kind="show" identifier="settingNickName" id="Veh-aa-Nwh"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1T6-Ob-PMk">
@@ -90,7 +98,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yJ-Yh-Pg6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headimage" translatesAutoresizingMaskIntoConstraints="NO" id="8yJ-Yh-Pg6">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoE-p7-WfR">
@@ -112,7 +120,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aor-xb-C2w">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signout" translatesAutoresizingMaskIntoConstraints="NO" id="aor-xb-C2w">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="注销登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-Oe-dBg">
@@ -135,7 +143,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1s3-TF-Qc3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rate" translatesAutoresizingMaskIntoConstraints="NO" id="1s3-TF-Qc3">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="评价我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcO-nh-R53">
@@ -154,7 +162,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udg-oM-MoQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="followus" translatesAutoresizingMaskIntoConstraints="NO" id="udg-oM-MoQ">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="关注我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIl-IV-JFE">
@@ -165,6 +173,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="h1q-Px-r9c" kind="show" identifier="followUs" id="0Vf-u0-Auy"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Pxa-Qj-bnq">
                                         <rect key="frame" x="0.0" y="416" width="320" height="40"/>
@@ -173,7 +184,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-cD-xo7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homepage" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-cD-xo7">
                                                     <rect key="frame" x="15" y="9" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="官方网站" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-PT-gZJ">
@@ -184,6 +195,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="h1q-Px-r9c" kind="show" identifier="homePage" id="w8V-v6-oek"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -217,16 +231,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmr-8c-OZG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmr-8c-OZG">
                                 <rect key="frame" x="10" y="74" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gkx-di-ZDI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cmr-8c-OZG" firstAttribute="leading" secondItem="zAi-bS-akl" secondAttribute="leading" constant="10" id="9HM-zG-iyM"/>
+                            <constraint firstItem="cmr-8c-OZG" firstAttribute="top" secondItem="Ynp-P7-9GT" secondAttribute="bottom" constant="10" id="VdG-sC-xnm"/>
+                            <constraint firstAttribute="trailing" secondItem="cmr-8c-OZG" secondAttribute="trailing" constant="10" id="Y9p-AS-5A1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="更改昵称" id="hFy-7U-pRP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rO4-cE-pxI"/>
+                    <navigationItem key="navigationItem" title="更改昵称" id="MMC-ay-nMW">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="NY3-NC-HdQ">
+                            <connections>
+                                <action selector="doneBarButtonClicked:" destination="P9E-rc-KPH" id="ImI-4I-ULV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -249,12 +276,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vZ-TB-Kvm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0vZ-TB-Kvm">
                                 <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0vZ-TB-Kvm" secondAttribute="height" multiplier="1:1" id="pJh-DV-NgO"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyI-l3-Pr0">
-                                <rect key="frame" x="20" y="407" width="280" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyI-l3-Pr0">
+                                <rect key="frame" x="20" y="414" width="280" height="30"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.49803921569999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sIt-Vy-b7z"/>
+                                </constraints>
                                 <state key="normal" title="更换头像">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -262,18 +295,19 @@
                                     <action selector="changeHeadImageButtonClicked:" destination="q9x-OV-rfe" eventType="touchUpInside" id="8Gb-cK-R9r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-uA-Lm5">
-                                <rect key="frame" x="20" y="454" width="280" height="30"/>
-                                <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="saveButtonClicked:" destination="q9x-OV-rfe" eventType="touchUpInside" id="Py0-Fb-Bxw"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0vZ-TB-Kvm" firstAttribute="top" secondItem="5cn-do-izJ" secondAttribute="bottom" id="2QT-Sw-iuu"/>
+                            <constraint firstItem="jyI-l3-Pr0" firstAttribute="top" secondItem="0vZ-TB-Kvm" secondAttribute="bottom" constant="30" id="Nj3-NM-H7o"/>
+                            <constraint firstAttribute="trailing" secondItem="0vZ-TB-Kvm" secondAttribute="trailing" id="dtR-iR-dhz"/>
+                            <constraint firstAttribute="trailing" secondItem="jyI-l3-Pr0" secondAttribute="trailing" constant="20" id="fzn-9J-19H"/>
+                            <constraint firstItem="0vZ-TB-Kvm" firstAttribute="leading" secondItem="EEr-aK-Lbs" secondAttribute="leading" id="nzT-8E-2zY"/>
+                            <constraint firstItem="jyI-l3-Pr0" firstAttribute="leading" secondItem="EEr-aK-Lbs" secondAttribute="leading" constant="20" id="vGG-gG-8LE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="设置头像" id="brJ-wI-LMO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9IS-kW-35w">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="9IS-kW-35w">
                             <connections>
                                 <action selector="doneBarButtonClicked:" destination="q9x-OV-rfe" id="QyE-WI-hG3"/>
                             </connections>
@@ -283,12 +317,45 @@
                     <connections>
                         <outlet property="changeHeadImageButton" destination="jyI-l3-Pr0" id="6XH-nj-VL3"/>
                         <outlet property="headImageView" destination="0vZ-TB-Kvm" id="T4X-pI-91t"/>
-                        <outlet property="saveButton" destination="RHM-uA-Lm5" id="eMJ-ka-2pt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlG-Mo-ab8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="685"/>
+        </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="jMM-dn-W7h">
+            <objects>
+                <viewController id="h1q-Px-r9c" customClass="GBMHomePageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2H3-y5-GwA"/>
+                        <viewControllerLayoutGuide type="bottom" id="rg2-Vt-gvj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rna-C7-wmj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-Y8-OEh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ofd-Y8-OEh" secondAttribute="bottom" id="5BQ-Ai-x8n"/>
+                            <constraint firstItem="Ofd-Y8-OEh" firstAttribute="leading" secondItem="rna-C7-wmj" secondAttribute="leading" id="N3R-iG-7We"/>
+                            <constraint firstAttribute="trailing" secondItem="Ofd-Y8-OEh" secondAttribute="trailing" id="Svo-6Q-2UT"/>
+                            <constraint firstItem="Ofd-Y8-OEh" firstAttribute="top" secondItem="rna-C7-wmj" secondAttribute="top" id="hko-1l-t0x"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="Ofd-Y8-OEh" id="Ksk-bT-Xzu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sc5-dk-FtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2171" y="685"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nNr-2L-GAN">
@@ -313,5 +380,14 @@
     <resources>
         <image name="Untitled.jpg" width="2880" height="1800"/>
         <image name="background" width="320" height="128"/>
+        <image name="followus" width="22" height="22"/>
+        <image name="headimage" width="22" height="22"/>
+        <image name="homepage" width="22" height="22"/>
+        <image name="nickname" width="22" height="22"/>
+        <image name="rate" width="22" height="22"/>
+        <image name="signout" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Vf-u0-Auy"/>
+    </inferredMetricsTieBreakers>
 </document>
