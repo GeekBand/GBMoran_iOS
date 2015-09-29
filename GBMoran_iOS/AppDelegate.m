@@ -43,16 +43,11 @@
     UIStoryboard *myStoryboard
     = [UIStoryboard storyboardWithName:@"GBMMy" bundle:[NSBundle mainBundle]];
     GBMMyViewController *myVC = [myStoryboard instantiateViewControllerWithIdentifier:@"MyStoryboard"];
-//    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:myVC];
     myVC.tabBarItem.title = @"我的";
     myVC.tabBarItem.image = [UIImage imageNamed:@"my"];
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[ nav1,myVC];
-    
-    
-//    self.window.rootViewController = self.tabBarController;
- 
     
     // 添加切换页面的动画效果
     [controller presentViewController:self.tabBarController animated:YES completion:nil];
