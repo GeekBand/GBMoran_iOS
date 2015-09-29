@@ -76,7 +76,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"receive data string:%@", string);
+//    NSLog(@"receive data string:%@", string);
     GBMPublishRequestParser *parser =[[GBMPublishRequestParser alloc]init];
     GBMPublishModel* model =  [parser parseJson:self.receivedData];
     if ([_delegate respondsToSelector:@selector(requestSuccess:picId:)]) {

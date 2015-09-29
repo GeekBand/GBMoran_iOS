@@ -7,7 +7,7 @@
 //
 
 #import "GBMMyViewController.h"
-#import "GBMNickNameViewController.h"
+#import "AppDelegate.h"
 
 @interface GBMMyViewController ()
 
@@ -53,21 +53,57 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        if (indexPath.row == 1) {
-            //            <#statements#>
+        if (indexPath.row == 2) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:@"确定注销吗？"
+                                                           delegate:self
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"取消", @"确定", nil];
+            [alert show];
         }
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - UIAlertView delegate method
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate loadLoginView];
+    }
+}
+
 
 #pragma mark - Storyboard segue methods
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"settingNickName"]) {
-        GBMNickNameViewController *nickNameVC = [[GBMNickNameViewController alloc] init];
-        self.nickNameLabel.text = @"易科比";
-        nickNameVC.nickNameTextField.text = self.nickNameLabel.text;
+        GBMNickNameViewController *nickNameVC = segue.destinationViewController;
+        nickNameVC.nickName = self.nickNameLabel.text;
+        nickNameVC.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"settingHeadImage"]) {
+        GBMHeadImageViewController *headImageVC = segue.destinationViewController;
+        headImageVC.headImage = self.headImageView.image;
+        headImageVC.delegate = self;
     }
+}
+
+#pragma mark - GBMNickNameViewController delegate method
+
+- (void)updateNickName:(NSString *)newName
+{
+    self.nickNameLabel.text = newName;
+}
+
+#pragma mark - GBMHeadImageViewController delegate method
+
+- (void)updateHeadImage:(UIImage *)newImage
+{
+    self.headImageView.image = newImage;
 }
 
 

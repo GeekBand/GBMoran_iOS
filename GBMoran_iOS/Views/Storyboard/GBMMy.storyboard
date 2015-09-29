@@ -32,7 +32,7 @@
                                         <constraint firstAttribute="width" constant="48" id="ujp-Mj-5MV"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="科比布莱恩特" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-Pc-7s6">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一个人类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-Pc-7s6">
                                     <rect key="frame" x="8" y="81" width="304" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="3NU-gg-xkM"/>
@@ -251,7 +251,7 @@
                     <navigationItem key="navigationItem" title="更改昵称" id="MMC-ay-nMW">
                         <barButtonItem key="rightBarButtonItem" title="确定" id="NY3-NC-HdQ">
                             <connections>
-                                <action selector="doneBarButtonClicked:" destination="P9E-rc-KPH" id="ImI-4I-ULV"/>
+                                <action selector="doneBarButtonClicked:" destination="P9E-rc-KPH" id="37L-w3-g6i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -288,7 +288,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sIt-Vy-b7z"/>
                                 </constraints>
-                                <state key="normal" title="更换头像">
+                                <state key="normal" title="选择头像">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

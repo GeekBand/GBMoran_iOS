@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class GBMHeadImageViewController;
+
+@protocol GBMHeadImageViewControllerDelegate <NSObject>
+
+- (void)updateHeadImage:(UIImage *)newImage;
+
+@end
+
 @interface GBMHeadImageViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UIButton *changeHeadImageButton;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (nonatomic, weak) UIImage *headImage;
+@property (nonatomic, weak) id <GBMHeadImageViewControllerDelegate> delegate;
 
 - (IBAction)doneBarButtonClicked:(id)sender;
 - (IBAction)changeHeadImageButtonClicked:(id)sender;
-- (IBAction)saveButtonClicked:(id)sender;
 
 @end

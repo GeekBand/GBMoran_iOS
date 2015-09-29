@@ -63,7 +63,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"receive data string:%@", string);
+//    NSLog(@"receive data string:%@", string);
     
     GBMRegisterRequestParser *parser = [[GBMRegisterRequestParser alloc] init];
     GBMUserModel *user = [parser parseJson:self.receivedData];

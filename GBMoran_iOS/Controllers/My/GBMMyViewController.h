@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBMHeadImageViewController.h"
+#import "GBMNickNameViewController.h"
 
-@interface GBMMyViewController : UITableViewController
+@interface GBMMyViewController : UITableViewController <GBMNickNameViewControllerDelegate, GBMHeadImageViewControllerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;

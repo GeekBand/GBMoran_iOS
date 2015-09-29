@@ -23,6 +23,7 @@
 		C93EB5CA1BAFDC60007DCAB4 /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C91BAFDC60007DCAB4 /* BLMultipartForm.m */; };
 		C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */; };
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; };
+		C9D668AC1BBA3C4100208F9D /* GBMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D668AA1BBA3C4100208F9D /* GBMHomePageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
 		DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF11BB773BA0023543B /* GBMGlobal.m */; settings = {ASSET_TAGS = (); }; };
 		DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */; settings = {ASSET_TAGS = (); }; };
@@ -85,6 +86,8 @@
 		C93EB5CD1BAFE464007DCAB4 /* GBMLoginRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLoginRequestParser.m; sourceTree = "<group>"; };
 		C93EB5CF1BAFE9A9007DCAB4 /* GBMRegisterRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMRegisterRequestParser.h; sourceTree = "<group>"; };
 		C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMRegisterRequestParser.m; sourceTree = "<group>"; };
+		C9D668AA1BBA3C4100208F9D /* GBMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMHomePageViewController.m; sourceTree = "<group>"; };
+		C9D668AB1BBA3C4100208F9D /* GBMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMHomePageViewController.h; sourceTree = "<group>"; };
 		DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequest.h; sourceTree = "<group>"; };
 		DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequest.m; sourceTree = "<group>"; };
 		DFEB0BF01BB773BA0023543B /* GBMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMGlobal.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 		E987E9821BAFA53900D4A039 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				C9D668AB1BBA3C4100208F9D /* GBMHomePageViewController.h */,
+				C9D668AA1BBA3C4100208F9D /* GBMHomePageViewController.m */,
 				E987E9A71BAFA72400D4A039 /* GBMMyViewController.h */,
 				E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */,
 				C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */,
@@ -558,6 +563,7 @@
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */,
+				C9D668AC1BBA3C4100208F9D /* GBMHomePageViewController.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
 				C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
