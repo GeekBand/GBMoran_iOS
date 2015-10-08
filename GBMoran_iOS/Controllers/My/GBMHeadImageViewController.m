@@ -72,7 +72,7 @@
 }
 
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.headImage = info[UIImagePickerControllerOriginalImage];
     self.headImageView.image = self.headImage;

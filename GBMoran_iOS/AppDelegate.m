@@ -103,7 +103,7 @@
 }
 
 #pragma mark -----UIImagePickerController delegate method
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
