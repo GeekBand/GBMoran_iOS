@@ -10,4 +10,7 @@
 
 @interface GBMSquareModel : NSObject
 
+@property (nonatomic, strong) NSString *addr;
+@property (nonatomic, strong) NSString *pic;
+
 @end
