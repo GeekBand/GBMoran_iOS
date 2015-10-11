@@ -4,17 +4,27 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GBMoran_iOS/Controllers/LoginAndRegister/GBMLoginViewController.m"
-            timestampString = "465958382.486071"
+            timestampString = "466233009.596048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-loginRequestSuccess:user:"
             landmarkType = "5">
          </BreakpointContent>
@@ -25,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GBMoran_iOS/Controllers/LoginAndRegister/GBMLoginViewController.m"
-            timestampString = "465958401.603221"
+            filePath = "GBMoran_iOS/Controllers/Square/GBMSquareViewController.m"
+            timestampString = "466233624.995393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-loginButtonClicked:"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "-requestAllData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +51,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GBMoran_iOS/Controllers/LoginAndRegister/GBMLoginViewController.m"
-            timestampString = "465958413.841395"
+            filePath = "GBMoran_iOS/Controllers/Square/GBMSquareViewController.m"
+            timestampString = "466233731.216283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-loginHandle"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-squareRequestSuccess:squareModel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GBMoran_iOS/Parsers/GBMSquareRequestParser.m"
+            timestampString = "466233961.631519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-parseJson:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

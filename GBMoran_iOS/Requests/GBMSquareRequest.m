@@ -34,9 +34,11 @@
 //    NSDictionary *dic = @{@"token":token, @"user_id":loginId, @"longitude":@"121.47794", @"latitude":@"31.22516", @"distance":@"1000"};
     
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
-//    [form addValue:email forField:@"email"];
-//    [form addValue:password forField:@"password"];
-//    [form addValue:gbid forField:@"gbid"];
+    [form addValue:paramDic[@"token"] forField:@"token"];
+    [form addValue:paramDic[@"user_id"] forField:@"user_id"];
+    [form addValue:paramDic[@"longitude"] forField:@"longitude"];
+    [form addValue:paramDic[@"latitude"] forField:@"latitude"];
+    [form addValue:paramDic[@"distance"] forField:@"distance"];
     request.HTTPBody = [form httpBody];
     [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
     

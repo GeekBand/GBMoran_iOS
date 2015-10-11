@@ -11,9 +11,12 @@
 #import "KxMenu.h"
 #define SPAN  MACoordinateSpanMake(0.025, 0.025)
 #import "MJRefresh.h"
+#import "GBMSquareRequest.h"
+#import "GBMUserModel.h"
+#import "GBMGlobal.h"
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
-@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate>
 @property (nonatomic, strong) NSArray *scrollArray;
 @property (nonatomic ,strong) NSMutableDictionary * userLocationDict;
 
@@ -156,9 +159,6 @@
 
 
 
-
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.dataArr.count;
@@ -197,6 +197,21 @@
 
 - (void)requestAllData
 {
-    }
+    ;
+    
+    NSDictionary *paramDic = @{@"user_id":[GBMGlobal shareGloabl].user.userId, @"token":[GBMGlobal shareGloabl].user.token, @"longitude":@"121.47794", @"latitude":@"31.22516", @"distance":@"1000"};
+    
+    GBMSquareRequest *squareRequest = [[GBMSquareRequest alloc] init];
+    [squareRequest sendSquareRequestWithParameter:paramDic delegate:self];
+}
+
+- (void)squareRequestSuccess:(GBMSquareRequest *)request squareModel:(GBMSquareModel *)squareModel
+{
+    
+}
+- (void)squareRequestFailed:(GBMSquareRequest *)request error:(NSError *)error
+{
+    
+}
 
 @end
