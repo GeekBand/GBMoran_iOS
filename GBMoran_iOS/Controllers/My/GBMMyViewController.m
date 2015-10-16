@@ -8,18 +8,24 @@
 
 #import "GBMMyViewController.h"
 #import "AppDelegate.h"
-
+#import "GBMGlobal.h"
 @interface GBMMyViewController ()
 
 @end
 
 @implementation GBMMyViewController
-
+- (void)viewDidAppear:(BOOL)animated{
+    self.nickNameLabel.text=[GBMGlobal shareGloabl].user.username;
+    self.headImageView.image=[GBMGlobal shareGloabl].user.image;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // 给navigation bar 设置背景色，颜色选择和蓦然登录注明界面的button颜色一致
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:237 / 255.0f green:127 / 255.0f blue:74 /255.0f alpha:1.0f];
+    self.emailLabel.text=[GBMGlobal shareGloabl].user.email;
+    
     
     // 把头像显示成圆形
     self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width / 2.0f;
@@ -54,27 +60,24 @@
 {
     if (indexPath.section == 0) {
         if (indexPath.row == 2) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                            message:@"确定注销吗？"
-                                                           delegate:self
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"取消", @"确定", nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定注销吗？" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *enterAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                [self dismissViewControllerAnimated:YES completion:nil];
+                [GBMGlobal shareGloabl].user=nil;
+                AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [appDelegate loadLoginView];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:enterAction];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:true completion:nil];
+
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - UIAlertView delegate method
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [appDelegate loadLoginView];
-    }
-}
 
 
 #pragma mark - Storyboard segue methods
@@ -84,27 +87,14 @@
     if ([segue.identifier isEqualToString:@"settingNickName"]) {
         GBMNickNameViewController *nickNameVC = segue.destinationViewController;
         nickNameVC.nickName = self.nickNameLabel.text;
-        nickNameVC.delegate = self;
     } else if ([segue.identifier isEqualToString:@"settingHeadImage"]) {
         GBMHeadImageViewController *headImageVC = segue.destinationViewController;
         headImageVC.headImage = self.headImageView.image;
-        headImageVC.delegate = self;
     }
 }
 
-#pragma mark - GBMNickNameViewController delegate method
 
-- (void)updateNickName:(NSString *)newName
-{
-    self.nickNameLabel.text = newName;
-}
 
-#pragma mark - GBMHeadImageViewController delegate method
-
-- (void)updateHeadImage:(UIImage *)newImage
-{
-    self.headImageView.image = newImage;
-}
 
 
 

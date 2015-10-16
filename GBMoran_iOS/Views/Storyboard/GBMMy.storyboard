@@ -241,6 +241,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="emailLabel" destination="f88-n3-q8v" id="jtT-c5-qEq"/>
                         <outlet property="headImageView" destination="0n7-Dg-piL" id="oiF-xy-GSS"/>
                         <outlet property="nickNameLabel" destination="NBG-Pc-7s6" id="Wfu-tr-y7I"/>
                     </connections>

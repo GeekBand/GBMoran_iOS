@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "GBMGlobal.h"
 #import "GBMPublishViewController.h"
+#import "GBMGetImage.h"
 @interface GBMLoginViewController () <GBMLoginRequestDelegate>
 {
     BOOL openOrNot;
@@ -138,10 +139,15 @@
 //        NSLog(@"登录成功，现在转换页面");
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appDelegate loadMainViewWithController:self];
- 
         [GBMGlobal shareGloabl].user = user;
+<<<<<<< Updated upstream
        
 
+=======
+        [GBMGlobal shareGloabl].user.email= self.emailTextField.text;
+        GBMGetImage *getimage=[[GBMGetImage alloc]init];
+        [getimage sendGetImageRequest];
+>>>>>>> Stashed changes
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                         message:user.loginReturnMessage

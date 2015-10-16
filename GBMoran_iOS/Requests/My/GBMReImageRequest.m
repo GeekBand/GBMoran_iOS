@@ -1,31 +1,23 @@
 //
-//  GBMPublishRequest.m
+//  GBMReImageRequest.m
 //  GBMoran_iOS
 //
-//  Created by 陈铭嘉 on 15/9/23.
+//  Created by ZHY on 15/10/16.
 //  Copyright © 2015年 Brave. All rights reserved.
 //
 
-#import "GBMPublishRequest.h"
+#import "GBMReImageRequest.h"
 #import "BLMultipartForm.h"
-#import "GBMPublishRequestParser.h"
+#import "GBMGlobal.h"
+@implementation GBMReImageRequest
 
-@interface GBMPublishRequest()<NSURLConnectionDataDelegate>
-
-
-@end
-
-
-@implementation GBMPublishRequest
-
-
--(void)sendLoginRequestWithUserId:(NSString *)userId token:(NSString *)token longitude:(NSString *)longitude latitude:(NSString *)latitude title:(NSString *)title data:(NSData *)data delegate:(id<GBMPublishRequestDelegate>)delegate
+- (void)sendReNameRequestWithImage:(UIImage *)image delegate:(id<GBMReImageRequestDelegate>)delegate
 {
-    
     [self.urlConnection cancel];
+    
     self.delegate = delegate;
     
-    NSString *urlString = @"http://moran.chinacloudapp.cn/moran/web/picture/create";
+    NSString *urlString = @"http://moran.chinacloudapp.cn/moran/web//user/avatar";
     
     // POST请求
     NSString *encodeURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -35,27 +27,19 @@
     request.HTTPMethod = @"POST";
     request.timeoutInterval = 60;
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
-    
-    
+    NSData *data;
+    data = UIImageJPEGRepresentation(image, 0.000001);
     BLMultipartForm *form = [[BLMultipartForm alloc] init];
-    [form addValue:token forField:@"token"];
-    [form addValue:userId forField:@"user_id"];
+    [form addValue: [GBMGlobal shareGloabl].user.userId forField:@"user_id"];
+    [form addValue:[GBMGlobal shareGloabl].user.token forField:@"token"];
     [form addValue:data forField:@"data"];
-    [form addValue:title forField:@"title"];
-    [form addValue:@"" forField:@"location"];
-    [form addValue:longitude forField:@"longitude"];
-    [form addValue:latitude forField:@"latitude"];
-    
-    
     request.HTTPBody = [form httpBody];
     [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
     
     self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
                                                          delegate:self
                                                  startImmediately:YES];
-    
 }
-
 
 #pragma mark - 网络请求代理方法
 
@@ -76,25 +60,19 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"receive data string:%@", string);
-    GBMPublishRequestParser *parser =[[GBMPublishRequestParser alloc]init];
-    GBMPublishModel* model =  [parser parseJson:self.receivedData];
-    if ([_delegate respondsToSelector:@selector(requestSuccess:picId:)]) {
-        [_delegate requestSuccess:self picId:model.picId];
+    NSLog(@"ReImage receive data string:%@", string);
+    if ([_delegate respondsToSelector:@selector(reImageRequestSuccess:)]) {
+        [_delegate reImageRequestSuccess:self];
     }
-    //    [parser parseJson:self.receivedData];
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"error = %@", error);
-    if ([_delegate respondsToSelector:@selector(requestFailed:error:)]) {
-        [_delegate requestFailed:self error:error];
+    if ([_delegate respondsToSelector:@selector(reImageRequestfail:error:)]) {
+        [_delegate reImageRequestfail:self error:error];
     }
 }
-
-
-
-
 @end
+
+

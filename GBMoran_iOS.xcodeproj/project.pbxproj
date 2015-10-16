@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9900D7951BD0A46A00A4C32D /* GBMReNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D7941BD0A46A00A4C32D /* GBMReNameRequest.m */; settings = {ASSET_TAGS = (); }; };
+		9900D7981BD0C80D00A4C32D /* GBMGetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D7971BD0C80D00A4C32D /* GBMGetImage.m */; settings = {ASSET_TAGS = (); }; };
+		9900D79E1BD0CC0200A4C32D /* GBMReImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D79D1BD0CC0200A4C32D /* GBMReImageRequest.m */; settings = {ASSET_TAGS = (); }; };
 		994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5141BB68DF800420EB8 /* GBMPublishCell.m */; };
 		994BB51D1BB68DF800420EB8 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5151BB68DF800420EB8 /* GBMPublishCell.xib */; };
 		994BB51E1BB68DF800420EB8 /* GBMLoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5171BB68DF800420EB8 /* GBMLoginAndRegister.storyboard */; };
@@ -107,6 +110,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9900D7931BD0A46A00A4C32D /* GBMReNameRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMReNameRequest.h; path = My/GBMReNameRequest.h; sourceTree = "<group>"; };
+		9900D7941BD0A46A00A4C32D /* GBMReNameRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMReNameRequest.m; path = My/GBMReNameRequest.m; sourceTree = "<group>"; };
+		9900D7961BD0C80D00A4C32D /* GBMGetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMGetImage.h; sourceTree = "<group>"; };
+		9900D7971BD0C80D00A4C32D /* GBMGetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMGetImage.m; sourceTree = "<group>"; };
+		9900D79C1BD0CC0200A4C32D /* GBMReImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMReImageRequest.h; path = My/GBMReImageRequest.h; sourceTree = "<group>"; };
+		9900D79D1BD0CC0200A4C32D /* GBMReImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMReImageRequest.m; path = My/GBMReImageRequest.m; sourceTree = "<group>"; };
 		994BB5131BB68DF800420EB8 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		994BB5141BB68DF800420EB8 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		994BB5151BB68DF800420EB8 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
@@ -279,6 +288,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9900D7921BD0A3C600A4C32D /* My */ = {
+			isa = PBXGroup;
+			children = (
+				9900D7931BD0A46A00A4C32D /* GBMReNameRequest.h */,
+				9900D7941BD0A46A00A4C32D /* GBMReNameRequest.m */,
+				9900D79C1BD0CC0200A4C32D /* GBMReImageRequest.h */,
+				9900D79D1BD0CC0200A4C32D /* GBMReImageRequest.m */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
 		994BB5101BB68D1E00420EB8 /* ViewDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +356,7 @@
 		C93EB5C01BAFD5D9007DCAB4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				9900D7921BD0A3C600A4C32D /* My */,
 				E96FBF471BC744810073B788 /* Square */,
 				E9CA0CF51BB2A81500695D6E /* LoginAndRegister */,
 				DFD76C6D1BB28F7400AAF041 /* Publish */,
@@ -693,6 +714,8 @@
 				C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */,
 				C93EB5C41BAFD87B007DCAB4 /* GBMRegisterRequest.h */,
 				C93EB5C51BAFD87B007DCAB4 /* GBMRegisterRequest.m */,
+				9900D7961BD0C80D00A4C32D /* GBMGetImage.h */,
+				9900D7971BD0C80D00A4C32D /* GBMGetImage.m */,
 			);
 			name = LoginAndRegister;
 			sourceTree = "<group>";
@@ -881,6 +904,7 @@
 				E96FBF391BC743E20073B788 /* SDWebImagePrefetcher.m in Sources */,
 				E96FBF331BC743E20073B788 /* SDImageCache.m in Sources */,
 				E91353EB1BC53DBB002DE9B3 /* MJRefreshAutoGifFooter.m in Sources */,
+				9900D79E1BD0CC0200A4C32D /* GBMReImageRequest.m in Sources */,
 				E91353ED1BC53DBB002DE9B3 /* MJRefreshAutoStateFooter.m in Sources */,
 				E96FBF4D1BC749010073B788 /* GBMSquareRequestParser.m in Sources */,
 				DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */,
@@ -895,6 +919,7 @@
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
 				E96FBF3C1BC743E20073B788 /* UIImage+MultiFormat.m in Sources */,
 				E96FBF311BC743E20073B788 /* MKAnnotationView+WebCache.m in Sources */,
+				9900D7981BD0C80D00A4C32D /* GBMGetImage.m in Sources */,
 				E91353F51BC53DC3002DE9B3 /* MJRefreshBackNormalFooter.m in Sources */,
 				E91353FE1BC53DE9002DE9B3 /* MJRefreshNormalHeader.m in Sources */,
 				E96FBF461BC7440B0073B788 /* SVProgressHUD.m in Sources */,
@@ -904,6 +929,7 @@
 				E91353F61BC53DC3002DE9B3 /* MJRefreshBackStateFooter.m in Sources */,
 				E96FBF401BC743E20073B788 /* UIView+WebCacheOperation.m in Sources */,
 				E987E99D1BAFA64900D4A039 /* GBMPictureModel.m in Sources */,
+				9900D7951BD0A46A00A4C32D /* GBMReNameRequest.m in Sources */,
 				E96FBF381BC743E20073B788 /* SDWebImageManager.m in Sources */,
 				E91353FD1BC53DE9002DE9B3 /* MJRefreshGifHeader.m in Sources */,
 				E91353EC1BC53DBB002DE9B3 /* MJRefreshAutoNormalFooter.m in Sources */,

@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "GBMHeadImageViewController.h"
 #import "GBMNickNameViewController.h"
-
-@interface GBMMyViewController : UITableViewController <GBMNickNameViewControllerDelegate, GBMHeadImageViewControllerDelegate>
+#import "GBMGlobal.h"
+@interface GBMMyViewController : UITableViewController
 
 
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 
 @end

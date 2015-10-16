@@ -7,8 +7,9 @@
 //
 
 #import "GBMHeadImageViewController.h"
+#import "GBMReImageRequest.h"
 
-@interface GBMHeadImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface GBMHeadImageViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate,GBMReImageRequestDelegate>
 
 @end
 
@@ -29,9 +30,21 @@
 
 - (IBAction)doneBarButtonClicked:(id)sender
 {
-    [self.delegate updateHeadImage:self.headImageView.image];
+    GBMReImageRequest * request= [[GBMReImageRequest alloc]init];
+    [request sendReNameRequestWithImage:self.headImageView.image delegate:self];
+    
+  }
+
+-(void)reImageRequestSuccess:(GBMReImageRequest *)request
+{
+    [GBMGlobal shareGloabl].user.image=self.headImageView.image ;
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (void)reImageRequestfail:(GBMReImageRequest *)request error:(NSError *)error
+{
+     [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (IBAction)changeHeadImageButtonClicked:(id)sender
 {
