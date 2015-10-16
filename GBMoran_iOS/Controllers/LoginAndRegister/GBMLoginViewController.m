@@ -12,8 +12,15 @@
 #import "GBMGlobal.h"
 #import "GBMPublishViewController.h"
 @interface GBMLoginViewController () <GBMLoginRequestDelegate>
-
+{
+    BOOL openOrNot;
+    BOOL keyboardOpen;
+    CGFloat keyboardOffSet;
+    UIActivityIndicatorView *activity;
+}
 @property (nonatomic, strong) GBMLoginRequest *loginRequest;
+@property (nonatomic, strong) UITextField *textView;
+
 
 @end
 
@@ -22,6 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    CGFloat width =self.view.frame.size.width/2;
+    [activity setCenter:CGPointMake(width , 160) ];
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:activity];
+  
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     // 设置登录按钮为圆角矩形
     self.loginButton.layer.cornerRadius = 5.0;
@@ -50,6 +67,11 @@
         [self showErrorMessage:@"邮箱和密码不能为空"];
     } else {
         [self loginHandle];
+        if ([activity isAnimating]) {
+            [activity stopAnimating];
+        }
+        [activity startAnimating];
+        
     }
 }
 
@@ -95,27 +117,17 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    // 键盘收回后，视图恢复到原始位置
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
+//    // 键盘收回后，视图恢复到原始位置
+//    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//    
     return YES;
 }
 
 // 通过键盘弹出时，适当上移视图，避免键盘遮挡输入框
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    CGRect frame = self.loginButton.frame;
-    int offset = frame.origin.y + 36 - (self.view.frame.size.height - 216); // 键盘高度216
-    
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    
-    // 将视图的Y坐标向上移Y个单位，为键盘腾出空间
-    if (offset > 0) {
-        self.view.frame = CGRectMake(0, -offset, self.view.frame.size.width, self.view.frame.size.height);
-        [UIView commitAnimations];
-    }
+
+    self.textView = textField;
     
 }
 
@@ -128,17 +140,59 @@
         [appDelegate loadMainViewWithController:self];
  
         [GBMGlobal shareGloabl].user = user;
+       
 
     } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:user.loginReturnMessage
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
         NSLog(@"服务器报错:%@", user.loginReturnMessage);
     }
+     [activity stopAnimating];
 }
 
 - (void)loginRequestFailed:(GBMLoginRequest *)request error:(NSError *)error
 {
     NSLog(@"登录错误原因:%@", error);
+    [activity stopAnimating];
 }
 
+#pragma mark ---弹出键盘时适应
+- (void)keyboardWillChangeFrame:(NSNotification *)notification
+{
+    if (keyboardOpen == NO) {
+        NSDictionary *info = [notification userInfo];
+        CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+        CGRect endKeyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        //    CGFloat yOffset = endKeyboardRect.origin.y - beginKeyboardRect.origin.y;
+        CGFloat keyboardHeight = endKeyboardRect.origin.y;
+        CGRect textViewRect  = self.textView.frame;
+        CGFloat textViewHeight = textViewRect.origin.y+textViewRect.size.height;
+        keyboardOffSet = textViewHeight - keyboardHeight;
+        CGFloat newy = textViewRect.origin.y - keyboardOffSet;
+        if (textViewHeight > keyboardHeight) {
+            [UIView animateWithDuration:duration animations:^{
+                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+            }];
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+            keyboardOpen = YES;
+        }
+    }
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    CGRect textViewRect  = self.textView.frame;
+    if (keyboardOpen == YES) {
+        [UIView animateWithDuration:1 animations:^{
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+        }];
+        keyboardOpen = NO;
+    }
+}
 
 
 

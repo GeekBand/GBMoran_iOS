@@ -12,19 +12,23 @@
 #import "GBMGlobal.h"
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
+#import "GBMLocationParser.h"
 #define selfWidth self.view.frame.size.width
 #define selfHeight self.view.frame.size.height
 
 @interface GBMPublishViewController ()<CLLocationManagerDelegate>
 {
     BOOL openOrNot;
+    BOOL locationOrNot;
     BOOL keyboardOpen;
     CGFloat keyboardOffSet;
     UIButton* publishButton;
     UILabel* titleLabel;
-    
+    UIActivityIndicatorView *activity;
+    GBMLocationModel *locationModel;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
@@ -49,6 +53,20 @@
 
 
 - (void)viewDidLoad {
+    
+    
+    [self getLatitudeAndLongtitude];
+
+    
+    activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    CGFloat width =self.view.frame.size.width/2;
+    [activity setCenter:CGPointMake(width , 160) ];
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:activity];
+
+    
+    
+    
     self.pulishview.image= self.publishPhoto;
     keyboardOpen = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
@@ -69,6 +87,69 @@
     
     // Do any additional setup after loading the view.
 }
+
+
+-(void)getLatitudeAndLongtitude{
+
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // distanceFilter是距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序
+    // 它的单位是米，这里设置为至少移动1000再通知委托处理更新;
+    self.locationManager.distanceFilter = 1000.0f; // 如果设为kCLDistanceFilterNone，则每秒更新一次
+    // Do any additional setup after loading the view, typically from a nib.
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+        
+        [_locationManager requestWhenInUseAuthorization];
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        
+        
+        [self.locationManager startUpdatingLocation];
+        
+    }else {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [alert show];
+        
+    }
+
+}
+
+
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg
+{
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    [request setHTTPMethod: @"GET"];
+    [request addValue: @"06d932a18b74aa1fcf83b46fc537c2e0" forHTTPHeaderField: @"apikey"];
+    [NSURLConnection sendAsynchronousRequest: request
+                                       queue: [NSOperationQueue mainQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                               if (error) {
+                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                             
+                                   locationOrNot = NO;
+                                   
+                               } else {
+                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+                                   NSLog(@"HttpResponseBody %@",responseString);
+                                   locationModel = [[GBMLocationModel alloc]init];
+                                   GBMLocationParser *parser = [[GBMLocationParser alloc]init];
+                                   locationModel = [parser parseJson:data];
+                                   
+                                   
+                                   locationOrNot = YES;
+                                    [self makeTableView];
+                               }
+                           }];
+    
+}
+
 
 -(void)dealloc{
 
@@ -98,14 +179,14 @@
         _blackView.backgroundColor = [UIColor blackColor];
         _blackView.alpha = 0;
         [self.view addSubview:_blackView];
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             [self.tableView setFrame:CGRectMake(0, selfHeight-230, selfWidth, 230)];
             _blackView.alpha = 0.5;
         }
          ];
         openOrNot = YES;
     }else{
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             [self.tableView setFrame:CGRectMake(0, selfHeight, selfWidth, 230)];
             _blackView.alpha = 0;
         }];
@@ -136,23 +217,32 @@
 
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (openOrNot == YES) {
-        [self makeTableView];
-    }
-    
-}
 
--(void)publishButtonClicked:(id)sender{
-    
-}
+
 
 
 
 - (IBAction)publishLocation:(id)sender {
     
+   
+    [self MakeLocation];
+    if (locationOrNot == NO) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"获取地理位置信息失败"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
+   
+
+   
+}
+
+
+-(void)MakeLocation{
+
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -162,21 +252,31 @@
     self.locationManager.distanceFilter = 1000.0f; // 如果设为kCLDistanceFilterNone，则每秒更新一次
     // Do any additional setup after loading the view, typically from a nib.
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-        
         [_locationManager requestWhenInUseAuthorization];
-    
     if ([CLLocationManager locationServicesEnabled]) {
-        
-        [self makeTableView];
         [self.locationManager startUpdatingLocation];
-        
     }else {
-    
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
         [alert show];
-        
     }
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        NSString *latitude = [NSString stringWithFormat:@"l=%@",[self.dic valueForKey:@"latitude"]];
+        NSString *string1 = [latitude stringByAppendingString:@"%2C"];
+        NSString *httpArgs = [string1 stringByAppendingString:[self.dic valueForKey:@"longitude"]];
+        
+        
+        //           NSString *httpArg = @"l=37.785834%2C-122.406417";
+        NSString *httpUrl = @"http://apis.baidu.com/3023/geo/address";
+        NSString *httpArg = @"l=31.215865%2C121.510374";
+        [self request: httpUrl withHttpArg: httpArg];
+        
+    }];
+    [queue addOperation:operation];
+
 }
+
 
 
 #pragma mark - CLLocationManagerDelegate
@@ -187,8 +287,10 @@
     self.dic = [NSMutableDictionary dictionary];
     NSLog(@"纬度:%f",newLocation.coordinate.latitude);
     NSLog(@"经度:%f",newLocation.coordinate.longitude);
-    NSNumber *latitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
-    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.longitude];
+    NSString *latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
+//    NSNumber *latitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
+//    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.longitude];
     [self.dic setValue:latitude forKey:@"latitude"];
     [self.dic setValue:longitude forKey:@"longitude"];
     
@@ -229,16 +331,26 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return locationModel.nameArray.count -1;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GBMPublishCell *cell = [tableView dequeueReusableCellWithIdentifier:@"publishCell" ];
     [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-    cell.nameLabel.text = @"上海";
-    cell.placeLabel.text = @"上海浦东国际金融中心";
+    cell.nameLabel.text = locationModel.nameArray[indexPath.row];
+    cell.placeLabel.text = locationModel.addrArray[indexPath.row];
     return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    self.locationButton.titleLabel.text = locationModel.nameArray[indexPath.row];
+    if (openOrNot == YES) {
+        [self makeTableView];
+    }
     
 }
 
@@ -330,7 +442,10 @@
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
     [request sendLoginRequestWithUserId:user.userId token:user.token longitude:[self.dic valueForKey:@"longitude"] latitude:[self.dic valueForKey:@"latitude"] title:self.textView.text data:data delegate:self];
     
-    
+    if ([activity isAnimating]) {
+        [activity stopAnimating];
+    }
+    [activity startAnimating];
     
     
 }
@@ -340,6 +455,7 @@
 {
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
+     [activity stopAnimating];
 //    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    [appDelegate loadMainViewWithController:self];
 }
@@ -350,6 +466,7 @@
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
     [alert show];
+     [activity stopAnimating];
 }
 
 

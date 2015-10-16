@@ -10,8 +10,15 @@
 #import "GBMSquareViewController.h"
 
 @interface GBMRegisterViewController () <GBMRegisterRequestDelegate>
+{
+    BOOL openOrNot;
+    BOOL keyboardOpen;
+    CGFloat keyboardOffSet;
+    UIActivityIndicatorView *activity;
+}
 
 @property (nonatomic, strong) GBMRegisterRequest *registerRequest;
+@property (nonatomic, strong) UITextField *textView;
 
 @end
 
@@ -20,6 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    CGFloat width =self.view.frame.size.width/2;
+    [activity setCenter:CGPointMake(width , 160) ];
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:activity];
+   
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
     
     // 把注册按钮设为圆角矩形
     self.registerButton.layer.cornerRadius = 5.0;
@@ -45,9 +62,6 @@
 {
     [textField resignFirstResponder];
     
-    // 键盘收回后，视图恢复到原始位置
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
     return YES;
 }
 
@@ -67,18 +81,7 @@
 // 通过键盘弹出时，适当上移视图，避免键盘遮挡输入框
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    CGRect frame = self.registerButton.frame;
-    int offset = frame.origin.y + 36 - (self.view.frame.size.height - 216); // 键盘高度216
-    
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    
-    // 将视图的Y坐标向上移Y个单位，为键盘腾出空间
-    if (offset > 0) {
-        self.view.frame = CGRectMake(0, -offset, self.view.frame.size.width, self.view.frame.size.height);
-        [UIView commitAnimations];
-    }
+    self.textView = textField;
     
 }
 
@@ -112,6 +115,10 @@
         [self showErrorMessage:@"密码格式有误，应为6~20位的字母或数字"];
     } else {
         [self registerHandle];
+        if ([activity isAnimating]) {
+            [activity stopAnimating];
+        }
+        [activity startAnimating];
     }
 }
 
@@ -169,12 +176,49 @@
                                               otherButtonTitles:nil];
         [alert show];
         [self dismissViewControllerAnimated:YES completion:nil];
+        [activity stopAnimating];
     }
 }
 
 - (void)registerRequestFailed:(GBMRegisterRequest *)request error:(NSError *)error
 {
     NSLog(@"注册错误原因:%@", error);
+    [activity stopAnimating];
+}
+
+
+#pragma mark ---弹出键盘时适应
+- (void)keyboardWillChangeFrame:(NSNotification *)notification
+{
+    if (keyboardOpen == NO) {
+        NSDictionary *info = [notification userInfo];
+        CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+        CGRect endKeyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        //    CGFloat yOffset = endKeyboardRect.origin.y - beginKeyboardRect.origin.y;
+        CGFloat keyboardHeight = endKeyboardRect.origin.y;
+        CGRect textViewRect  = self.textView.frame;
+        CGFloat textViewHeight = textViewRect.origin.y+textViewRect.size.height;
+        keyboardOffSet = textViewHeight - keyboardHeight;
+        CGFloat newy = textViewRect.origin.y - keyboardOffSet;
+        if (textViewHeight > keyboardHeight) {
+            [UIView animateWithDuration:duration animations:^{
+                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+            }];
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+            keyboardOpen = YES;
+        }
+    }
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    CGRect textViewRect  = self.textView.frame;
+    if (keyboardOpen == YES) {
+        [UIView animateWithDuration:1 animations:^{
+            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+        }];
+        keyboardOpen = NO;
+    }
 }
 
 

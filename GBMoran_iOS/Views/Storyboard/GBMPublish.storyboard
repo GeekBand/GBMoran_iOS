@@ -129,6 +129,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="locationButton" destination="6bN-MV-cks" id="rsM-bJ-VT3"/>
                         <outlet property="numberLabel" destination="u4p-AV-8jH" id="c4U-Mh-gxN"/>
                         <outlet property="pulishview" destination="Hld-ig-BUH" id="9b7-ps-Ds3"/>
                         <outlet property="textView" destination="LAp-Z0-llf" id="Qda-jx-wjl"/>
