@@ -262,9 +262,9 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
         
-        NSString *latitude = [NSString stringWithFormat:@"l=%@",[self.dic valueForKey:@"latitude"]];
-        NSString *string1 = [latitude stringByAppendingString:@"%2C"];
-        NSString *httpArgs = [string1 stringByAppendingString:[self.dic valueForKey:@"longitude"]];
+//        NSString *latitude = [NSString stringWithFormat:@"l=%@",[self.dic valueForKey:@"latitude"]];
+//        NSString *string1 = [latitude stringByAppendingString:@"%2C"];
+//        NSString *httpArgs = [string1 stringByAppendingString:[self.dic valueForKey:@"longitude"]];
         
         
         //           NSString *httpArg = @"l=37.785834%2C-122.406417";

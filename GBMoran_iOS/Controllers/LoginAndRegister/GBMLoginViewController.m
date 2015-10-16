@@ -140,14 +140,14 @@
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appDelegate loadMainViewWithController:self];
         [GBMGlobal shareGloabl].user = user;
-<<<<<<< Updated upstream
+
        
 
-=======
+
         [GBMGlobal shareGloabl].user.email= self.emailTextField.text;
         GBMGetImage *getimage=[[GBMGetImage alloc]init];
         [getimage sendGetImageRequest];
->>>>>>> Stashed changes
+
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                         message:user.loginReturnMessage
