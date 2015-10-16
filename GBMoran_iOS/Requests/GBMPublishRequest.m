@@ -43,8 +43,8 @@
     [form addValue:data forField:@"data"];
     [form addValue:title forField:@"title"];
     [form addValue:@"" forField:@"location"];
-    [form addValue:@"123" forField:@"longitude"];
-    [form addValue:@"123" forField:@"latitude"];
+    [form addValue:longitude forField:@"longitude"];
+    [form addValue:latitude forField:@"latitude"];
    
    
     request.HTTPBody = [form httpBody];

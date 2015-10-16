@@ -106,6 +106,13 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    CGSize imagesize = image.size;
+    imagesize.height = 626;
+    imagesize.width = 413;
+    image = [self imageWithImage:image scaledToSize:imagesize];
+    
+    
+    
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
             GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
     pulish.publishPhoto = image;
@@ -115,6 +122,18 @@
 
 
 }
+
+
+//对图片尺寸进行压缩
+-(UIImage *)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize{
+
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

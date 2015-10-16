@@ -11,14 +11,18 @@
 #import "GBMPublishRequest.h"
 #import "GBMGlobal.h"
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
 #define selfWidth self.view.frame.size.width
 #define selfHeight self.view.frame.size.height
 
-@interface GBMPublishViewController ()
+@interface GBMPublishViewController ()<CLLocationManagerDelegate>
 {
     BOOL openOrNot;
     BOOL keyboardOpen;
     CGFloat keyboardOffSet;
+    UIButton* publishButton;
+    UILabel* titleLabel;
+    
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -26,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong,nonatomic) UITableView *tableView;
 @property (strong,nonatomic) UIControl *blackView;
+@property(nonatomic , strong) CLLocationManager *locationManager;
+@property(nonatomic , strong) NSMutableDictionary *dic;
 
 @end
 
@@ -55,13 +61,20 @@
     self.navigationController.navigationBar.barTintColor = [[UIColor alloc]initWithRed:230/255.0 green:106/255.0 blue:58/255.0 alpha:1];
     self.textView.delegate = self;
     [self.navigationController.navigationBar setAlpha:1.0];
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-30, 10, 100, 30)];
-    label.text =@"发布照片";
-    label.textColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar addSubview:label];
+   titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-30, 10, 100, 30)];
+    titleLabel.text =@"发布照片";
+    titleLabel.textColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar addSubview:titleLabel];
     
     
     // Do any additional setup after loading the view.
+}
+
+-(void)dealloc{
+
+    [titleLabel removeFromSuperview];
+    [publishButton removeFromSuperview];
+
 }
 
 //制作tableview
@@ -110,15 +123,15 @@
 
 //制作发布按钮
 -(void)makePublishButton{
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-65, 0, 50, 40)];
-    button.backgroundColor = [UIColor whiteColor];
-    button.alpha = 0.8;
-    [button setTitle:@"发布" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(publishPhotoButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    button.layer.cornerRadius = 3.0;
-    button.clipsToBounds = YES;
-    [self.navigationController.navigationBar addSubview:button];
+    publishButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-65, 0, 50, 40)];
+    publishButton.backgroundColor = [UIColor whiteColor];
+    publishButton.alpha = 0.8;
+    [publishButton setTitle:@"发布" forState:UIControlStateNormal];
+    [publishButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [publishButton addTarget:self action:@selector(publishPhotoButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    publishButton.layer.cornerRadius = 3.0;
+    publishButton.clipsToBounds = YES;
+    [self.navigationController.navigationBar addSubview:publishButton];
 }
 
 
@@ -134,9 +147,64 @@
 -(void)publishButtonClicked:(id)sender{
     
 }
+
+
+
 - (IBAction)publishLocation:(id)sender {
-    [self makeTableView];
+    
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // distanceFilter是距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序
+    // 它的单位是米，这里设置为至少移动1000再通知委托处理更新;
+    self.locationManager.distanceFilter = 1000.0f; // 如果设为kCLDistanceFilterNone，则每秒更新一次
+    // Do any additional setup after loading the view, typically from a nib.
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+        
+        [_locationManager requestWhenInUseAuthorization];
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        
+        [self makeTableView];
+        [self.locationManager startUpdatingLocation];
+        
+    }else {
+    
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [alert show];
+        
+    }
 }
+
+
+#pragma mark - CLLocationManagerDelegate
+// 地理位置发生改变时触发
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    // 获取经纬度
+    self.dic = [NSMutableDictionary dictionary];
+    NSLog(@"纬度:%f",newLocation.coordinate.latitude);
+    NSLog(@"经度:%f",newLocation.coordinate.longitude);
+    NSNumber *latitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
+    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.longitude];
+    [self.dic setValue:latitude forKey:@"latitude"];
+    [self.dic setValue:longitude forKey:@"longitude"];
+    
+    // 停止位置更新
+    [manager stopUpdatingLocation];
+}
+
+// 定位失误时触发
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"error:%@",error);
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -257,10 +325,10 @@
 
 -(void)publishPhotoButtonClicked:(id)sender{
     
-    NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 1.0);
+    NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 0.00001);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
-    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:@"1" latitude:@"1" title:self.textView.text data:data delegate:self];
+    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:[self.dic valueForKey:@"longitude"] latitude:[self.dic valueForKey:@"latitude"] title:self.textView.text data:data delegate:self];
     
     
     
@@ -283,6 +351,7 @@
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
     [alert show];
 }
+
 
 
 - (IBAction)returnToCamera:(id)sender {
