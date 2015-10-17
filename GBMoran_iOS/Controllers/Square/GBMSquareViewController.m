@@ -14,9 +14,12 @@
 #import "GBMSquareRequest.h"
 #import "GBMUserModel.h"
 #import "GBMGlobal.h"
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <MAMapKit/MAMapKit.h>
+
 
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
-@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate>
+@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate, AMapSearchDelegate, MAMapViewDelegate>
 @property (nonatomic, strong) NSArray *scrollArray;
 @property (nonatomic ,strong) NSMutableDictionary * userLocationDict;
 
@@ -27,6 +30,9 @@
 
 @property (nonatomic, strong) UIButton *titleButton;
 
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) AMapSearchAPI *mapSearchAPI;
+@property (nonatomic, strong) MAUserLocation *currentLocation;
 
 
 @end
@@ -37,6 +43,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [MAMapServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
+    [AMapSearchServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
+    self.mapView = [[MAMapView alloc] init];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
+    self.mapSearchAPI = [[AMapSearchAPI alloc] init];
+    self.mapSearchAPI.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
     
@@ -85,6 +99,40 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+
+- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
+{
+    if(updatingLocation == YES)
+    {
+            }
+    
+    [self.locationDic setObject:[NSNumber numberWithFloat:userLocation.location.coordinate.longitude] forKey:@"longitude"];
+    [self.locationDic setObject:[NSNumber numberWithFloat:userLocation.location.coordinate.latitude] forKey:@"latitude"];
+    
+    self.currentLocation = userLocation;
+    [self.mapView setRegion:MACoordinateRegionMake(self.currentLocation.coordinate, SPAN) animated:YES];
+    
+    CLLocation * location = userLocation.location;
+    
+    AMapReGeocodeSearchRequest * request = [[AMapReGeocodeSearchRequest alloc] init];
+    request.requireExtension = YES;
+    request.radius = 10000;
+    AMapGeoPoint * point = [AMapGeoPoint locationWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+    request.location = point;
+    [self.mapSearchAPI AMapReGoecodeSearch:request];
+}
+
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+{
+    if(response.regeocode != nil)
+    {
+        NSString *result = [NSString stringWithFormat:@"%@", response.regeocode.formattedAddress];
+                NSLog(@"ReGeo: %@", result);
+        
+        [self.locationDic setObject:result forKey:@"location"];
+    }
 }
 
 - (void)titleButtonClick:(UIButton *)button
