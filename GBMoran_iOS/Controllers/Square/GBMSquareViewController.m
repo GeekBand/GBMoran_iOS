@@ -197,8 +197,6 @@
 
 - (void)requestAllData
 {
-    ;
-    
     NSDictionary *paramDic = @{@"user_id":[GBMGlobal shareGloabl].user.userId, @"token":[GBMGlobal shareGloabl].user.token, @"longitude":@"121.47794", @"latitude":@"31.22516", @"distance":@"1000"};
     
     GBMSquareRequest *squareRequest = [[GBMSquareRequest alloc] init];
