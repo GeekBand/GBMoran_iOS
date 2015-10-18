@@ -16,8 +16,11 @@
 #import "GBMGlobal.h"
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
-
-
+#import "GBMPictureModel.h"
+#import "GBMSquareModel.h"
+#import "GBMViewDetailViewController.h"
+#import "UIImageView+WebCache.h"
+#define VCFromSB(SB,ID) [[UIStoryboard storyboardWithName:SB bundle:nil] instantiateViewControllerWithIdentifier:ID]
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 @interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate, AMapSearchDelegate, MAMapViewDelegate>
 @property (nonatomic, strong) NSArray *scrollArray;
@@ -35,6 +38,10 @@
 @property (nonatomic, strong) MAUserLocation *currentLocation;
 
 
+@property (nonatomic, strong) NSMutableArray *addrArray;
+@property (nonatomic, strong) NSMutableArray *pictureArray;
+
+
 @end
 
 @implementation GBMSquareViewController
@@ -44,6 +51,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.locationDic = [NSMutableDictionary dictionary];
+    
     [MAMapServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
     [AMapSearchServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
     self.mapView = [[MAMapView alloc] init];
@@ -52,7 +61,7 @@
     self.mapSearchAPI = [[AMapSearchAPI alloc] init];
     self.mapSearchAPI.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
     
     self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.titleButton setTitle:@"全部" forState:UIControlStateNormal];
@@ -67,25 +76,18 @@
     
     [self requestAllData];
     
-    
-    // 下拉刷新
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
             [self.tableView.header endRefreshing];
+            [self.tableView reloadData];
             
         });
     }];
     
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
     self.tableView.header.automaticallyChangeAlpha = YES;
     
-    // 上拉刷新
     self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
             [self.tableView.footer endRefreshing];
         });
     }];
@@ -129,9 +131,11 @@
     if(response.regeocode != nil)
     {
         NSString *result = [NSString stringWithFormat:@"%@", response.regeocode.formattedAddress];
-                NSLog(@"ReGeo: %@", result);
+//                NSLog(@"ReGeo: %@", result);
         
         [self.locationDic setObject:result forKey:@"location"];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"observeLocationValue" object:nil userInfo:self.locationDic];
     }
 }
 
@@ -172,11 +176,11 @@
     
 }
 
-- (void)observeLocationValue:(NSNotification *)noti
-{
-    self.locationDic = (NSMutableDictionary *)noti.userInfo;
-    
-}
+//- (void)observeLocationValue:(NSNotification *)noti
+//{
+//    self.locationDic = (NSMutableDictionary *)noti.userInfo;
+//    
+//}
 
 - (NSMutableArray *)data
 {
@@ -207,40 +211,47 @@
 
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.dataArr.count;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    NSLog(@"numberOfSectionsInTabelView: %zd", self.addrArray.count);
+//    return 1;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 1;
+    return self.addrArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *str = @"squareCell";
-    GBMSquareCell * cell = [tableView dequeueReusableCellWithIdentifier:str];
+    GBMSquareCell * cell = [tableView dequeueReusableCellWithIdentifier:str forIndexPath:indexPath];
     if (!cell) {
         cell = [[GBMSquareCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
     }
+    
+    GBMSquareModel *squareModel = self.addrArray[indexPath.row][0];
     cell.squareVC = self;
-    NSLog(@"%zd", indexPath.section);
-    cell.locationLabel.text = self.dataArr[indexPath.section][@"node"][@"addr"];
-    cell.dataArr = self.dataArr[indexPath.section][@"pic"];
+//    NSLog(@"%zd", indexPath.section);
+    cell.locationLabel.text = squareModel.addr;
+    cell.dataArr = self.dataDic[self.addrArray[indexPath.row]];
     [cell.collectionView reloadData];
     return cell;
 }
 
 - (void)toCheckPicture
 {
+    GBMViewDetailViewController *detailVC = VCFromSB(@"GBMViewDetail", @"detailVC");
+    [detailVC.PhotoImage sd_setImageWithURL:[NSURL URLWithString:_pic_url]];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
 }
 
 
 - (void)request1000kilometerData
 {
-    
+   
 }
 
 - (void)requestAllData
@@ -251,8 +262,13 @@
     [squareRequest sendSquareRequestWithParameter:paramDic delegate:self];
 }
 
-- (void)squareRequestSuccess:(GBMSquareRequest *)request squareModel:(GBMSquareModel *)squareModel
+- (void)squareRequestSuccess:(GBMSquareRequest *)request dictionary:(NSDictionary *)dictionary
 {
+//    NSLog(@"%@", dictionary);
+    self.addrArray = [NSMutableArray arrayWithArray:[dictionary allKeys]];
+//    self.pictureArray = [NSMutableArray arrayWithArray:dictionary[@"pic"]];
+    self.dataDic = dictionary;
+    [self.tableView reloadData];
     
 }
 - (void)squareRequestFailed:(GBMSquareRequest *)request error:(NSError *)error

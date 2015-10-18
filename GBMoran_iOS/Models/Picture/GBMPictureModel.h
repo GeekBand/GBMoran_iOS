@@ -10,4 +10,8 @@
 
 @interface GBMPictureModel : NSObject
 
+@property (nonatomic, strong) NSString *pic_link;
+@property (nonatomic, strong) NSString *pic_id;
+@property (nonatomic, strong) NSString *title;
+
 @end

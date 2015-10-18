@@ -11,6 +11,8 @@
 
 @interface GBMSquareRequestParser : NSObject
 
-- (GBMSquareModel *)parseJson:(NSData *)data;
+- (NSDictionary *)parseJson:(NSData *)data;
+@property (nonatomic, strong) NSMutableArray *addrArray;
+@property (nonatomic, strong) NSMutableArray *pictureArray;
 
 @end

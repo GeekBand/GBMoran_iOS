@@ -7,9 +7,9 @@
 //
 
 #import "GBMSquareCell.h"
-//#import "GBMCheckPictureViewController.h"
 #import "GBMSquareCollectionCell.h"
-//#import "UIImageView+WebCache.h"
+#import "GBMPictureModel.h"
+#import "UIImageView+WebCache.h"
 
 @implementation GBMSquareCell
 
@@ -30,11 +30,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GBMSquareCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
-    NSString *pic = self.dataArr[indexPath.row][@"pic_link"];
+    GBMPictureModel *pictureModel = self.dataArr[indexPath.row];
+    NSString *pic = pictureModel.pic_link;
     pic = [pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *pic_url = [NSURL URLWithString:pic];
-//    [cell.pictureImageView sd_setImageWithURL:pic_url];
-    cell.titleLabel.text = self.dataArr[indexPath.row][@"title"];
+    [cell.pictureImageView sd_setImageWithURL:pic_url];
+    cell.titleLabel.text = pictureModel.title;
     return cell;
 }
 
@@ -42,8 +43,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%zd", indexPath.row);
-    self.pic_url = self.dataArr[indexPath.row][@"pic_link"];
-    self.pic_id = self.dataArr[indexPath.row][@"pic_id"];
+    GBMPictureModel *pictureModel = self.dataArr[indexPath.row];
+    self.pic_url = pictureModel.pic_link;
+    self.pic_id = pictureModel.pic_id;
     self.squareVC.pic_url = self.pic_url;
     self.squareVC.pic_id = self.pic_id;
     [self.squareVC toCheckPicture];

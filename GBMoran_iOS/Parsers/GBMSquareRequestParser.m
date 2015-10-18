@@ -7,50 +7,47 @@
 //
 
 #import "GBMSquareRequestParser.h"
+#import "GBMPictureModel.h"
 
 @implementation GBMSquareRequestParser
 
-- (GBMSquareModel *)parseJson:(NSData *)data
+- (NSDictionary *)parseJson:(NSData *)data
 {
     NSError *error = nil;
     id jsonDic = [NSJSONSerialization JSONObjectWithData:data
                                                  options:NSJSONReadingAllowFragments
                                                    error:&error];
+    
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     if (error) {
         NSLog(@"The parser is not work.");
     } else {
-        GBMSquareModel *squareModel = [[GBMSquareModel alloc] init];
+        
         if ([[jsonDic class] isSubclassOfClass:[NSDictionary class]]) {
             
-            id data = [jsonDic valueForKey:@"data"];
-            if ([[data class] isSubclassOfClass:[NSDictionary class]]) {
-                
-                id addr = [data valueForKey:@"addr"];
-                if ([[addr class] isSubclassOfClass:[NSString class]]) {
-                    squareModel.addr = addr;
+            id data = [[jsonDic valueForKey:@"data"] allValues];
+            
+            __block GBMSquareRequestParser *weakSelf = self;
+            
+            for (id dic in data) {
+                weakSelf.addrArray = [NSMutableArray array];
+                weakSelf.pictureArray = [NSMutableArray array];
+               GBMSquareModel *squareModel = [[GBMSquareModel alloc] init];
+                [squareModel setValuesForKeysWithDictionary:dic[@"node"]];
+                for (id picDictionary in dic[@"pic"]) {
+                    
+                    GBMPictureModel *pictureModel = [[GBMPictureModel alloc] init];
+                   [pictureModel setValuesForKeysWithDictionary:picDictionary];
+                    [weakSelf.pictureArray addObject:pictureModel];
                 }
-                
-                id pic = [data valueForKey:@"pic"];
-                if ([[addr class] isSubclassOfClass:[NSString class]]) {
-                    squareModel.pic = pic;
-                }
-                
+                [weakSelf.addrArray addObject:squareModel];
+            
+                [dictionary setObject:_pictureArray forKey:_addrArray];
             }
-            
-            
-            
-//            id returnMessage = [jsonDic valueForKey:@"message"];
-//            if ([[returnMessage class] isSubclassOfClass:[NSString class]]) {
-//                
-//                squareModel.loginReturnMessage = returnMessage;
-//                
-//                
-//            }
-            
-            return squareModel;
         }
     }
-    return nil;
+    return dictionary;
 }
 
 @end

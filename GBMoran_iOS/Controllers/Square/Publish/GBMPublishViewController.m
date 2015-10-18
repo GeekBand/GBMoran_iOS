@@ -26,6 +26,7 @@
     UILabel* titleLabel;
     UIActivityIndicatorView *activity;
     GBMLocationModel *locationModel;
+    NSDictionary *locationDic;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
@@ -54,6 +55,8 @@
 
 - (void)viewDidLoad {
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
     
     [self getLatitudeAndLongtitude];
 
@@ -86,6 +89,11 @@
     
     
     // Do any additional setup after loading the view.
+}
+
+- (void)observeLocationValue:(NSNotification *)noti
+{
+    locationDic = (NSMutableDictionary *)noti.userInfo;
 }
 
 

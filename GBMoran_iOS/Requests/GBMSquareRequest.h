@@ -13,6 +13,7 @@
 
 @protocol GBMSquareRequestDelegate <NSObject>
 
+- (void)squareRequestSuccess:(GBMSquareRequest *)request dictionary:(NSDictionary *)dictionary;
 - (void)squareRequestSuccess:(GBMSquareRequest *)request squareModel:(GBMSquareModel *)squareModel;
 - (void)squareRequestFailed:(GBMSquareRequest *)request error:(NSError *)error;
 

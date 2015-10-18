@@ -18,14 +18,13 @@
     
     self.delegate = delegate;
     
-    NSString *urlString = @"http://moran.chinacloudapp.cn/moran/web/node/list";
-    
+    NSString *urlString = [NSString stringWithFormat:@"http://moran.chinacloudapp.cn/moran/web/node/list?distance=%@&latitude=%@&longitude=%@&token=%@&user_id=%@", paramDic[@"distance"], paramDic[@"latitude"], paramDic[@"longitude"], paramDic[@"token"], paramDic[@"user_id"]];
     // POST请求
     NSString *encodeURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *url = [NSURL URLWithString:encodeURLString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    request.HTTPMethod = @"POST";
+    request.HTTPMethod = @"GET";
     request.timeoutInterval = 60;
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData; // 忽略本地和远程的缓存
     
@@ -33,14 +32,14 @@
     
 //    NSDictionary *dic = @{@"token":token, @"user_id":loginId, @"longitude":@"121.47794", @"latitude":@"31.22516", @"distance":@"1000"};
     
-    BLMultipartForm *form = [[BLMultipartForm alloc] init];
-    [form addValue:paramDic[@"token"] forField:@"token"];
-    [form addValue:paramDic[@"user_id"] forField:@"user_id"];
-    [form addValue:paramDic[@"longitude"] forField:@"longitude"];
-    [form addValue:paramDic[@"latitude"] forField:@"latitude"];
-    [form addValue:paramDic[@"distance"] forField:@"distance"];
-    request.HTTPBody = [form httpBody];
-    [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
+//    BLMultipartForm *form = [[BLMultipartForm alloc] init];
+//    [form addValue:paramDic[@"token"] forField:@"token"];
+//    [form addValue:paramDic[@"user_id"] forField:@"user_id"];
+//    [form addValue:paramDic[@"longitude"] forField:@"longitude"];
+//    [form addValue:paramDic[@"latitude"] forField:@"latitude"];
+//    [form addValue:paramDic[@"distance"] forField:@"distance"];
+//    request.HTTPBody = [form httpBody];
+//    [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
     
     self.urlConnection = [[NSURLConnection alloc] initWithRequest:request
                                                          delegate:self
@@ -59,7 +58,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
 }
 
@@ -69,9 +67,8 @@
        NSLog(@"Square receive data string:%@", string);
     
     GBMSquareRequestParser *parser = [[GBMSquareRequestParser alloc] init];
-    GBMSquareModel *squareModel = [parser parseJson:self.receivedData];
-    if ([_delegate respondsToSelector:@selector(squareRequestSuccess:squareModel:)]) {
-        [_delegate squareRequestSuccess:self squareModel:squareModel];
+    if ([_delegate respondsToSelector:@selector(squareRequestSuccess:dictionary:)]) {
+        [_delegate squareRequestSuccess:self dictionary:[parser parseJson:self.receivedData]];
     }
 }
 
