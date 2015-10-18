@@ -219,7 +219,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+    NSLog(@"addrArray: %zd", self.addrArray.count);
     return self.addrArray.count;
 }
 
