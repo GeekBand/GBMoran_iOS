@@ -53,8 +53,12 @@
 }
 
 
+
 - (void)viewDidLoad {
+   
     
+    
+    [self MakeBackButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
     
@@ -93,7 +97,10 @@
 
 - (void)observeLocationValue:(NSNotification *)noti
 {
+    
     locationDic = (NSMutableDictionary *)noti.userInfo;
+    [self.locationButton.titleLabel setText:[locationDic valueForKey:@"location"]];
+    
 }
 
 
@@ -140,6 +147,12 @@
                                    NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                              
                                    locationOrNot = NO;
+                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                                                   message:@"获取地理位置信息失败"
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:@"确定"
+                                                                         otherButtonTitles:nil];
+                                   [alert show];
                                    
                                } else {
                                    NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
@@ -234,16 +247,6 @@
     
    
     [self MakeLocation];
-    if (locationOrNot == NO) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"获取地理位置信息失败"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    
-   
 
    
 }
@@ -270,14 +273,14 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
         
-//        NSString *latitude = [NSString stringWithFormat:@"l=%@",[self.dic valueForKey:@"latitude"]];
-//        NSString *string1 = [latitude stringByAppendingString:@"%2C"];
-//        NSString *httpArgs = [string1 stringByAppendingString:[self.dic valueForKey:@"longitude"]];
+        NSString *latitude = [NSString stringWithFormat:@"l=%@",[locationDic valueForKey:@"latitude"]];
+        NSString *string1 = [latitude stringByAppendingString:@"%2C"];
+        NSString *httpArg = [NSString stringWithFormat:@"%@%@",string1,[locationDic valueForKey:@"longitude"]];
         
         
-        //           NSString *httpArg = @"l=37.785834%2C-122.406417";
+        
         NSString *httpUrl = @"http://apis.baidu.com/3023/geo/address";
-        NSString *httpArg = @"l=31.215865%2C121.510374";
+//        NSString *httpArg = @"l=31.215865%2C121.510374";
         [self request: httpUrl withHttpArg: httpArg];
         
     }];
@@ -485,7 +488,25 @@
     
 }
 
+#pragma mark ---制作返回按钮
+-(void)MakeBackButton{
+  
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    
 
+
+}
+
+-(void)cancelAction:(id)sender{
+    if (self.tag == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else if (self.tag == 2 ){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+}
 
 /*
  #pragma mark - Navigation

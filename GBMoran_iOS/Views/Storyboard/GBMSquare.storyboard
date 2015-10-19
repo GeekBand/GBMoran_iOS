@@ -13,21 +13,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="185" sectionHeaderHeight="22" sectionFooterHeight="22" id="9tO-6W-fVa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" id="9tO-6W-fVa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="squareCell" rowHeight="176" id="pEq-LY-d1G" customClass="GBMSquareCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="176"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="squareCell" rowHeight="170" id="pEq-LY-d1G" customClass="GBMSquareCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pEq-LY-d1G" id="HDw-r0-pea">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eNI-d9-Qjx">
-                                                    <rect key="frame" x="0.0" y="36" width="640" height="317"/>
+                                                    <rect key="frame" x="0.0" y="36" width="640" height="133.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +39,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="SnM-Bw-hTC" customClass="GBMSquareCollectionCell">
-                                                            <rect key="frame" x="10" y="0.0" width="135" height="134"/>
+                                                            <rect key="frame" x="10" y="-0.5" width="135" height="134"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="134"/>
@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oL7-Wh-pEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="377"/>
+            <point key="canvasLocation" x="143" y="395"/>
         </scene>
     </scenes>
     <resources>

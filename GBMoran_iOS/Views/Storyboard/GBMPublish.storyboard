@@ -126,7 +126,9 @@
                             <action selector="touchDown:" destination="Q8f-dx-KYk" eventType="touchDown" id="T5O-yJ-Cob"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="locationButton" destination="6bN-MV-cks" id="rsM-bJ-VT3"/>
@@ -143,6 +145,6 @@
     <resources>
         <image name="Untitled.jpg" width="2880" height="1800"/>
         <image name="publish_location" width="22" height="22"/>
-        <image name="publish_repick" width="22" height="22"/>
+        <image name="publish_repick" width="16" height="16"/>
     </resources>
 </document>

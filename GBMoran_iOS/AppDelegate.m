@@ -19,6 +19,7 @@
 @interface AppDelegate ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong)UITabBarController *tabBarController;
+@property (nonatomic,strong)UIImagePickerController *pickerController;
 
 
 @end
@@ -82,13 +83,13 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    UIImagePickerController *pickerController = [[UIImagePickerController alloc]init];;
+    self.pickerController = [[UIImagePickerController alloc]init];;
     if (buttonIndex == 0) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-            pickerController.allowsEditing = YES;
-            pickerController.delegate = self;
-            [self.tabBarController presentViewController:pickerController animated:YES completion:nil];
+            self.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            self.pickerController.allowsEditing = YES;
+            self.pickerController.delegate = self;
+            [self.tabBarController presentViewController:self.pickerController animated:YES completion:nil];
           
         }else {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"无法获取照相机" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
@@ -96,9 +97,9 @@
               return;
         }
     }else if(buttonIndex == 1){
-        pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        pickerController.delegate = self;
-        [self.tabBarController presentViewController:pickerController animated:YES completion:nil];
+        self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        self.pickerController.delegate = self;
+        [self.tabBarController presentViewController:self.pickerController animated:YES completion:nil];
     }
     
  
@@ -115,12 +116,22 @@
     
     
     
-            UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
-            GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
-    pulish.publishPhoto = image;
-            UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:pulish];
     
+    if (self.pickerController.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+        GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
+        pulish.tag = 2;
+        pulish.publishPhoto = image;
         [picker pushViewController:pulish animated:YES];
+    }else{
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"GBMPublish" bundle:nil];
+        GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
+        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:pulish];
+        pulish.tag = 1;
+        [picker presentViewController:navigationController animated:YES completion:nil];
+    }
+    
+   
 
 
 }

@@ -14,7 +14,6 @@
 #import "GBMSquareRequest.h"
 #import "GBMUserModel.h"
 #import "GBMGlobal.h"
-
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "GBMPictureModel.h"
@@ -53,7 +52,7 @@
     // Do any additional setup after loading the view.
     
     self.locationDic = [NSMutableDictionary dictionary];
-    
+    //地图API设置
     [MAMapServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
     [AMapSearchServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
     self.mapView = [[MAMapView alloc] init];
@@ -64,6 +63,7 @@
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
     
+    //NavigationBar的设置
     self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.titleButton setTitle:@"全部" forState:UIControlStateNormal];
     self.titleButton.frame = CGRectMake(0, 0, 200, 35);
@@ -76,7 +76,7 @@
     self.navigationItem.titleView = self.titleButton;
     
     [self requestAllData];
-    
+    //头刷新
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.tableView.header endRefreshing];
@@ -86,7 +86,7 @@
     }];
     
     self.tableView.header.automaticallyChangeAlpha = YES;
-    
+     //尾刷新
     self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.tableView.footer endRefreshing];
@@ -226,10 +226,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *str = @"squareCell";
-    GBMSquareCell * cell = [tableView dequeueReusableCellWithIdentifier:str forIndexPath:indexPath];
+//    static NSString *str = @"squareCell";
+    GBMSquareCell * cell = [tableView dequeueReusableCellWithIdentifier:@"squareCell" forIndexPath:indexPath];
     if (!cell) {
-        cell = [[GBMSquareCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
+        cell = [[GBMSquareCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"squareCell"];
     }
     
     GBMSquareModel *squareModel = self.addrArray[indexPath.row][0];

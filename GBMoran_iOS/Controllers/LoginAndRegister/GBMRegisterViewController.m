@@ -202,9 +202,10 @@
         CGFloat newy = textViewRect.origin.y - keyboardOffSet;
         if (textViewHeight > keyboardHeight) {
             [UIView animateWithDuration:duration animations:^{
-                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+//                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+                [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y-keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
             }];
-            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+//            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
             keyboardOpen = YES;
         }
     }
@@ -215,7 +216,7 @@
     CGRect textViewRect  = self.textView.frame;
     if (keyboardOpen == YES) {
         [UIView animateWithDuration:1 animations:^{
-            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
         }];
         keyboardOpen = NO;
     }

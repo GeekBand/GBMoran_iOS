@@ -42,10 +42,10 @@
     [form addValue:userId forField:@"user_id"];
     [form addValue:data forField:@"data"];
     [form addValue:title forField:@"title"];
-    [form addValue:@"上海浦东软件园" forField:@"location"];
+    [form addValue:@"" forField:@"location"];
     [form addValue:longitude forField:@"longitude"];
     [form addValue:latitude forField:@"latitude"];
-    [form addValue:@"上海浦东软件园" forField:@"addr"];
+    
     
     request.HTTPBody = [form httpBody];
     [request setValue:form.contentType forHTTPHeaderField:@"Content-Type"];
@@ -71,7 +71,6 @@
 {
     self.receivedData = [NSMutableData data];
     [self.receivedData appendData:data];
-    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection

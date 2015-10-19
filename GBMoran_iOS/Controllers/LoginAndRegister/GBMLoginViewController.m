@@ -12,12 +12,14 @@
 #import "GBMGlobal.h"
 #import "GBMPublishViewController.h"
 #import "GBMGetImage.h"
-@interface GBMLoginViewController () <GBMLoginRequestDelegate>
+@interface GBMLoginViewController () <GBMLoginRequestDelegate,UIAlertViewDelegate>
 {
     BOOL openOrNot;
     BOOL keyboardOpen;
     CGFloat keyboardOffSet;
     UIActivityIndicatorView *activity;
+    NSString *myEmail;
+    NSString *myPassword;
 }
 @property (nonatomic, strong) GBMLoginRequest *loginRequest;
 @property (nonatomic, strong) UITextField *textView;
@@ -30,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self readInformation];
     activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     CGFloat width =self.view.frame.size.width/2;
     [activity setCenter:CGPointMake(width , 160) ];
@@ -48,6 +50,33 @@
     // 设置输入框的代理
     self.emailTextField.delegate = self;
     self.passwordTextField.delegate = self;
+}
+
+// 读取本地化的数据
+-(void)readInformation{
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    myEmail = [defaults stringForKey:@"email"];
+    myPassword = [defaults stringForKey:@"password"];
+    
+    if (myEmail){
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:@"是否使用本地邮箱密码"
+                                                   delegate:self
+                                          cancelButtonTitle:@"取消"
+                                          otherButtonTitles:@"确定", nil];
+        
+    [alert show];
+    }
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        self.emailTextField.text = myEmail;
+        self.passwordTextField.text = myPassword;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,6 +176,13 @@
         [GBMGlobal shareGloabl].user.email= self.emailTextField.text;
         GBMGetImage *getimage=[[GBMGetImage alloc]init];
         [getimage sendGetImageRequest];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.emailTextField.text forKey:@"email"];
+        [defaults setObject:self.passwordTextField.text forKey:@"password"];
+        [defaults synchronize];
+        
+        
 
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
@@ -181,7 +217,7 @@
         CGFloat newy = textViewRect.origin.y - keyboardOffSet;
         if (textViewHeight > keyboardHeight) {
             [UIView animateWithDuration:duration animations:^{
-                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+                [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y-keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
             }];
             [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
             keyboardOpen = YES;
@@ -194,7 +230,7 @@
     CGRect textViewRect  = self.textView.frame;
     if (keyboardOpen == YES) {
         [UIView animateWithDuration:1 animations:^{
-            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+             [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
         }];
         keyboardOpen = NO;
     }
