@@ -143,6 +143,6 @@
     <resources>
         <image name="Untitled.jpg" width="2880" height="1800"/>
         <image name="publish_location" width="22" height="22"/>
-        <image name="publish_repick" width="16" height="16"/>
+        <image name="publish_repick" width="22" height="22"/>
     </resources>
 </document>

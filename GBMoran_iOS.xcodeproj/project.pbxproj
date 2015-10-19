@@ -37,6 +37,12 @@
 		DF22FEB81BD0B646008A893A /* GBMLocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEB71BD0B646008A893A /* GBMLocationRequest.m */; };
 		DF22FEBB1BD0B6C6008A893A /* GBMLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEBA1BD0B6C6008A893A /* GBMLocationModel.m */; };
 		DF22FEBE1BD0DB82008A893A /* GBMLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEBD1BD0DB82008A893A /* GBMLocationParser.m */; };
+		DF586B901BD3C6BD002543CF /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B8F1BD3C6BD002543CF /* MAMapKit.framework */; };
+		DF586B921BD3C7F2002543CF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B911BD3C7F2002543CF /* libc++.tbd */; };
+		DF586B941BD3C7FA002543CF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B931BD3C7FA002543CF /* libstdc++.6.0.9.tbd */; };
+		DF586B961BD3C805002543CF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B951BD3C805002543CF /* libz.tbd */; };
+		DF586B9A1BD3C883002543CF /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B991BD3C883002543CF /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
+		DF586B9F1BD3C9AB002543CF /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF586B9E1BD3C9AB002543CF /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
 		DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF11BB773BA0023543B /* GBMGlobal.m */; };
 		DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */; };
@@ -171,6 +177,12 @@
 		DF22FEBA1BD0B6C6008A893A /* GBMLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationModel.m; sourceTree = "<group>"; };
 		DF22FEBC1BD0DB82008A893A /* GBMLocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationParser.h; sourceTree = "<group>"; };
 		DF22FEBD1BD0DB82008A893A /* GBMLocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationParser.m; sourceTree = "<group>"; };
+		DF586B8F1BD3C6BD002543CF /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = GBMoran_iOS/Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
+		DF586B911BD3C7F2002543CF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		DF586B931BD3C7FA002543CF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		DF586B951BD3C805002543CF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DF586B991BD3C883002543CF /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = /Users/chenmingjia/GitHub/GBMoran_iOS/AMapSearchKit.framework; sourceTree = "<absolute>"; };
+		DF586B9E1BD3C9AB002543CF /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = GBMoran_iOS/Frameworks/AMapSearchKit.framework; sourceTree = "<group>"; };
 		DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequest.h; sourceTree = "<group>"; };
 		DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequest.m; sourceTree = "<group>"; };
 		DFEB0BF01BB773BA0023543B /* GBMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMGlobal.h; sourceTree = "<group>"; };
@@ -303,9 +315,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				995CF0031BD47FF40052B5F7 /* libstdc++.6.0.9.tbd in Frameworks */,
 				995CF0011BD47FED0052B5F7 /* libc++.tbd in Frameworks */,
 				995CEFFF1BD47FE30052B5F7 /* libz.tbd in Frameworks */,
+=======
+				DF586B9A1BD3C883002543CF /* AMapSearchKit.framework in Frameworks */,
+				DF586B961BD3C805002543CF /* libz.tbd in Frameworks */,
+				DF586B941BD3C7FA002543CF /* libstdc++.6.0.9.tbd in Frameworks */,
+				DF586B921BD3C7F2002543CF /* libc++.tbd in Frameworks */,
+				DF586B9F1BD3C9AB002543CF /* AMapSearchKit.framework in Frameworks */,
+				DF586B901BD3C6BD002543CF /* MAMapKit.framework in Frameworks */,
+>>>>>>> Stashed changes
 				E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */,
 				E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */,
 				E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */,
@@ -773,10 +794,20 @@
 		E9E1715F1BD217AC00218C42 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				E9E171491BD2150800218C42 /* AMap.bundle */,
 				995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */,
 				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
 				E9E1714B1BD2152D00218C42 /* CoreLocation.framework */,
+=======
+				DF586B9E1BD3C9AB002543CF /* AMapSearchKit.framework */,
+				DF586B8F1BD3C6BD002543CF /* MAMapKit.framework */,
+				E9E1715D1BD215E300218C42 /* Security.framework */,
+				E9E1715B1BD215DB00218C42 /* libc++.dylib */,
+				E9E171591BD215CC00218C42 /* libstdc++.6.0.9.dylib */,
+				E9E171571BD215C100218C42 /* libz.dylib */,
+				E9E171551BD215B600218C42 /* SystemConfiguration.framework */,
+>>>>>>> Stashed changes
 				E9E171531BD215AF00218C42 /* CoreTelephony.framework */,
 				995CF0001BD47FED0052B5F7 /* libc++.tbd */,
 				995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */,
@@ -784,8 +815,14 @@
 				995CF0081BD481A20052B5F7 /* MAMapKit.framework */,
 				E9E171511BD215A700218C42 /* OpenGLES.framework */,
 				E9E1714F1BD2159D00218C42 /* QuartzCore.framework */,
+<<<<<<< Updated upstream
 				E9E1715D1BD215E300218C42 /* Security.framework */,
 				E9E171551BD215B600218C42 /* SystemConfiguration.framework */,
+=======
+				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
+				E9E1714B1BD2152D00218C42 /* CoreLocation.framework */,
+				E9E171491BD2150800218C42 /* AMap.bundle */,
+>>>>>>> Stashed changes
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -793,6 +830,9 @@
 		E9F17DB81BAF93B700C2948B = {
 			isa = PBXGroup;
 			children = (
+				DF586B951BD3C805002543CF /* libz.tbd */,
+				DF586B931BD3C7FA002543CF /* libstdc++.6.0.9.tbd */,
+				DF586B911BD3C7F2002543CF /* libc++.tbd */,
 				E9E1715F1BD217AC00218C42 /* Framework */,
 				E9F17DC31BAF93B700C2948B /* GBMoran_iOS */,
 				E9F17DDD1BAF93B700C2948B /* GBMoran_iOSTests */,
@@ -900,6 +940,7 @@
 				TargetAttributes = {
 					E9F17DC01BAF93B700C2948B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 5F86ZD4GLF;
 					};
 					E9F17DD91BAF93B700C2948B = {
 						CreatedOnToolsVersion = 6.1;
@@ -1154,9 +1195,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brave/Downloads,
+<<<<<<< Updated upstream
+=======
+					"$(PROJECT_DIR)/GBMoran_iOS/Frameworks",
+>>>>>>> Stashed changes
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GBMoran_iOS/Info.plist;
@@ -1167,7 +1214,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Brave.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = AAASAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1176,9 +1223,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brave/Downloads,
+<<<<<<< Updated upstream
+=======
+					"$(PROJECT_DIR)/GBMoran_iOS/Frameworks",
+>>>>>>> Stashed changes
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GBMoran_iOS/Info.plist;
@@ -1189,7 +1242,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Brave.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = AAASAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
