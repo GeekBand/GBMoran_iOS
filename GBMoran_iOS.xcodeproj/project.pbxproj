@@ -24,6 +24,7 @@
 		995CF0031BD47FF40052B5F7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */; };
 		995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		995CF0091BD481A20052B5F7 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0081BD481A20052B5F7 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
+		995CF00D1BD4865D0052B5F7 /* GBMViewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */; settings = {ASSET_TAGS = (); }; };
 		999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */; };
 		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; };
 		C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */; };
@@ -144,6 +145,8 @@
 		995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		995CF0081BD481A20052B5F7 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		995CF00B1BD4865D0052B5F7 /* GBMViewDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailRequest.h; path = ViewDetail/GBMViewDetailRequest.h; sourceTree = "<group>"; };
+		995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailRequest.m; path = ViewDetail/GBMViewDetailRequest.m; sourceTree = "<group>"; };
 		999CB1B21BBE303700F01E42 /* GBMViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailViewController.h; path = ViewDetail/GBMViewDetailViewController.h; sourceTree = "<group>"; };
 		999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailViewController.m; path = ViewDetail/GBMViewDetailViewController.m; sourceTree = "<group>"; };
 		C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMNickNameViewController.h; sourceTree = "<group>"; };
@@ -390,6 +393,15 @@
 			path = Publish;
 			sourceTree = "<group>";
 		};
+		995CF00A1BD486170052B5F7 /* ViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				995CF00B1BD4865D0052B5F7 /* GBMViewDetailRequest.h */,
+				995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */,
+			);
+			name = ViewDetail;
+			sourceTree = "<group>";
+		};
 		C93EB5C01BAFD5D9007DCAB4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +628,7 @@
 		E96FBF471BC744810073B788 /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				995CF00A1BD486170052B5F7 /* ViewDetail */,
 				E96FBF481BC744B20073B788 /* GBMSquareRequest.h */,
 				E96FBF491BC744B20073B788 /* GBMSquareRequest.m */,
 			);
@@ -1014,6 +1027,7 @@
 				E91353E01BC53D8D002DE9B3 /* MJRefreshHeader.m in Sources */,
 				E91353FF1BC53DE9002DE9B3 /* MJRefreshStateHeader.m in Sources */,
 				E96FBF361BC743E20073B788 /* SDWebImageDownloader.m in Sources */,
+				995CF00D1BD4865D0052B5F7 /* GBMViewDetailRequest.m in Sources */,
 				DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */,
 				E91353DC1BC53D8D002DE9B3 /* MJRefreshAutoFooter.m in Sources */,
 				E91353CD1BC53D4E002DE9B3 /* UIScrollView+MJExtension.m in Sources */,

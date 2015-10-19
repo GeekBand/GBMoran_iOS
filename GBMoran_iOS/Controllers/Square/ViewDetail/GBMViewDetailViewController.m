@@ -7,8 +7,8 @@
 //
 
 #import "GBMViewDetailViewController.h"
-
-@interface GBMViewDetailViewController ()
+#import "GBMGlobal.h"
+@interface GBMViewDetailViewController ()<GBMViewDetailRequestDelegate>
 
 @end
 
@@ -16,14 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSString *token= [GBMGlobal shareGloabl].user.token;
+     NSString *userId= [GBMGlobal shareGloabl].user.userId;
+    NSDictionary *dic=@{@"pic_id":_pic_id,@"token":token,@"user_id":userId};
+    GBMViewDetailRequest *request= [[GBMViewDetailRequest alloc]init];
+    [request sendViewDetailRequestWithParameter:dic delegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDetailRequestSuccess:(GBMViewDetailRequest *)request data:(NSData *)data{
+    _PhotoImage.image=[[UIImage alloc]initWithData:data];
+}
+- (void)viewDetailRequestFailed:(GBMViewDetailRequest *)request error:(NSError *)error{
+    
+}
 /*
 #pragma mark - Navigation
 

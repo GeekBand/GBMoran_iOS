@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GBMViewDetailRequest.h"
 @interface GBMViewDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *PhotoImage;
 @property (weak, nonatomic) IBOutlet UILabel *TitleLabel;
@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *UserImage;
 @property (weak, nonatomic) IBOutlet UILabel *UserNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TimeLabel;
-
+@property (copy,nonatomic ) NSString *pic_id;
 @end
