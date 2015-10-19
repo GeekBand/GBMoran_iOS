@@ -19,6 +19,11 @@
 		994BB5221BB68DF800420EB8 /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51B1BB68DF800420EB8 /* GBMViewDetail.storyboard */; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; };
+		995CEFFF1BD47FE30052B5F7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CEFFE1BD47FE30052B5F7 /* libz.tbd */; };
+		995CF0011BD47FED0052B5F7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0001BD47FED0052B5F7 /* libc++.tbd */; };
+		995CF0031BD47FF40052B5F7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */; };
+		995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
+		995CF0091BD481A20052B5F7 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0081BD481A20052B5F7 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
 		999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */; };
 		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; };
 		C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */; };
@@ -91,7 +96,6 @@
 		E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AA1BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
-		E9E171481BD214C100218C42 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171471BD214C100218C42 /* MAMapKit.framework */; };
 		E9E1714A1BD2150800218C42 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9E171491BD2150800218C42 /* AMap.bundle */; };
 		E9E1714C1BD2152D00218C42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1714B1BD2152D00218C42 /* CoreLocation.framework */; };
 		E9E1714E1BD2159600218C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1714D1BD2159600218C42 /* CoreGraphics.framework */; };
@@ -99,11 +103,7 @@
 		E9E171521BD215A700218C42 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171511BD215A700218C42 /* OpenGLES.framework */; };
 		E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171531BD215AF00218C42 /* CoreTelephony.framework */; };
 		E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171551BD215B600218C42 /* SystemConfiguration.framework */; };
-		E9E171581BD215C100218C42 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171571BD215C100218C42 /* libz.dylib */; };
-		E9E1715A1BD215CC00218C42 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171591BD215CC00218C42 /* libstdc++.6.0.9.dylib */; };
-		E9E1715C1BD215DB00218C42 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1715B1BD215DB00218C42 /* libc++.dylib */; };
 		E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1715D1BD215E300218C42 /* Security.framework */; };
-		E9E171611BD2189F00218C42 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E171601BD2189F00218C42 /* AMapSearchKit.framework */; };
 		E9F17DC71BAF93B700C2948B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC61BAF93B700C2948B /* main.m */; };
 		E9F17DCA1BAF93B700C2948B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F17DC91BAF93B700C2948B /* AppDelegate.m */; };
 		E9F17DD21BAF93B700C2948B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F17DD11BAF93B700C2948B /* Images.xcassets */; };
@@ -139,6 +139,11 @@
 		994BB5241BB68E0D00420EB8 /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+		995CEFFE1BD47FE30052B5F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		995CF0001BD47FED0052B5F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		995CF0081BD481A20052B5F7 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		999CB1B21BBE303700F01E42 /* GBMViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailViewController.h; path = ViewDetail/GBMViewDetailViewController.h; sourceTree = "<group>"; };
 		999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailViewController.m; path = ViewDetail/GBMViewDetailViewController.m; sourceTree = "<group>"; };
 		C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMNickNameViewController.h; sourceTree = "<group>"; };
@@ -270,7 +275,6 @@
 		E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMMyViewController.m; sourceTree = "<group>"; };
 		E987E9AB1BAFA73200D4A039 /* GBMSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareViewController.h; sourceTree = "<group>"; };
 		E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareViewController.m; sourceTree = "<group>"; };
-		E9E171471BD214C100218C42 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = ../Downloads/MAMapKit.framework; sourceTree = "<group>"; };
 		E9E171491BD2150800218C42 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		E9E1714B1BD2152D00218C42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E9E1714D1BD2159600218C42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -278,11 +282,7 @@
 		E9E171511BD215A700218C42 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E9E171531BD215AF00218C42 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E9E171551BD215B600218C42 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		E9E171571BD215C100218C42 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		E9E171591BD215CC00218C42 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
-		E9E1715B1BD215DB00218C42 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		E9E1715D1BD215E300218C42 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		E9E171601BD2189F00218C42 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = ../Downloads/AMapSearchKit.framework; sourceTree = "<group>"; };
 		E9F17DC11BAF93B700C2948B /* GBMoran_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBMoran_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F17DC51BAF93B700C2948B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9F17DC61BAF93B700C2948B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -300,18 +300,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E171611BD2189F00218C42 /* AMapSearchKit.framework in Frameworks */,
+				995CF0031BD47FF40052B5F7 /* libstdc++.6.0.9.tbd in Frameworks */,
+				995CF0011BD47FED0052B5F7 /* libc++.tbd in Frameworks */,
+				995CEFFF1BD47FE30052B5F7 /* libz.tbd in Frameworks */,
 				E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */,
-				E9E1715C1BD215DB00218C42 /* libc++.dylib in Frameworks */,
-				E9E1715A1BD215CC00218C42 /* libstdc++.6.0.9.dylib in Frameworks */,
-				E9E171581BD215C100218C42 /* libz.dylib in Frameworks */,
 				E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */,
 				E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */,
+				995CF0091BD481A20052B5F7 /* MAMapKit.framework in Frameworks */,
+				995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */,
 				E9E171521BD215A700218C42 /* OpenGLES.framework in Frameworks */,
 				E9E171501BD2159D00218C42 /* QuartzCore.framework in Frameworks */,
 				E9E1714E1BD2159600218C42 /* CoreGraphics.framework in Frameworks */,
 				E9E1714C1BD2152D00218C42 /* CoreLocation.framework in Frameworks */,
-				E9E171481BD214C100218C42 /* MAMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,19 +760,19 @@
 		E9E1715F1BD217AC00218C42 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				E9E171601BD2189F00218C42 /* AMapSearchKit.framework */,
-				E9E1715D1BD215E300218C42 /* Security.framework */,
-				E9E1715B1BD215DB00218C42 /* libc++.dylib */,
-				E9E171591BD215CC00218C42 /* libstdc++.6.0.9.dylib */,
-				E9E171571BD215C100218C42 /* libz.dylib */,
-				E9E171551BD215B600218C42 /* SystemConfiguration.framework */,
-				E9E171531BD215AF00218C42 /* CoreTelephony.framework */,
-				E9E171511BD215A700218C42 /* OpenGLES.framework */,
-				E9E1714F1BD2159D00218C42 /* QuartzCore.framework */,
+				E9E171491BD2150800218C42 /* AMap.bundle */,
+				995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */,
 				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
 				E9E1714B1BD2152D00218C42 /* CoreLocation.framework */,
-				E9E171491BD2150800218C42 /* AMap.bundle */,
-				E9E171471BD214C100218C42 /* MAMapKit.framework */,
+				E9E171531BD215AF00218C42 /* CoreTelephony.framework */,
+				995CF0001BD47FED0052B5F7 /* libc++.tbd */,
+				995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */,
+				995CEFFE1BD47FE30052B5F7 /* libz.tbd */,
+				995CF0081BD481A20052B5F7 /* MAMapKit.framework */,
+				E9E171511BD215A700218C42 /* OpenGLES.framework */,
+				E9E1714F1BD2159D00218C42 /* QuartzCore.framework */,
+				E9E1715D1BD215E300218C42 /* Security.framework */,
+				E9E171551BD215B600218C42 /* SystemConfiguration.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -799,15 +799,15 @@
 		E9F17DC31BAF93B700C2948B /* GBMoran_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E91353AD1BC53BC8002DE9B3 /* Library */,
-				DFEB0BEF1BB773AF0023543B /* Global */,
-				994BB5111BB68DF800420EB8 /* Views */,
+				E987E98A1BAFA57100D4A039 /* APP */,
 				E987E9801BAFA53900D4A039 /* Controllers */,
+				DFEB0BEF1BB773AF0023543B /* Global */,
+				E91353AD1BC53BC8002DE9B3 /* Library */,
 				E987E9841BAFA54000D4A039 /* Models */,
 				E9CA0CF31BB2A7E600695D6E /* Public */,
 				E987E98B1BAFA58200D4A039 /* Resources */,
-				E987E98A1BAFA57100D4A039 /* APP */,
 				E9F17DC41BAF93B700C2948B /* Supporting Files */,
+				994BB5111BB68DF800420EB8 /* Views */,
 			);
 			path = GBMoran_iOS;
 			sourceTree = "<group>";
@@ -1143,10 +1143,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brave/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GBMoran_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brave.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1160,10 +1165,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brave/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GBMoran_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brave.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
