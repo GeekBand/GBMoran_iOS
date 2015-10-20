@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="nZh-tf-STW"/>
                         <viewControllerLayoutGuide type="bottom" id="a2z-1X-Fqi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="18a-dX-fG5" customClass="GBMViewDetail">
+                    <view key="view" contentMode="scaleToFill" id="18a-dX-fG5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -51,11 +52,11 @@
                                 <exclude reference="JwP-ik-7iJ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="VTl-FU-4Kv"/>
+                                <exclude reference="jb4-Yo-FQY"/>
                                 <exclude reference="2M2-UL-5x5"/>
                                 <exclude reference="7fy-NO-Qym"/>
                                 <exclude reference="Pfz-SR-YXv"/>
-                                <exclude reference="VTl-FU-4Kv"/>
-                                <exclude reference="jb4-Yo-FQY"/>
                             </mask>
                         </variation>
                     </view>
