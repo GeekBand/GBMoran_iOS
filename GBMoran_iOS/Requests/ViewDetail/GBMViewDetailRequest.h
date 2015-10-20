@@ -12,7 +12,7 @@
 
 @protocol GBMViewDetailRequestDelegate <NSObject>
 
-- (void)viewDetailRequestSuccess:(GBMViewDetailRequest *)request data:(NSData *)dictionary;
+- (void)viewDetailRequestSuccess:(GBMViewDetailRequest *)request data:(NSArray *)array;
 
 - (void)viewDetailRequestFailed:(GBMViewDetailRequest *)request error:(NSError *)error;
 

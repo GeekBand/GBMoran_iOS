@@ -75,6 +75,7 @@
     
     
     self.pulishview.image= self.publishPhoto;
+//    [self.view bringSubviewToFront:self.textView];
     keyboardOpen = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -176,6 +177,7 @@
 
     [titleLabel removeFromSuperview];
     [publishButton removeFromSuperview];
+    
 
 }
 
@@ -369,17 +371,17 @@
 
 #pragma mark ------textView的delegate
 
-//-(void)textViewDidChange:(UITextView *)textView
-//{
-//
-//    if (textView.text.length > 25) {
-//
-//        [self.textView resignFirstResponder];
-//
-//    }
-//    self.numberLabel.text = [NSString stringWithFormat:@"%lu/25",textView.text.length];
-//
-//}
+-(void)textViewDidChange:(UITextView *)textView
+{
+
+    if (textView.text.length > 25) {
+
+        [self.textView resignFirstResponder];
+
+    }
+    self.numberLabel.text = [NSString stringWithFormat:@"%lu/25",textView.text.length];
+
+}
 
 
 
@@ -424,9 +426,9 @@
         keyboardOffSet = textViewHeight - keyboardHeight;
         CGFloat newy = textViewRect.origin.y - keyboardOffSet;
         [UIView animateWithDuration:duration animations:^{
-            [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y-keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
         }];
-        [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
+     
         keyboardOpen = YES;
     }
     
@@ -436,7 +438,7 @@
     CGRect textViewRect  = self.textView.frame;
     if (keyboardOpen == YES) {
         [UIView animateWithDuration:1 animations:^{
-            [self.textView setFrame:CGRectMake(textViewRect.origin.x, textViewRect.origin.y + keyboardOffSet, textViewRect.size.width, textViewRect.size.height)];
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y+keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];
         }];
         keyboardOpen = NO;
     }
@@ -448,6 +450,18 @@
 
 -(void)publishPhotoButtonClicked:(id)sender{
     
+    if ([self.textView.text  isEqual: @"你想说的话"]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"请写上你的留言"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles: nil];
+        
+        [alert show];
+        
+    }else{
+    
     NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 0.00001);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
@@ -457,7 +471,7 @@
         [activity stopAnimating];
     }
     [activity startAnimating];
-    
+    }
     
 }
 
@@ -477,16 +491,20 @@
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
     [alert show];
-     [activity stopAnimating];
+    [activity stopAnimating];
 }
 
 
 
 - (IBAction)returnToCamera:(id)sender {
-    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate addOrderView];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
+
 
 #pragma mark ---制作返回按钮
 -(void)MakeBackButton{
@@ -500,6 +518,7 @@
 }
 
 -(void)cancelAction:(id)sender{
+    
     if (self.tag == 1) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }else if (self.tag == 2 ){

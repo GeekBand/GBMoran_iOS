@@ -15,6 +15,7 @@
 
 - (void)loadLoginView;
 - (void)loadMainViewWithController:(UIViewController *)controller;
+- (void) addOrderView;
 
 
 @end

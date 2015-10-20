@@ -128,6 +128,7 @@
         GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
         UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:pulish];
         pulish.tag = 1;
+         pulish.publishPhoto = image;
         [picker presentViewController:navigationController animated:YES completion:nil];
     }
     

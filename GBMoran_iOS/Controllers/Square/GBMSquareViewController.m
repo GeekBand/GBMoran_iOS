@@ -246,6 +246,7 @@
     GBMViewDetailViewController *detailVC = VCFromSB(@"GBMViewDetail", @"detailVC");
     [detailVC.PhotoImage sd_setImageWithURL:[NSURL URLWithString:_pic_url]];
     detailVC.pic_id=_pic_id;
+    detailVC.pic_url = _pic_url;
     [self.navigationController pushViewController:detailVC animated:YES];
     
 }
