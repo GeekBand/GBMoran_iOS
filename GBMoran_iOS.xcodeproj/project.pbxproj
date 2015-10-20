@@ -19,8 +19,8 @@
 		994BB5221BB68DF800420EB8 /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51B1BB68DF800420EB8 /* GBMViewDetail.storyboard */; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; };
+		995A79781BD6363C00D4A823 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A79771BD6363C00D4A823 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
 		995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */; };
-		995CF0091BD481A20052B5F7 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0081BD481A20052B5F7 /* MAMapKit.framework */; };
 		995CF00D1BD4865D0052B5F7 /* GBMViewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */; };
 		999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */; };
 		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; };
@@ -144,11 +144,11 @@
 		994BB5241BB68E0D00420EB8 /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
+		995A79771BD6363C00D4A823 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		995CEFFE1BD47FE30052B5F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		995CF0001BD47FED0052B5F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		995CF0081BD481A20052B5F7 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		995CF00B1BD4865D0052B5F7 /* GBMViewDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailRequest.h; path = ViewDetail/GBMViewDetailRequest.h; sourceTree = "<group>"; };
 		995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailRequest.m; path = ViewDetail/GBMViewDetailRequest.m; sourceTree = "<group>"; };
 		999CB1B21BBE303700F01E42 /* GBMViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailViewController.h; path = ViewDetail/GBMViewDetailViewController.h; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */,
 				E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */,
 				E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */,
-				995CF0091BD481A20052B5F7 /* MAMapKit.framework in Frameworks */,
+				995A79781BD6363C00D4A823 /* MAMapKit.framework in Frameworks */,
 				995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */,
 				E9E171521BD215A700218C42 /* OpenGLES.framework in Frameworks */,
 				E9E171501BD2159D00218C42 /* QuartzCore.framework in Frameworks */,
@@ -796,6 +796,7 @@
 		E9E1715F1BD217AC00218C42 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				995A79771BD6363C00D4A823 /* MAMapKit.framework */,
 				E9E171491BD2150800218C42 /* AMap.bundle */,
 				995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */,
 				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
@@ -804,7 +805,6 @@
 				995CF0001BD47FED0052B5F7 /* libc++.tbd */,
 				995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */,
 				995CEFFE1BD47FE30052B5F7 /* libz.tbd */,
-				995CF0081BD481A20052B5F7 /* MAMapKit.framework */,
 				E9E171511BD215A700218C42 /* OpenGLES.framework */,
 				E9E1714F1BD2159D00218C42 /* QuartzCore.framework */,
 				E9E1715D1BD215E300218C42 /* Security.framework */,
