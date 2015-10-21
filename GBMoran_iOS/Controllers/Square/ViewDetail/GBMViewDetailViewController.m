@@ -96,12 +96,7 @@
         cell = [[GBMCommentListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
-    //    [cell cleanComponents];
-    
-    //    [cell setHeadImageOfComment:[UIImage imageNamed:@"camera"]];
-    //    [cell setUsernameOfComment:@"花事了了"];
-    //    [cell setTextOfComment:@"这家火锅超赞"];
-    //    [cell setDateOfComment:@"8月17日 12:55"];
+
     GBMViewDetailModel *model = self.commentArr[indexPath.row];
     cell.textOfComment.text = model.comment;
     cell.dateOfComment.text = model.modified;
