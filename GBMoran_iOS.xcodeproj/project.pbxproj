@@ -20,6 +20,10 @@
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; };
 		995A79781BD6363C00D4A823 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A79771BD6363C00D4A823 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
+		995A79801BD72EF000D4A823 /* GBMPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A797C1BD72EF000D4A823 /* GBMPublishModel.m */; settings = {ASSET_TAGS = (); }; };
+		995A79811BD72EF000D4A823 /* GBMViewDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A797F1BD72EF000D4A823 /* GBMViewDetailModel.m */; settings = {ASSET_TAGS = (); }; };
+		995A79841BD72F5400D4A823 /* GBMLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A79831BD72F5400D4A823 /* GBMLocationModel.m */; settings = {ASSET_TAGS = (); }; };
+		995A79871BD72F5E00D4A823 /* GBMLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A79861BD72F5E00D4A823 /* GBMLocationParser.m */; settings = {ASSET_TAGS = (); }; };
 		995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */; };
 		995CF00D1BD4865D0052B5F7 /* GBMViewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */; };
 		999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */; };
@@ -32,16 +36,12 @@
 		C93EB5D11BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */; };
 		C9D668AC1BBA3C4100208F9D /* GBMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D668AA1BBA3C4100208F9D /* GBMHomePageViewController.m */; };
 		DF22FEB81BD0B646008A893A /* GBMLocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEB71BD0B646008A893A /* GBMLocationRequest.m */; };
-		DF22FEBB1BD0B6C6008A893A /* GBMLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEBA1BD0B6C6008A893A /* GBMLocationModel.m */; };
-		DF22FEBE1BD0DB82008A893A /* GBMLocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22FEBD1BD0DB82008A893A /* GBMLocationParser.m */; };
 		DF755C2B1BD609F1005B0495 /* GBMCommentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF755C2A1BD609F1005B0495 /* GBMCommentListCell.m */; settings = {ASSET_TAGS = (); }; };
 		DF755C2E1BD6129B005B0495 /* GBMViewDetailParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF755C2D1BD6129B005B0495 /* GBMViewDetailParser.m */; settings = {ASSET_TAGS = (); }; };
 		DF755C311BD612DD005B0495 /* UIColor+AddColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF755C301BD612DD005B0495 /* UIColor+AddColor.m */; settings = {ASSET_TAGS = (); }; };
-		DF755C341BD614A0005B0495 /* GBMViewDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF755C331BD614A0005B0495 /* GBMViewDetailModel.m */; settings = {ASSET_TAGS = (); }; };
 		DFD76C701BB28F8F00AAF041 /* GBMPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */; };
 		DFEB0BF21BB773BA0023543B /* GBMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF11BB773BA0023543B /* GBMGlobal.m */; };
 		DFEB0BF51BB774040023543B /* GBMPublishRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */; };
-		DFEB0BFA1BB774EA0023543B /* GBMPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */; };
 		DFFB3C261BB1756000396F7A /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFB3C251BB1756000396F7A /* Main.xcassets */; };
 		E91353A71BC5398B002DE9B3 /* GBMSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91353A41BC5398B002DE9B3 /* GBMSquareCell.m */; };
 		E91353A81BC5398B002DE9B3 /* GBMSquareCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91353A61BC5398B002DE9B3 /* GBMSquareCollectionCell.m */; };
@@ -145,6 +145,14 @@
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
 		995A79771BD6363C00D4A823 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		995A797B1BD72EF000D4A823 /* GBMPublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishModel.h; sourceTree = "<group>"; };
+		995A797C1BD72EF000D4A823 /* GBMPublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishModel.m; sourceTree = "<group>"; };
+		995A797E1BD72EF000D4A823 /* GBMViewDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMViewDetailModel.h; sourceTree = "<group>"; };
+		995A797F1BD72EF000D4A823 /* GBMViewDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMViewDetailModel.m; sourceTree = "<group>"; };
+		995A79821BD72F5400D4A823 /* GBMLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationModel.h; sourceTree = "<group>"; };
+		995A79831BD72F5400D4A823 /* GBMLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationModel.m; sourceTree = "<group>"; };
+		995A79851BD72F5E00D4A823 /* GBMLocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationParser.h; sourceTree = "<group>"; };
+		995A79861BD72F5E00D4A823 /* GBMLocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationParser.m; sourceTree = "<group>"; };
 		995CEFFE1BD47FE30052B5F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		995CF0001BD47FED0052B5F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -171,26 +179,18 @@
 		C9D668AB1BBA3C4100208F9D /* GBMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMHomePageViewController.h; sourceTree = "<group>"; };
 		DF22FEB61BD0B646008A893A /* GBMLocationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationRequest.h; sourceTree = "<group>"; };
 		DF22FEB71BD0B646008A893A /* GBMLocationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationRequest.m; sourceTree = "<group>"; };
-		DF22FEB91BD0B6C6008A893A /* GBMLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationModel.h; sourceTree = "<group>"; };
-		DF22FEBA1BD0B6C6008A893A /* GBMLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationModel.m; sourceTree = "<group>"; };
-		DF22FEBC1BD0DB82008A893A /* GBMLocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMLocationParser.h; sourceTree = "<group>"; };
-		DF22FEBD1BD0DB82008A893A /* GBMLocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMLocationParser.m; sourceTree = "<group>"; };
 		DF755C291BD609F1005B0495 /* GBMCommentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMCommentListCell.h; sourceTree = "<group>"; };
 		DF755C2A1BD609F1005B0495 /* GBMCommentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMCommentListCell.m; sourceTree = "<group>"; };
 		DF755C2C1BD6129B005B0495 /* GBMViewDetailParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMViewDetailParser.h; sourceTree = "<group>"; };
 		DF755C2D1BD6129B005B0495 /* GBMViewDetailParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMViewDetailParser.m; sourceTree = "<group>"; };
 		DF755C2F1BD612DD005B0495 /* UIColor+AddColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AddColor.h"; sourceTree = "<group>"; };
 		DF755C301BD612DD005B0495 /* UIColor+AddColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AddColor.m"; sourceTree = "<group>"; };
-		DF755C321BD614A0005B0495 /* GBMViewDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMViewDetailModel.h; sourceTree = "<group>"; };
-		DF755C331BD614A0005B0495 /* GBMViewDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMViewDetailModel.m; sourceTree = "<group>"; };
 		DFD76C6E1BB28F8F00AAF041 /* GBMPublishRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequest.h; sourceTree = "<group>"; };
 		DFD76C6F1BB28F8F00AAF041 /* GBMPublishRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequest.m; sourceTree = "<group>"; };
 		DFEB0BF01BB773BA0023543B /* GBMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMGlobal.h; sourceTree = "<group>"; };
 		DFEB0BF11BB773BA0023543B /* GBMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMGlobal.m; sourceTree = "<group>"; };
 		DFEB0BF31BB774040023543B /* GBMPublishRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishRequestParser.h; sourceTree = "<group>"; };
 		DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishRequestParser.m; sourceTree = "<group>"; };
-		DFEB0BF81BB774EA0023543B /* GBMPublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishModel.h; sourceTree = "<group>"; };
-		DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishModel.m; sourceTree = "<group>"; };
 		DFFB3C251BB1756000396F7A /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E91353A31BC5398B002DE9B3 /* GBMSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareCell.h; sourceTree = "<group>"; };
 		E91353A41BC5398B002DE9B3 /* GBMSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareCell.m; sourceTree = "<group>"; };
@@ -412,6 +412,26 @@
 			path = Publish;
 			sourceTree = "<group>";
 		};
+		995A797A1BD72EF000D4A823 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				995A79821BD72F5400D4A823 /* GBMLocationModel.h */,
+				995A79831BD72F5400D4A823 /* GBMLocationModel.m */,
+				995A797B1BD72EF000D4A823 /* GBMPublishModel.h */,
+				995A797C1BD72EF000D4A823 /* GBMPublishModel.m */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		995A797D1BD72EF000D4A823 /* ViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				995A797E1BD72EF000D4A823 /* GBMViewDetailModel.h */,
+				995A797F1BD72EF000D4A823 /* GBMViewDetailModel.m */,
+			);
+			path = ViewDetail;
+			sourceTree = "<group>";
+		};
 		995CF00A1BD486170052B5F7 /* ViewDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +464,8 @@
 		C93EB5CB1BAFE464007DCAB4 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				995A79851BD72F5E00D4A823 /* GBMLocationParser.h */,
+				995A79861BD72F5E00D4A823 /* GBMLocationParser.m */,
 				DFEB0BF31BB774040023543B /* GBMPublishRequestParser.h */,
 				DFEB0BF41BB774040023543B /* GBMPublishRequestParser.m */,
 				C93EB5CC1BAFE464007DCAB4 /* GBMLoginRequestParser.h */,
@@ -452,8 +474,6 @@
 				C93EB5D01BAFE9A9007DCAB4 /* GBMRegisterRequestParser.m */,
 				E96FBF4B1BC749010073B788 /* GBMSquareRequestParser.h */,
 				E96FBF4C1BC749010073B788 /* GBMSquareRequestParser.m */,
-				DF22FEBC1BD0DB82008A893A /* GBMLocationParser.h */,
-				DF22FEBD1BD0DB82008A893A /* GBMLocationParser.m */,
 				DF755C2C1BD6129B005B0495 /* GBMViewDetailParser.h */,
 				DF755C2D1BD6129B005B0495 /* GBMViewDetailParser.m */,
 			);
@@ -478,17 +498,6 @@
 				DFEB0BF11BB773BA0023543B /* GBMGlobal.m */,
 			);
 			name = Global;
-			sourceTree = "<group>";
-		};
-		DFEB0BF71BB774D50023543B /* Publish */ = {
-			isa = PBXGroup;
-			children = (
-				DFEB0BF81BB774EA0023543B /* GBMPublishModel.h */,
-				DFEB0BF91BB774EA0023543B /* GBMPublishModel.m */,
-				DF22FEB91BD0B6C6008A893A /* GBMLocationModel.h */,
-				DF22FEBA1BD0B6C6008A893A /* GBMLocationModel.m */,
-			);
-			name = Publish;
 			sourceTree = "<group>";
 		};
 		E91353AD1BC53BC8002DE9B3 /* Library */ = {
@@ -725,11 +734,10 @@
 		E987E9861BAFA54000D4A039 /* Square */ = {
 			isa = PBXGroup;
 			children = (
-				DFEB0BF71BB774D50023543B /* Publish */,
+				995A797A1BD72EF000D4A823 /* Publish */,
+				995A797D1BD72EF000D4A823 /* ViewDetail */,
 				E987E9971BAFA63900D4A039 /* GBMSquareModel.h */,
 				E987E9981BAFA63900D4A039 /* GBMSquareModel.m */,
-				DF755C321BD614A0005B0495 /* GBMViewDetailModel.h */,
-				DF755C331BD614A0005B0495 /* GBMViewDetailModel.m */,
 			);
 			path = Square;
 			sourceTree = "<group>";
@@ -992,6 +1000,7 @@
 				E96FBF3F1BC743E20073B788 /* UIImageView+WebCache.m in Sources */,
 				E96FBF4A1BC744B20073B788 /* GBMSquareRequest.m in Sources */,
 				E96FBF371BC743E20073B788 /* SDWebImageDownloaderOperation.m in Sources */,
+				995A79841BD72F5400D4A823 /* GBMLocationModel.m in Sources */,
 				E987E9941BAFA61700D4A039 /* GBMUserModel.m in Sources */,
 				E987E9A11BAFA66400D4A039 /* GBMLoginViewController.m in Sources */,
 				E96FBF3D1BC743E20073B788 /* UIImage+WebP.m in Sources */,
@@ -1009,10 +1018,11 @@
 				E96FBF351BC743E20073B788 /* SDWebImageDecoder.m in Sources */,
 				E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */,
 				E96FBF3E1BC743E20073B788 /* UIImageView+HighlightedWebCache.m in Sources */,
-				DF755C341BD614A0005B0495 /* GBMViewDetailModel.m in Sources */,
+				995A79811BD72EF000D4A823 /* GBMViewDetailModel.m in Sources */,
 				E9F17DC71BAF93B700C2948B /* main.m in Sources */,
 				E91353CF1BC53D4E002DE9B3 /* UIView+MJExtension.m in Sources */,
 				E91353CE1BC53D4E002DE9B3 /* UIScrollView+MJRefresh.m in Sources */,
+				995A79801BD72EF000D4A823 /* GBMPublishModel.m in Sources */,
 				994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */,
 				C9D668AC1BBA3C4100208F9D /* GBMHomePageViewController.m in Sources */,
 				C93EB5C61BAFD87B007DCAB4 /* GBMRegisterRequest.m in Sources */,
@@ -1034,18 +1044,16 @@
 				E91353FD1BC53DE9002DE9B3 /* MJRefreshGifHeader.m in Sources */,
 				E91353EC1BC53DBB002DE9B3 /* MJRefreshAutoNormalFooter.m in Sources */,
 				C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */,
+				995A79871BD72F5E00D4A823 /* GBMLocationParser.m in Sources */,
 				E91353A81BC5398B002DE9B3 /* GBMSquareCollectionCell.m in Sources */,
-				DF22FEBB1BD0B6C6008A893A /* GBMLocationModel.m in Sources */,
 				E91353F41BC53DC3002DE9B3 /* MJRefreshBackGifFooter.m in Sources */,
 				C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */,
 				E987E9A51BAFA71700D4A039 /* GBMRegisterViewController.m in Sources */,
 				994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */,
-				DFEB0BFA1BB774EA0023543B /* GBMPublishModel.m in Sources */,
 				C93EB5CE1BAFE464007DCAB4 /* GBMLoginRequestParser.m in Sources */,
 				999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */,
 				DF755C311BD612DD005B0495 /* UIColor+AddColor.m in Sources */,
 				E91353BB1BC53D22002DE9B3 /* KxMenu.m in Sources */,
-				DF22FEBE1BD0DB82008A893A /* GBMLocationParser.m in Sources */,
 				E987E9991BAFA63900D4A039 /* GBMSquareModel.m in Sources */,
 				E91353CC1BC53D4E002DE9B3 /* MJRefreshConst.m in Sources */,
 				E96FBF321BC743E20073B788 /* NSData+ImageContentType.m in Sources */,

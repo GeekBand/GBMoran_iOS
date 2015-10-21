@@ -30,7 +30,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong,nonatomic) UITableView *tableView;

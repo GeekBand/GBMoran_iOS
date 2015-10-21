@@ -105,6 +105,8 @@
     GBMViewDetailModel *model = self.commentArr[indexPath.row];
     cell.textOfComment.text = model.comment;
     cell.dateOfComment.text = model.modified;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.userInteractionEnabled=false;
     return cell;
 }
 
