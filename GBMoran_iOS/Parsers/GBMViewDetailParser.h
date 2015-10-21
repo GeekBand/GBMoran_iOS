@@ -10,8 +10,9 @@
 
 @interface GBMViewDetailParser : NSObject
 
-- (NSArray*)parseJson:(NSData *)data;
+
 @property (nonatomic, strong) NSMutableArray *addrArray;
 @property (nonatomic, strong) NSMutableArray *pictureArray;
+- (NSArray*)parseJson:(NSData *)data;
 
 @end

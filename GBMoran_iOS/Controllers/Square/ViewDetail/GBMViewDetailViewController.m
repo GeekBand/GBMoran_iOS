@@ -11,14 +11,15 @@
 #import "GBMCommentListCell.h"
 #import "GBMUserModel.h"
 #import "GBMViewDetailModel.h"
-@interface GBMViewDetailViewController ()<GBMViewDetailRequestDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface GBMViewDetailViewController ()
 {
     UIActivityIndicatorView *activity;
      UITableView     *_tableView;
 
 }
 
-@property (nonatomic, strong) NSArray *commentArr;
+
+
 @end
 
 @implementation GBMViewDetailViewController
@@ -36,30 +37,15 @@
     self.PhotoImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.pic_url]]];
     [activity stopAnimating];
     
-    NSString *token= [GBMGlobal shareGloabl].user.token;
-     NSString *userId= [GBMGlobal shareGloabl].user.userId;
-    NSDictionary *dic = @{@"user_id":userId, @"token":token, @"pic_id":self.pic_id};
+    NSDictionary *dic = @{@"user_id":[GBMGlobal shareGloabl].user.userId, @"token":[GBMGlobal shareGloabl].user.token, @"pic_id":self.pic_id};
+    
     GBMViewDetailRequest *request= [[GBMViewDetailRequest alloc]init];
     [request sendViewDetailRequestWithParameter:dic delegate:self];
     
 
   
-
-    
-
-    
-
-    
 }
--(UIImage *) getImageFromURL:(NSString *)fileURL {
-    
-    NSLog(@"执行图片下载函数");
-    UIImage * result;
-    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-    result = [UIImage imageWithData:data];
-    return result;
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -110,15 +96,12 @@
         cell = [[GBMCommentListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
-    //    [cell cleanComponents];
-    
-    //    [cell setHeadImageOfComment:[UIImage imageNamed:@"camera"]];
-    //    [cell setUsernameOfComment:@"花事了了"];
-    //    [cell setTextOfComment:@"这家火锅超赞"];
-    //    [cell setDateOfComment:@"8月17日 12:55"];
+
     GBMViewDetailModel *model = self.commentArr[indexPath.row];
     cell.textOfComment.text = model.comment;
     cell.dateOfComment.text = model.modified;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.userInteractionEnabled=false;
     return cell;
 }
 
