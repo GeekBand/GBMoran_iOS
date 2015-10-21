@@ -28,7 +28,7 @@
             
             id data = [[jsonDic valueForKey:@"data"] allValues];
             
-            __block GBMSquareRequestParser *weakSelf = self;
+             GBMSquareRequestParser *weakSelf = self;
             
             for (id dic in data) {
                 weakSelf.addrArray = [NSMutableArray array];

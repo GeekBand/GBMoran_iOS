@@ -479,8 +479,15 @@
 -(void)requestSuccess:(GBMPublishRequest *)request picId:(NSString *)picId
 {
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
-     [activity stopAnimating];
+    
+    if (self.tag == 1) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
+    }else if (self.tag == 2 ){
+         [self dismissViewControllerAnimated:YES completion:nil];
+    }
+   
+    [activity stopAnimating];
 //    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    [appDelegate loadMainViewWithController:self];
 }
@@ -499,7 +506,7 @@
 - (IBAction)returnToCamera:(id)sender {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate addOrderView];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -520,7 +527,7 @@
 -(void)cancelAction:(id)sender{
     
     if (self.tag == 1) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }else if (self.tag == 2 ){
         [self.navigationController popViewControllerAnimated:YES];
     }

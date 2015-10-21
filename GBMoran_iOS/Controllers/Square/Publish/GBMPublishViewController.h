@@ -14,6 +14,7 @@
 @property (strong , nonatomic)UIImage *publishPhoto;
 @property (weak, nonatomic) IBOutlet UIImageView *pulishview;
 @property(nonatomic, assign)NSInteger tag;
+@property (nonatomic ,strong) UIImagePickerController *imagePicker;
 
 -(instancetype)initWithPulishPhoto:(UIImage*)pulishPhoto;
 

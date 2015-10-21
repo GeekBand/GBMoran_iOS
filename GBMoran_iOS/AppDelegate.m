@@ -87,7 +87,7 @@
     if (buttonIndex == 0) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             self.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-            self.pickerController.allowsEditing = YES;
+            self.pickerController.allowsEditing = NO;
             self.pickerController.delegate = self;
             [self.tabBarController presentViewController:self.pickerController animated:YES completion:nil];
           
@@ -128,6 +128,7 @@
         GBMPublishViewController *pulish =  [story instantiateViewControllerWithIdentifier:@"CMJ"];
         UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:pulish];
         pulish.tag = 1;
+        pulish.imagePicker = picker;
          pulish.publishPhoto = image;
         [picker presentViewController:navigationController animated:YES completion:nil];
     }
