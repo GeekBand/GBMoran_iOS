@@ -10,6 +10,13 @@
 		9900D7951BD0A46A00A4C32D /* GBMReNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D7941BD0A46A00A4C32D /* GBMReNameRequest.m */; };
 		9900D7981BD0C80D00A4C32D /* GBMGetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D7971BD0C80D00A4C32D /* GBMGetImage.m */; };
 		9900D79E1BD0CC0200A4C32D /* GBMReImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D79D1BD0CC0200A4C32D /* GBMReImageRequest.m */; };
+		993546501BD789C000881616 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9935464F1BD789BF00881616 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
+		993546521BD78AD900881616 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993546511BD78AD900881616 /* UIKit.framework */; };
+		993546541BD78AE100881616 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993546531BD78AE100881616 /* Foundation.framework */; };
+		993546551BD78B2100881616 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */; };
+		993546571BD78B4600881616 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 993546561BD78B4600881616 /* libstdc++.tbd */; };
+		993546591BD78B4C00881616 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 993546581BD78B4C00881616 /* libstdc++.6.tbd */; };
+		9935465B1BD78B5F00881616 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9935465A1BD78B5F00881616 /* libz.1.2.5.tbd */; };
 		994BB51C1BB68DF800420EB8 /* GBMPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5141BB68DF800420EB8 /* GBMPublishCell.m */; };
 		994BB51D1BB68DF800420EB8 /* GBMPublishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5151BB68DF800420EB8 /* GBMPublishCell.xib */; };
 		994BB51E1BB68DF800420EB8 /* GBMLoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5171BB68DF800420EB8 /* GBMLoginAndRegister.storyboard */; };
@@ -19,7 +26,6 @@
 		994BB5221BB68DF800420EB8 /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51B1BB68DF800420EB8 /* GBMViewDetail.storyboard */; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; };
-		995A79781BD6363C00D4A823 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A79771BD6363C00D4A823 /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
 		995A79801BD72EF000D4A823 /* GBMPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A797C1BD72EF000D4A823 /* GBMPublishModel.m */; settings = {ASSET_TAGS = (); }; };
 		995A79811BD72EF000D4A823 /* GBMViewDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A797F1BD72EF000D4A823 /* GBMViewDetailModel.m */; settings = {ASSET_TAGS = (); }; };
 		995A79841BD72F5400D4A823 /* GBMLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 995A79831BD72F5400D4A823 /* GBMLocationModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -130,6 +136,12 @@
 		9900D7971BD0C80D00A4C32D /* GBMGetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMGetImage.m; sourceTree = "<group>"; };
 		9900D79C1BD0CC0200A4C32D /* GBMReImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMReImageRequest.h; path = My/GBMReImageRequest.h; sourceTree = "<group>"; };
 		9900D79D1BD0CC0200A4C32D /* GBMReImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMReImageRequest.m; path = My/GBMReImageRequest.m; sourceTree = "<group>"; };
+		9935464F1BD789BF00881616 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		993546511BD78AD900881616 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		993546531BD78AE100881616 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		993546561BD78B4600881616 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		993546581BD78B4C00881616 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		9935465A1BD78B5F00881616 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		994BB5131BB68DF800420EB8 /* GBMPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishCell.h; sourceTree = "<group>"; };
 		994BB5141BB68DF800420EB8 /* GBMPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishCell.m; sourceTree = "<group>"; };
 		994BB5151BB68DF800420EB8 /* GBMPublishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBMPublishCell.xib; sourceTree = "<group>"; };
@@ -141,7 +153,6 @@
 		994BB5241BB68E0D00420EB8 /* GBMPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishViewController.h; sourceTree = "<group>"; };
 		994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishViewController.m; sourceTree = "<group>"; };
 		994BB5261BB68E0D00420EB8 /* Untitled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Untitled.jpg; sourceTree = "<group>"; };
-		995A79771BD6363C00D4A823 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		995A797B1BD72EF000D4A823 /* GBMPublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMPublishModel.h; sourceTree = "<group>"; };
 		995A797C1BD72EF000D4A823 /* GBMPublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMPublishModel.m; sourceTree = "<group>"; };
 		995A797E1BD72EF000D4A823 /* GBMViewDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMViewDetailModel.h; sourceTree = "<group>"; };
@@ -312,15 +323,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9935465B1BD78B5F00881616 /* libz.1.2.5.tbd in Frameworks */,
+				993546591BD78B4C00881616 /* libstdc++.6.tbd in Frameworks */,
+				993546571BD78B4600881616 /* libstdc++.tbd in Frameworks */,
 				E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */,
+				993546551BD78B2100881616 /* libstdc++.6.0.9.tbd in Frameworks */,
 				E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */,
 				E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */,
-				995A79781BD6363C00D4A823 /* MAMapKit.framework in Frameworks */,
-				995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */,
+				E9E1714C1BD2152D00218C42 /* CoreLocation.framework in Frameworks */,
 				E9E171521BD215A700218C42 /* OpenGLES.framework in Frameworks */,
 				E9E171501BD2159D00218C42 /* QuartzCore.framework in Frameworks */,
 				E9E1714E1BD2159600218C42 /* CoreGraphics.framework in Frameworks */,
-				E9E1714C1BD2152D00218C42 /* CoreLocation.framework in Frameworks */,
+				993546541BD78AE100881616 /* Foundation.framework in Frameworks */,
+				993546521BD78AD900881616 /* UIKit.framework in Frameworks */,
+				993546501BD789C000881616 /* MAMapKit.framework in Frameworks */,
+				995CF0071BD480DF0052B5F7 /* AMapSearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,13 +450,13 @@
 		995A79CB1BD7685E00D4A823 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				995A7A461BD7688F00D4A823 /* UIColor+AddColor.h */,
-				995A7A471BD7688F00D4A823 /* UIColor+AddColor.m */,
 				995A79CC1BD7685E00D4A823 /* KxMenu.h */,
 				995A79CD1BD7685E00D4A823 /* KxMenu.m */,
 				995A79CE1BD7685E00D4A823 /* MJRefresh */,
 				995A79F51BD7685E00D4A823 /* SDWebImage */,
 				995A7A171BD7685E00D4A823 /* SVProgressHUD */,
+				995A7A461BD7688F00D4A823 /* UIColor+AddColor.h */,
+				995A7A471BD7688F00D4A823 /* UIColor+AddColor.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -747,19 +764,24 @@
 		E9E1715F1BD217AC00218C42 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				995A79771BD6363C00D4A823 /* MAMapKit.framework */,
 				E9E171491BD2150800218C42 /* AMap.bundle */,
 				995CF0061BD480DF0052B5F7 /* AMapSearchKit.framework */,
 				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
 				E9E1714B1BD2152D00218C42 /* CoreLocation.framework */,
 				E9E171531BD215AF00218C42 /* CoreTelephony.framework */,
+				993546531BD78AE100881616 /* Foundation.framework */,
 				995CF0001BD47FED0052B5F7 /* libc++.tbd */,
 				995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */,
+				993546581BD78B4C00881616 /* libstdc++.6.tbd */,
+				993546561BD78B4600881616 /* libstdc++.tbd */,
+				9935465A1BD78B5F00881616 /* libz.1.2.5.tbd */,
 				995CEFFE1BD47FE30052B5F7 /* libz.tbd */,
+				9935464F1BD789BF00881616 /* MAMapKit.framework */,
 				E9E171511BD215A700218C42 /* OpenGLES.framework */,
 				E9E1714F1BD2159D00218C42 /* QuartzCore.framework */,
 				E9E1715D1BD215E300218C42 /* Security.framework */,
 				E9E171551BD215B600218C42 /* SystemConfiguration.framework */,
+				993546511BD78AD900881616 /* UIKit.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -787,9 +809,9 @@
 			isa = PBXGroup;
 			children = (
 				995A7A421BD7687000D4A823 /* App */,
+				E987E9801BAFA53900D4A039 /* Controllers */,
 				995A79C81BD7685E00D4A823 /* Global */,
 				995A79CB1BD7685E00D4A823 /* Library */,
-				E987E9801BAFA53900D4A039 /* Controllers */,
 				E987E9841BAFA54000D4A039 /* Models */,
 				E9CA0CF31BB2A7E600695D6E /* Public */,
 				E987E98B1BAFA58200D4A039 /* Resources */,
