@@ -20,16 +20,24 @@
     
     
     NSMutableArray *array = [[NSMutableArray alloc]init];
-    
+
     
     if (error) {
         NSLog(@"The parser is not work.");
     } else {
+        
         if ([[jsonDic class] isSubclassOfClass:[NSDictionary class]]) {
+            
             id data = [jsonDic valueForKey:@"data"];
+            
+            __block GBMViewDetailParser *weakSelf = self;
+            
             for (id dic in data) {
+//                weakSelf.addrArray = [NSMutableArray array];
+//                weakSelf.pictureArray = [NSMutableArray array];
                 GBMViewDetailModel *model = [[GBMViewDetailModel alloc]init];
                 [model setValuesForKeysWithDictionary:dic];
+                
                 [array addObject:model];
             }
         }

@@ -11,6 +11,7 @@
 
 @interface GBMPublishViewController : UIViewController<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate,GBMPublishRequestDelegate,UIActionSheetDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong , nonatomic)UIImage *publishPhoto;
 @property (weak, nonatomic) IBOutlet UIImageView *pulishview;
 @property(nonatomic, assign)NSInteger tag;

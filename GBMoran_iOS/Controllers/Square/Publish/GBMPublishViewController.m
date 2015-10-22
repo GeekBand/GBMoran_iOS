@@ -30,6 +30,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong,nonatomic) UITableView *tableView;
@@ -95,13 +96,7 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)observeLocationValue:(NSNotification *)noti
-{
-    
-    locationDic = (NSMutableDictionary *)noti.userInfo;
-    [self.locationButton.titleLabel setText:[locationDic valueForKey:@"location"]];
-    
-}
+
 
 
 -(void)getLatitudeAndLongtitude{
@@ -255,28 +250,13 @@
 
 -(void)MakeLocation{
 
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    // distanceFilter是距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序
-    // 它的单位是米，这里设置为至少移动1000再通知委托处理更新;
-    self.locationManager.distanceFilter = 1000.0f; // 如果设为kCLDistanceFilterNone，则每秒更新一次
-    // Do any additional setup after loading the view, typically from a nib.
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-        [_locationManager requestWhenInUseAuthorization];
-    if ([CLLocationManager locationServicesEnabled]) {
-        [self.locationManager startUpdatingLocation];
-    }else {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-        [alert show];
-    }
+   
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
         
-        NSString *latitude = [NSString stringWithFormat:@"l=%@",[locationDic valueForKey:@"latitude"]];
+        NSString *latitude = [NSString stringWithFormat:@"l=%@",[self.dic valueForKey:@"latitude"]];
         NSString *string1 = [latitude stringByAppendingString:@"%2C"];
-        NSString *httpArg = [NSString stringWithFormat:@"%@%@",string1,[locationDic valueForKey:@"longitude"]];
+        NSString *httpArg = [NSString stringWithFormat:@"%@%@",string1,[self.dic valueForKey:@"longitude"]];
         
         
         
@@ -302,9 +282,30 @@
     NSString *latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
 //    NSNumber *latitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
-//    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.longitude];
+//    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
     [self.dic setValue:latitude forKey:@"latitude"];
     [self.dic setValue:longitude forKey:@"longitude"];
+    CLLocationDegrees latitude2 = newLocation.coordinate.latitude;
+    CLLocationDegrees longitude2 = newLocation.coordinate.longitude;
+
+    CLLocation *c = [[CLLocation alloc] initWithLatitude:latitude2 longitude:longitude2];
+    //创建位置
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:c
+     //反向地理编码
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                     if (!error && [placemarks count] > 0)
+                     {
+                         NSDictionary *dict =
+                         [[placemarks objectAtIndex:0] addressDictionary]; NSLog(@"street address: %@",[dict objectForKey :@"Street"]);
+                         
+                         self.locationLabel.text = dict[@"Name"];
+                     }
+                     else
+                     {
+                         NSLog(@"ERROR: %@", error); }
+                 }];
+
     
     // 停止位置更新
     [manager stopUpdatingLocation];
@@ -359,7 +360,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    self.locationButton.titleLabel.text = locationModel.nameArray[indexPath.row];
+    self.locationLabel.text = locationModel.nameArray[indexPath.row];
     if (openOrNot == YES) {
         [self makeTableView];
     }
@@ -505,6 +506,7 @@
 - (IBAction)returnToCamera:(id)sender {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate addOrderView];
+    [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -527,6 +529,8 @@
     
     if (self.tag == 1) {
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
+       
     }else if (self.tag == 2 ){
         [self.navigationController popViewControllerAnimated:YES];
     }

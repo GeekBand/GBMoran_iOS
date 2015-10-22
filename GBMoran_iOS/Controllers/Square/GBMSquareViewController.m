@@ -22,7 +22,7 @@
 #import "UIImageView+WebCache.h"
 #define VCFromSB(SB,ID) [[UIStoryboard storyboardWithName:SB bundle:nil] instantiateViewControllerWithIdentifier:ID]
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
-@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate, AMapSearchDelegate, MAMapViewDelegate>
+@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate, AMapSearchDelegate, MAMapViewDelegate,CLLocationManagerDelegate>
 @property (nonatomic, strong) NSArray *scrollArray;
 @property (nonatomic ,strong) NSMutableDictionary * userLocationDict;
 
@@ -41,6 +41,8 @@
 @property (nonatomic, strong) NSMutableArray *addrArray;
 @property (nonatomic, strong) NSMutableArray *pictureArray;
 
+@property(nonatomic , strong) CLLocationManager *locationManager;
+
 
 @end
 
@@ -52,16 +54,26 @@
     // Do any additional setup after loading the view.
     
     self.locationDic = [NSMutableDictionary dictionary];
-    //地图API设置
-    [MAMapServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
-    [AMapSearchServices sharedServices].apiKey = @"69b035e62c17ae7f98898392e2b17376";
-    self.mapView = [[MAMapView alloc] init];
-    self.mapView.showsUserLocation = YES;
-    self.mapView.delegate = self;
-    self.mapSearchAPI = [[AMapSearchAPI alloc] init];
-    self.mapSearchAPI.delegate = self;
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // distanceFilter是距离过滤器，为了减少对定位装置的轮询次数，位置的改变不会每次都去通知委托，而是在移动了足够的距离时才通知委托程序
+    // 它的单位是米，这里设置为至少移动1000再通知委托处理更新;
+    self.locationManager.distanceFilter = 1000.0f; // 如果设为kCLDistanceFilterNone，则每秒更新一次
+    // Do any additional setup after loading the view, typically from a nib.
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+        [_locationManager requestWhenInUseAuthorization];
+    if ([CLLocationManager locationServicesEnabled]) {
+        [self.locationManager startUpdatingLocation];
+    }else {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"定位失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [alert show];
+    }
+    
+
     
     //NavigationBar的设置
     self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -104,41 +116,55 @@
     [super viewDidAppear:animated];
 }
 
-
-- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
+#pragma mark - CLLocationManagerDelegate
+// 地理位置发生改变时触发
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    if(updatingLocation == YES)
-    {
-            }
+    // 获取经纬度
+    self.locationDic = [NSMutableDictionary dictionary];
+    NSLog(@"纬度:%f",newLocation.coordinate.latitude);
+    NSLog(@"经度:%f",newLocation.coordinate.longitude);
+    NSString *latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
+    //    NSNumber *latitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
+    //    NSNumber *longitude = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
+    [self.locationDic setValue:latitude forKey:@"latitude"];
+    [self.locationDic setValue:longitude forKey:@"longitude"];
+    CLLocationDegrees latitude2 = newLocation.coordinate.latitude;
+    CLLocationDegrees longitude2 = newLocation.coordinate.longitude;
     
-    [self.locationDic setObject:[NSNumber numberWithFloat:userLocation.location.coordinate.longitude] forKey:@"longitude"];
-    [self.locationDic setObject:[NSNumber numberWithFloat:userLocation.location.coordinate.latitude] forKey:@"latitude"];
     
-    self.currentLocation = userLocation;
-    [self.mapView setRegion:MACoordinateRegionMake(self.currentLocation.coordinate, SPAN) animated:YES];
-    
-    CLLocation * location = userLocation.location;
-    
-    AMapReGeocodeSearchRequest * request = [[AMapReGeocodeSearchRequest alloc] init];
-    request.requireExtension = YES;
-    request.radius = 10000;
-    AMapGeoPoint * point = [AMapGeoPoint locationWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-    request.location = point;
-    [self.mapSearchAPI AMapReGoecodeSearch:request];
+    CLLocation *c = [[CLLocation alloc] initWithLatitude:latitude2 longitude:longitude2];
+    //创建位置
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:c
+     //反向地理编码
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                     if (!error && [placemarks count] > 0)
+                     {
+                         NSDictionary *dict =
+                         [[placemarks objectAtIndex:0] addressDictionary]; NSLog(@"street address: %@",[dict objectForKey :@"Street"]);
+                         [self.locationDic setValue:dict[@"Name"] forKey:@"location"];
+                    
+                     }
+                     else
+                     {
+                         NSLog(@"ERROR: %@", error); }
+                 }];
+   
+    // 停止位置更新
+    [manager stopUpdatingLocation];
 }
 
-- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+// 定位失误时触发
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    if(response.regeocode != nil)
-    {
-        NSString *result = [NSString stringWithFormat:@"%@", response.regeocode.formattedAddress];
-//                NSLog(@"ReGeo: %@", result);
-        
-        [self.locationDic setObject:result forKey:@"location"];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"observeLocationValue" object:nil userInfo:self.locationDic];
-    }
+    NSLog(@"error:%@",error);
 }
+
+
+
+
 
 - (void)titleButtonClick:(UIButton *)button
 {

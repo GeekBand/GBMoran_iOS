@@ -51,8 +51,37 @@
 }
 
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
 
 
+//清除cell中的内容
+- (void)cleanComponents{
+    _headImageOfComment.image = nil;
+    _usernameOfComment.text   = nil;
+    _textOfComment.text       = nil;
+    _dateOfComment.text       = nil;
+}
 
+
+//
+//- (void)setHeadImageOfComment:(UIImage *)headImagefComment{
+//    _headImageOfComment.image = headImagefComment;
+//}
+//
+//- (void)setUsernameOfComment:(NSString *)usernameOfComment{
+//    _usernameOfComment.text = usernameOfComment;
+//}
+//
+//- (void)setTextOfComment:(NSString *)textfComment{
+//    _textOfComment.text = textfComment;
+//}
+//
+//- (void)setDateOfComment:(NSString *)dateOfComment{
+//    _dateOfComment.text = dateOfComment;
+//}
 
 @end

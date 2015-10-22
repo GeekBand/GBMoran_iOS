@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface GBMSquareViewController : UIViewController
 
@@ -16,5 +17,6 @@
 @property (nonatomic, strong) NSString *pic_url;
 @property (nonatomic, strong) NSString *pic_id;
 @property (nonatomic, strong) NSMutableDictionary *locationDic;
+
 
 @end

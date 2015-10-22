@@ -48,28 +48,43 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-dQ-8uB">
                                 <rect key="frame" x="-4" y="498" width="328" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bN-MV-cks">
-                                        <rect key="frame" x="8" y="14" width="182" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bN-MV-cks">
+                                        <rect key="frame" x="8" y="14" width="312" height="22"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="IQs-1o-orD"/>
-                                            <constraint firstAttribute="width" constant="182" id="nKD-36-hRa"/>
+                                            <constraint firstAttribute="height" constant="22" id="s7U-H3-xXe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="上海市浦东新区常泰广场" image="publish_location">
+                                        <state key="normal" title="                                    " image="publish_location">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="publishLocation:" destination="Q8f-dx-KYk" eventType="touchUpInside" id="bKS-1T-B8r"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFZ-lS-SrN">
+                                        <rect key="frame" x="44" y="13" width="276" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ZJx-qa-C6b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="6bN-MV-cks" firstAttribute="top" secondItem="tFw-dQ-8uB" secondAttribute="top" constant="14" id="wB7-Je-xPi"/>
+                                    <constraint firstItem="xFZ-lS-SrN" firstAttribute="top" secondItem="tFw-dQ-8uB" secondAttribute="top" constant="13" id="PU9-pe-INT"/>
+                                    <constraint firstItem="6bN-MV-cks" firstAttribute="leading" secondItem="tFw-dQ-8uB" secondAttribute="leading" id="V0E-ED-OeN"/>
+                                    <constraint firstItem="xFZ-lS-SrN" firstAttribute="leading" secondItem="tFw-dQ-8uB" secondAttribute="leading" constant="44" id="Vl5-kw-gp4"/>
+                                    <constraint firstAttribute="bottom" secondItem="6bN-MV-cks" secondAttribute="bottom" constant="14" id="W79-YO-Ens"/>
+                                    <constraint firstAttribute="bottom" secondItem="xFZ-lS-SrN" secondAttribute="bottom" constant="16" id="bew-df-AJP"/>
+                                    <constraint firstItem="6bN-MV-cks" firstAttribute="top" secondItem="tFw-dQ-8uB" secondAttribute="top" constant="14" id="nK3-Df-LDM"/>
+                                    <constraint firstAttribute="trailing" secondItem="6bN-MV-cks" secondAttribute="trailing" constant="8" id="qnd-KM-sm3"/>
+                                    <constraint firstAttribute="trailing" secondItem="xFZ-lS-SrN" secondAttribute="trailing" constant="8" id="xhQ-e5-wK0"/>
                                     <constraint firstAttribute="height" constant="50" id="xxr-Q3-1JI"/>
-                                    <constraint firstItem="6bN-MV-cks" firstAttribute="leading" secondItem="tFw-dQ-8uB" secondAttribute="leading" constant="8" id="yY6-Mr-DfN"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="你想说的话" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LAp-Z0-llf">
@@ -132,6 +147,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="locationButton" destination="6bN-MV-cks" id="rsM-bJ-VT3"/>
+                        <outlet property="locationLabel" destination="xFZ-lS-SrN" id="uTc-XY-arX"/>
                         <outlet property="numberLabel" destination="u4p-AV-8jH" id="c4U-Mh-gxN"/>
                         <outlet property="pulishview" destination="Hld-ig-BUH" id="9b7-ps-Ds3"/>
                         <outlet property="textView" destination="LAp-Z0-llf" id="Qda-jx-wjl"/>
