@@ -465,7 +465,7 @@
     NSData *data = UIImageJPEGRepresentation(self.pulishview.image, 0.00001);
     GBMPublishRequest *request = [[GBMPublishRequest alloc]init];
     GBMUserModel *user = [GBMGlobal shareGloabl].user;
-    [request sendLoginRequestWithUserId:user.userId token:user.token longitude:[self.dic valueForKey:@"longitude"] latitude:[self.dic valueForKey:@"latitude"] title:self.textView.text data:data delegate:self];
+        [request sendLoginRequestWithUserId:user.userId token:user.token longitude:[self.dic valueForKey:@"longitude"] latitude:[self.dic valueForKey:@"latitude"]  title:self.textView.text data:data  location:self.locationLabel.text  delegate:self];
     
     if ([activity isAnimating]) {
         [activity stopAnimating];

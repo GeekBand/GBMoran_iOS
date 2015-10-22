@@ -178,7 +178,7 @@
       [KxMenuItem menuItem:@"附近500米"
                      image:nil
                     target:self
-                    action:@selector(request:)],
+                    action:@selector(request500kilometerData)],
       [KxMenuItem menuItem:@"附近1000米"
                      image:nil
                     target:self
@@ -186,7 +186,7 @@
       [KxMenuItem menuItem:@"附近1500米"
                      image:nil
                     target:self
-                    action:@selector(pulishCircle:)],
+                    action:@selector(request1000kilometerData)],
       
       ];
     
@@ -280,7 +280,11 @@
 
 - (void)request1000kilometerData
 {
-   
+    NSDictionary *paramDic = @{@"user_id":[GBMGlobal shareGloabl].user.userId, @"token":[GBMGlobal shareGloabl].user.token, @"longitude":[self.locationDic valueForKey:@"longitude"], @"latitude":[self.locationDic valueForKey:@"latitude"], @"distance":@"1000"};
+    
+    GBMSquareRequest *squareRequest = [[GBMSquareRequest alloc] init];
+    [squareRequest sendSquareRequestWithParameter:paramDic delegate:self];
+    
 }
 
 - (void)requestAllData

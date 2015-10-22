@@ -19,7 +19,7 @@
 @implementation GBMPublishRequest
 
 
--(void)sendLoginRequestWithUserId:(NSString *)userId token:(NSString *)token longitude:(NSString *)longitude latitude:(NSString *)latitude title:(NSString *)title data:(NSData *)data delegate:(id<GBMPublishRequestDelegate>)delegate
+-(void)sendLoginRequestWithUserId:(NSString *)userId token:(NSString *)token longitude:(NSString *)longitude latitude:(NSString *)latitude title:(NSString *)title data:(NSData *)data location:(NSString *)location delegate:(id<GBMPublishRequestDelegate>)delegate
 {
     
     [self.urlConnection cancel];
@@ -42,9 +42,10 @@
     [form addValue:userId forField:@"user_id"];
     [form addValue:data forField:@"data"];
     [form addValue:title forField:@"title"];
-    [form addValue:@"" forField:@"location"];
+    [form addValue:location forField:@"location"];
     [form addValue:longitude forField:@"longitude"];
     [form addValue:latitude forField:@"latitude"];
+    [form addValue:location forField:@"addr"];
     
     
     request.HTTPBody = [form httpBody];
@@ -76,7 +77,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *string = [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"receive data string:%@", string);
+    NSLog(@"receive Publishdata string:%@", string);
     GBMPublishRequestParser *parser =[[GBMPublishRequestParser alloc]init];
     GBMPublishModel* model =  [parser parseJson:self.receivedData];
     if ([_delegate respondsToSelector:@selector(requestSuccess:picId:)]) {

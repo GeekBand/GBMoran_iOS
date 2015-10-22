@@ -29,6 +29,7 @@
                           latitude:(NSString *)latitude
                              title:(NSString *)title
                               data:(NSData *)data
+                          location:(NSString *)location
                           delegate:(id<GBMPublishRequestDelegate>)delegate;
 
 @end
