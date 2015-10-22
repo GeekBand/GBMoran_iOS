@@ -44,10 +44,8 @@
 {
     NSLog(@"%zd", indexPath.row);
     GBMPictureModel *pictureModel = self.dataArr[indexPath.row];
-    self.pic_url = pictureModel.pic_link;
-    self.pic_id = pictureModel.pic_id;
-    self.squareVC.pic_url = self.pic_url;
-    self.squareVC.pic_id = self.pic_id;
+    self.squareVC.pic_url  = pictureModel.pic_link;
+    self.squareVC.pic_id = pictureModel.pic_id;
     [self.squareVC toCheckPicture];
 }
 

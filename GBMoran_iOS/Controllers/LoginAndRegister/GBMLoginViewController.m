@@ -227,7 +227,6 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification{
-    CGRect textViewRect  = self.textView.frame;
     if (keyboardOpen == YES) {
         [UIView animateWithDuration:1 animations:^{
              [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];

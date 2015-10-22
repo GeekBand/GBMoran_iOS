@@ -198,8 +198,6 @@
         CGFloat keyboardHeight = endKeyboardRect.origin.y;
         CGRect textViewRect  = self.textView.frame;
         CGFloat textViewHeight = textViewRect.origin.y+textViewRect.size.height;
-        keyboardOffSet = textViewHeight - keyboardHeight;
-        CGFloat newy = textViewRect.origin.y - keyboardOffSet;
         if (textViewHeight > keyboardHeight) {
             [UIView animateWithDuration:duration animations:^{
 //                [self.textView setFrame:CGRectMake(textViewRect.origin.x, newy, textViewRect.size.width, textViewRect.size.height)];
@@ -213,7 +211,6 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification{
-    CGRect textViewRect  = self.textView.frame;
     if (keyboardOpen == YES) {
         [UIView animateWithDuration:1 animations:^{
             [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+keyboardOffSet, self.view.frame.size.width, self.view.frame.size.height)];

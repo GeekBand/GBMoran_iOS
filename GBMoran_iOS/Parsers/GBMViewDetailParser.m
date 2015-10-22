@@ -30,11 +30,9 @@
             
             id data = [jsonDic valueForKey:@"data"];
             
-            __block GBMViewDetailParser *weakSelf = self;
+            
             
             for (id dic in data) {
-//                weakSelf.addrArray = [NSMutableArray array];
-//                weakSelf.pictureArray = [NSMutableArray array];
                 GBMViewDetailModel *model = [[GBMViewDetailModel alloc]init];
                 [model setValuesForKeysWithDictionary:dic];
                 
