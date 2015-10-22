@@ -14,15 +14,14 @@
 #import "GBMSquareRequest.h"
 #import "GBMUserModel.h"
 #import "GBMGlobal.h"
-#import <AMapSearchKit/AMapSearchKit.h>
-#import <MAMapKit/MAMapKit.h>
+
 #import "GBMPictureModel.h"
 #import "GBMSquareModel.h"
 #import "GBMViewDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #define VCFromSB(SB,ID) [[UIStoryboard storyboardWithName:SB bundle:nil] instantiateViewControllerWithIdentifier:ID]
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
-@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate, AMapSearchDelegate, MAMapViewDelegate,CLLocationManagerDelegate>
+@interface GBMSquareViewController ()<UITableViewDelegate, UITableViewDataSource, GBMSquareRequestDelegate,CLLocationManagerDelegate>
 @property (nonatomic, strong) NSArray *scrollArray;
 @property (nonatomic ,strong) NSMutableDictionary * userLocationDict;
 
@@ -33,9 +32,7 @@
 
 @property (nonatomic, strong) UIButton *titleButton;
 
-@property (nonatomic, strong) MAMapView *mapView;
-@property (nonatomic, strong) AMapSearchAPI *mapSearchAPI;
-@property (nonatomic, strong) MAUserLocation *currentLocation;
+
 
 
 @property (nonatomic, strong) NSMutableArray *addrArray;
