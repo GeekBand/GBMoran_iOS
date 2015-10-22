@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="nZh-tf-STW"/>
                         <viewControllerLayoutGuide type="bottom" id="a2z-1X-Fqi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="18a-dX-fG5">
+                    <view key="view" contentMode="scaleToFill" id="18a-dX-fG5" customClass="GBMViewDetail">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

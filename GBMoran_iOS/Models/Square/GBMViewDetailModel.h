@@ -10,10 +10,12 @@
 
 @interface GBMViewDetailModel : NSObject
 
-
+@property (nonatomic,strong) NSString *id;
+@property (nonatomic,strong) NSString *shop_id;
+@property (nonatomic,strong) NSString *user_id;
 @property (nonatomic,strong) NSString *comment;
 @property (nonatomic,strong) NSString *modified;
-
+@property (nonatomic,strong) NSString *pic_id;
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key;
 

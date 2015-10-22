@@ -34,7 +34,6 @@
 
 
 
-
 @property (nonatomic, strong) NSMutableArray *addrArray;
 @property (nonatomic, strong) NSMutableArray *pictureArray;
 

@@ -19,13 +19,8 @@
 		994BB5221BB68DF800420EB8 /* GBMViewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994BB51B1BB68DF800420EB8 /* GBMViewDetail.storyboard */; };
 		994BB5271BB68E0D00420EB8 /* GBMPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BB5251BB68E0D00420EB8 /* GBMPublishViewController.m */; };
 		994BB5281BB68E0D00420EB8 /* Untitled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 994BB5261BB68E0D00420EB8 /* Untitled.jpg */; };
-
 		995CF00D1BD4865D0052B5F7 /* GBMViewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */; };
 		999CB1B41BBE303700F01E42 /* GBMViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */; };
-		99DA1B921BD8917600A84B6C /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1B911BD8917600A84B6C /* MAMapKit.framework */; settings = {ASSET_TAGS = (); }; };
-		99DA1B941BD8952F00A84B6C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1B931BD8952F00A84B6C /* libstdc++.tbd */; };
-		99DA1B961BD8953800A84B6C /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1B951BD8953800A84B6C /* libstdc++.6.tbd */; };
-		99DA1B981BD8954000A84B6C /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DA1B971BD8954000A84B6C /* libz.1.2.5.tbd */; };
 		C92D438A1BB7890A00FA1916 /* GBMNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */; };
 		C92D438D1BB7891900FA1916 /* GBMHeadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D438C1BB7891900FA1916 /* GBMHeadImageViewController.m */; };
 		C93EB5C31BAFD7EE007DCAB4 /* GBMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C93EB5C21BAFD7EE007DCAB4 /* GBMLoginRequest.m */; };
@@ -102,7 +97,9 @@
 		E987E9A91BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AA1BAFA72400D4A039 /* GBMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */; };
 		E987E9AD1BAFA73200D4A039 /* GBMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */; };
-
+		E9CE16711BD5CA2800984AAF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CE16701BD5CA2800984AAF /* libc++.dylib */; };
+		E9CE16731BD5CA4200984AAF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CE16721BD5CA4200984AAF /* libz.dylib */; };
+		E9CE16751BD5CA4D00984AAF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CE16741BD5CA4D00984AAF /* libstdc++.6.0.9.dylib */; };
 		E9E1714C1BD2152D00218C42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1714B1BD2152D00218C42 /* CoreLocation.framework */; };
 		E9E1714E1BD2159600218C42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1714D1BD2159600218C42 /* CoreGraphics.framework */; };
 		E9E171501BD2159D00218C42 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E1714F1BD2159D00218C42 /* QuartzCore.framework */; };
@@ -148,15 +145,10 @@
 		995CEFFE1BD47FE30052B5F7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		995CF0001BD47FED0052B5F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-
 		995CF00B1BD4865D0052B5F7 /* GBMViewDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailRequest.h; path = ViewDetail/GBMViewDetailRequest.h; sourceTree = "<group>"; };
 		995CF00C1BD4865D0052B5F7 /* GBMViewDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailRequest.m; path = ViewDetail/GBMViewDetailRequest.m; sourceTree = "<group>"; };
 		999CB1B21BBE303700F01E42 /* GBMViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMViewDetailViewController.h; path = ViewDetail/GBMViewDetailViewController.h; sourceTree = "<group>"; };
 		999CB1B31BBE303700F01E42 /* GBMViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMViewDetailViewController.m; path = ViewDetail/GBMViewDetailViewController.m; sourceTree = "<group>"; };
-		99DA1B911BD8917600A84B6C /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
-		99DA1B931BD8952F00A84B6C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		99DA1B951BD8953800A84B6C /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
-		99DA1B971BD8954000A84B6C /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		C92D43881BB7890A00FA1916 /* GBMNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMNickNameViewController.h; sourceTree = "<group>"; };
 		C92D43891BB7890A00FA1916 /* GBMNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMNickNameViewController.m; sourceTree = "<group>"; };
 		C92D438B1BB7891900FA1916 /* GBMHeadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMHeadImageViewController.h; sourceTree = "<group>"; };
@@ -295,7 +287,9 @@
 		E987E9A81BAFA72400D4A039 /* GBMMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMMyViewController.m; sourceTree = "<group>"; };
 		E987E9AB1BAFA73200D4A039 /* GBMSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBMSquareViewController.h; sourceTree = "<group>"; };
 		E987E9AC1BAFA73200D4A039 /* GBMSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBMSquareViewController.m; sourceTree = "<group>"; };
-
+		E9CE16701BD5CA2800984AAF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		E9CE16721BD5CA4200984AAF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E9CE16741BD5CA4D00984AAF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		E9E1714B1BD2152D00218C42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E9E1714D1BD2159600218C42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9E1714F1BD2159D00218C42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -320,13 +314,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99DA1B981BD8954000A84B6C /* libz.1.2.5.tbd in Frameworks */,
-				99DA1B961BD8953800A84B6C /* libstdc++.6.tbd in Frameworks */,
-				99DA1B941BD8952F00A84B6C /* libstdc++.tbd in Frameworks */,
+				E9CE16751BD5CA4D00984AAF /* libstdc++.6.0.9.dylib in Frameworks */,
+				E9CE16731BD5CA4200984AAF /* libz.dylib in Frameworks */,
+				E9CE16711BD5CA2800984AAF /* libc++.dylib in Frameworks */,
 				E9E1715E1BD215E300218C42 /* Security.framework in Frameworks */,
 				E9E171561BD215B600218C42 /* SystemConfiguration.framework in Frameworks */,
 				E9E171541BD215AF00218C42 /* CoreTelephony.framework in Frameworks */,
-
 				E9E171521BD215A700218C42 /* OpenGLES.framework in Frameworks */,
 				E9E171501BD2159D00218C42 /* QuartzCore.framework in Frameworks */,
 				E9E1714E1BD2159600218C42 /* CoreGraphics.framework in Frameworks */,
@@ -798,14 +791,10 @@
 		E9E1715F1BD217AC00218C42 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-
 				E9E1714D1BD2159600218C42 /* CoreGraphics.framework */,
 				E9E1714B1BD2152D00218C42 /* CoreLocation.framework */,
 				E9E171531BD215AF00218C42 /* CoreTelephony.framework */,
 				995CF0001BD47FED0052B5F7 /* libc++.tbd */,
-				99DA1B971BD8954000A84B6C /* libz.1.2.5.tbd */,
-				99DA1B951BD8953800A84B6C /* libstdc++.6.tbd */,
-				99DA1B931BD8952F00A84B6C /* libstdc++.tbd */,
 				995CF0021BD47FF40052B5F7 /* libstdc++.6.0.9.tbd */,
 				995CEFFE1BD47FE30052B5F7 /* libz.tbd */,
 				E9E171511BD215A700218C42 /* OpenGLES.framework */,
@@ -819,6 +808,9 @@
 		E9F17DB81BAF93B700C2948B = {
 			isa = PBXGroup;
 			children = (
+				E9CE16741BD5CA4D00984AAF /* libstdc++.6.0.9.dylib */,
+				E9CE16721BD5CA4200984AAF /* libz.dylib */,
+				E9CE16701BD5CA2800984AAF /* libc++.dylib */,
 				E9E1715F1BD217AC00218C42 /* Framework */,
 				E9F17DC31BAF93B700C2948B /* GBMoran_iOS */,
 				E9F17DDD1BAF93B700C2948B /* GBMoran_iOSTests */,

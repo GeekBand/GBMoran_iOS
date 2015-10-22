@@ -18,7 +18,7 @@
 
 }
 
-
+@property (nonatomic, strong) NSArray *commentArr;
 @end
 
 @implementation GBMViewDetailViewController
@@ -51,7 +51,15 @@
 
     
 }
-
+-(UIImage *) getImageFromURL:(NSString *)fileURL {
+    
+    NSLog(@"执行图片下载函数");
+    UIImage * result;
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+    result = [UIImage imageWithData:data];
+    return result;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,12 +68,14 @@
 -(void)viewDetailRequestSuccess:(GBMViewDetailRequest *)request data:(NSArray *)array
 {
     self.commentArr = array;
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.PhotoImage.frame.size.height+self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
- 
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 - (void)viewDetailRequestFailed:(GBMViewDetailRequest *)request error:(NSError *)error{
     [activity stopAnimating];
@@ -98,9 +108,14 @@
     GBMCommentListCell *cell = (GBMCommentListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[GBMCommentListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
-
+    //    [cell cleanComponents];
+    
+    //    [cell setHeadImageOfComment:[UIImage imageNamed:@"camera"]];
+    //    [cell setUsernameOfComment:@"花事了了"];
+    //    [cell setTextOfComment:@"这家火锅超赞"];
+    //    [cell setDateOfComment:@"8月17日 12:55"];
     GBMViewDetailModel *model = self.commentArr[indexPath.row];
     cell.textOfComment.text = model.comment;
     cell.dateOfComment.text = model.modified;
