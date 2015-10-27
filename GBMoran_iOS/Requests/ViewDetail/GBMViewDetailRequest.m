@@ -13,7 +13,7 @@
 @implementation GBMViewDetailRequest
 
 -(void)sendViewDetailRequestWithParameter:(NSDictionary *)paramDic delegate:(id<GBMViewDetailRequestDelegate>)delegate{
-    
+ 
     
     [self.urlConnection cancel];
     

@@ -39,6 +39,7 @@
     NSString *token= [GBMGlobal shareGloabl].user.token;
      NSString *userId= [GBMGlobal shareGloabl].user.userId;
     NSDictionary *dic = @{@"user_id":userId, @"token":token, @"pic_id":self.pic_id};
+    
     GBMViewDetailRequest *request= [[GBMViewDetailRequest alloc]init];
     [request sendViewDetailRequestWithParameter:dic delegate:self];
     

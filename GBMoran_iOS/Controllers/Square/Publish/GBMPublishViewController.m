@@ -59,9 +59,7 @@
     
     
     [self MakeBackButton];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeLocationValue:) name:@"observeLocationValue" object:nil];
-    
+     
     [self getLatitudeAndLongtitude];
 
     
